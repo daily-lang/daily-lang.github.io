@@ -212,6 +212,15 @@ html[data-lang="en"] .i18n-zh { display: none !important; }
 .app-meta dt { color: var(--text-3); white-space: nowrap; }
 .app-meta dd { margin: 0; }
 
+/* 卡片底部的隐私政策入口：每个 App 指向自己的 /<appId>/privacy/ */
+.app-card__foot { margin: 14px 0 0; font-size: 13px; }
+.app-card__foot a {
+  color: var(--text-2);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.app-card__foot a:hover { color: var(--text); }
+
 .foot {
   display: flex;
   flex-wrap: wrap;

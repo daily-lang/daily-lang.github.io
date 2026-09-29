@@ -20,8 +20,8 @@
        改标题 / 原生名 / 简介 / 目标语言，并换上该 App 的正式 logo
        （缩到 256px 放进 assets/，用 <img class="app-logo"> 引用；暂无 logo 时用内联 SVG 占位）。
     2. 语言切换：正文中成对写 .i18n-zh / .i18n-en，由 assets/site.js 切换。
-    3. 隐私政策**不在本页展示**：它只服务于应用商店审核，按 App 归档在
-       /<appId>/privacy/ 下（见 vi/privacy/ 的目录约定）。
+    3. 隐私政策**正文不在这里展示**（它主要服务于应用商店审核，按 App 归档在 /<appId>/privacy/ 下），
+       但每张 .app-card 底部给一个「查看隐私政策」入口，指向该 App 自己的 /<appId>/privacy/。
     4. 本页不写「免登录 / 免费 / 数据只存本机 / 无广告」这类承诺：它们只是当前阶段
        的产品状态，不是长期承诺；需要对外说明的内容以隐私政策页为准。
   ==========================================================================
@@ -95,6 +95,13 @@
             <dd>Android · iOS · HarmonyOS</dd>
           </div>
         </dl>
+
+        <p class="app-card__foot">
+          <a href="vi/privacy/">
+            <span class="i18n-zh">查看隐私政策</span>
+            <span class="i18n-en">View privacy policy</span>
+          </a>
+        </p>
       </article>
 
       <!-- 泰语（尚未发布，仅占位） -->
@@ -137,6 +144,13 @@
             <dd>Android · iOS · HarmonyOS</dd>
           </div>
         </dl>
+
+        <p class="app-card__foot">
+          <a href="th/privacy/">
+            <span class="i18n-zh">查看隐私政策</span>
+            <span class="i18n-en">View privacy policy</span>
+          </a>
+        </p>
       </article>
 
     </div>
