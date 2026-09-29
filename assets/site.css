@@ -1,0 +1,400 @@
+/* ==========================================================================
+   DailyLang 官网 · 共享样式
+   --------------------------------------------------------------------------
+   用法：
+     · 首页            <body class="home">
+     · 隐私政策等文档页 <body class="doc-body app-vi|app-th"> + <main class="doc">
+   语言切换：
+     <html data-lang="zh-Hans"> 由 assets/site.js 维护；正文中成对出现
+     .i18n-zh / .i18n-en 的节点，按 data-lang 只显示其一。
+   ========================================================================== */
+
+/* ---------- 1. 设计 token ---------- */
+:root {
+  --text: #1F1A19;
+  --text-2: #5C5553;
+  --text-3: #8A8280;
+  --bg: #F5F2F0;
+  --card: #FFFFFF;
+  --line: #EDE8E5;
+  --muted-card: #FAF8F7;
+
+  /* 待填写占位符（黄底虚线） */
+  --gold-tint: #FFF6D6;
+  --gold-dark: #C9A200;
+
+  /* 各 App 主题色：越南国旗红 / 泰国国旗蓝 */
+  --vi: #DA251D; --vi-deep: #7D1310; --vi-tint: #FBE9E8; --vi-line: #F0C9C6; --vi-gold: #FFCD00;
+  --th: #1F4E9C; --th-deep: #123166; --th-tint: #E8EEF9; --th-line: #C9D8F0; --th-red: #A51931;
+
+  --radius: 14px;
+  --radius-lg: 16px;
+  --shadow-card: 0 1px 2px rgba(31, 26, 25, .05);
+  --shadow-pop: 0 12px 32px rgba(31, 26, 25, .10);
+}
+
+/* ---------- 2. 基础 ---------- */
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+               "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", sans-serif;
+  font-size: 16px;
+  line-height: 1.75;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: inherit; }
+
+/* ---------- 3. 语言切换（中英） ---------- */
+html[data-lang="zh-Hans"] .i18n-en { display: none !important; }
+html[data-lang="en"] .i18n-zh { display: none !important; }
+
+.langswitch {
+  display: inline-flex;
+  padding: 2px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+}
+
+.langswitch button {
+  border: 0;
+  background: transparent;
+  font: inherit;
+  font-size: 12.5px;
+  line-height: 1.5;
+  color: var(--text-2);
+  padding: 4px 11px;
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+.langswitch button.on {
+  background: var(--text);
+  color: #fff;
+  font-weight: 700;
+}
+
+/* ---------- 4. 首页 ---------- */
+.home .wrap {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 22px 20px 60px;
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 6px 0 30px;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  text-decoration: none;
+  font-weight: 700;
+  letter-spacing: .2px;
+}
+
+.brand__mark {
+  width: 28px;
+  height: 28px;
+  border-radius: 9px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--text);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.brand__name { font-size: 16.5px; }
+
+.topbar .langswitch { margin-left: auto; }
+
+.hero { padding: 14px 0 30px; }
+
+.hero h1 {
+  margin: 0 0 14px;
+  font-size: 34px;
+  line-height: 1.32;
+  letter-spacing: -.3px;
+}
+
+.hero .lede {
+  margin: 0;
+  max-width: 60ch;
+  font-size: 16px;
+  color: var(--text-2);
+}
+
+.sec-title {
+  margin: 36px 0 16px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: .5px;
+  color: var(--text-3);
+}
+
+.app-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 16px;
+}
+
+.app-card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 18px;
+  box-shadow: var(--shadow-card);
+}
+
+.app-card__head { display: flex; align-items: center; gap: 12px; }
+
+.app-icon {
+  width: 48px;
+  height: 48px;
+  flex: none;
+  display: block;
+  border-radius: 13px;
+  box-shadow: 0 2px 8px rgba(31, 26, 25, .12);
+}
+
+/* 各 App 的正式 logo（透明底 PNG）：按高度缩放，不做圆角裁剪与投影 */
+.app-logo {
+  flex: none;
+  display: block;
+  height: 46px;
+  width: auto;
+  max-width: 104px;
+  object-fit: contain;
+}
+
+.app-card__title { margin: 0; font-size: 16.5px; font-weight: 700; line-height: 1.3; }
+.app-card__native { margin: 2px 0 0; font-size: 12.5px; color: var(--text-3); }
+.app-card__head .badge { margin-left: auto; align-self: flex-start; }
+
+.badge {
+  flex: none;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 3px 9px;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+.badge--live { background: #E4F1E9; color: #2E7D4F; }
+.badge--soon { background: var(--muted-card); color: var(--text-3); border: 1px solid var(--line); }
+
+.app-card__desc { margin: 14px 0 0; font-size: 13.5px; color: var(--text-2); }
+
+.app-meta {
+  margin: 14px 0 0;
+  padding: 12px 14px;
+  background: var(--muted-card);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  display: grid;
+  gap: 6px;
+}
+
+.app-meta > div { display: grid; grid-template-columns: auto 1fr; gap: 12px; font-size: 12.5px; }
+.app-meta dt { color: var(--text-3); white-space: nowrap; }
+.app-meta dd { margin: 0; }
+
+.foot {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 14px;
+  margin-top: 48px;
+  padding-top: 20px;
+  border-top: 1px solid var(--line);
+  font-size: 12.5px;
+  color: var(--text-3);
+}
+
+/* ---------- 5. 文档页（隐私政策） ---------- */
+.doc-body { padding: 40px 20px 64px; }
+
+.doc-body.app-vi { --brand: var(--vi); --brand-deep: var(--vi-deep); --brand-tint: var(--vi-tint); --brand-line: var(--vi-line); }
+.doc-body.app-th { --brand: var(--th); --brand-deep: var(--th-deep); --brand-tint: var(--th-tint); --brand-line: var(--th-line); }
+
+.doc {
+  max-width: 720px;
+  margin: 0 auto;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  padding: 34px 40px 30px;
+  box-shadow: var(--shadow-card);
+}
+
+.doc-nav {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 0 0 22px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--line);
+  font-size: 13px;
+}
+
+.doc .doc-nav__crumb { color: var(--text-3); text-decoration: none; }
+.doc .doc-nav__crumb:hover { color: var(--text); }
+.doc-nav__links { display: inline-flex; gap: 4px; margin-left: auto; }
+
+.doc-nav__links a {
+  padding: 3px 11px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  font-size: 12.5px;
+  color: var(--text-2);
+  text-decoration: none;
+}
+
+.doc-nav__links a.on {
+  background: var(--text);
+  border-color: var(--text);
+  color: #fff;
+  font-weight: 700;
+}
+
+.doc header { border-bottom: 1px solid var(--line); padding-bottom: 20px; }
+
+.doc h1 { margin: 0 0 8px; font-size: 25px; line-height: 1.35; letter-spacing: .01em; }
+.doc h1 .app { color: var(--brand, var(--vi)); }
+
+.doc .meta { margin: 0; font-size: 13.5px; color: var(--text-3); }
+
+.doc h2 { margin: 34px 0 12px; font-size: 18px; line-height: 1.5; }
+.doc h2 .num { display: inline-block; min-width: 1.4em; color: var(--brand, var(--vi)); font-variant-numeric: tabular-nums; }
+
+.doc p { margin: 0 0 12px; }
+.doc ul { margin: 0 0 12px; padding-left: 1.25em; }
+.doc li { margin-bottom: 6px; }
+.doc strong { font-weight: 600; }
+
+.doc a { color: var(--brand-deep, var(--vi-deep)); text-decoration: underline; text-underline-offset: 2px; }
+
+.doc code {
+  padding: 1px 5px;
+  background: var(--muted-card);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  font-size: 13px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+
+/* 结论卡：一屏之内先给最要紧的几句话 */
+.doc .summary {
+  margin: 22px 0 8px;
+  padding: 18px 20px;
+  background: var(--brand-tint, var(--vi-tint));
+  border-radius: 12px;
+}
+
+.doc .summary p { margin: 0 0 10px; font-weight: 600; color: var(--brand-deep, var(--vi-deep)); }
+.doc .summary ul { margin: 0; padding-left: 1.2em; color: var(--text); }
+.doc .summary li { margin-bottom: 4px; }
+
+.doc .table-wrap { overflow-x: auto; margin: 0 0 12px; }
+.doc table { width: 100%; border-collapse: collapse; font-size: 14.5px; }
+.doc th, .doc td { border: 1px solid var(--line); padding: 9px 12px; text-align: left; vertical-align: top; }
+.doc th { background: var(--muted-card); font-weight: 600; white-space: nowrap; }
+.doc td.no { color: var(--text-2); }
+
+/* 发布前必须替换的占位符：黄底虚线，替换后高亮自然消失 */
+.doc .fill {
+  padding: 1px 4px;
+  background: var(--gold-tint);
+  border-bottom: 1px dashed var(--gold-dark);
+  border-radius: 3px;
+  color: var(--brand-deep, var(--vi-deep));
+}
+
+.doc .contact {
+  margin: 0 0 12px;
+  padding: 16px 20px;
+  background: var(--muted-card);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+}
+
+.doc .contact dl { margin: 0; display: grid; grid-template-columns: auto 1fr; gap: 6px 16px; }
+.doc .contact dt { color: var(--text-3); font-size: 14px; white-space: nowrap; }
+.doc .contact dd { margin: 0; font-size: 14.5px; }
+
+.doc .note {
+  margin: 16px 0 0;
+  padding: 14px 18px;
+  background: var(--muted-card);
+  border-left: 3px solid var(--brand-line, var(--vi-line));
+  border-radius: 0 10px 10px 0;
+  font-size: 14.5px;
+  color: var(--text-2);
+}
+
+/* 版本库入口页的条目 */
+.doc .entry {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px 14px;
+  margin: 0 0 10px;
+  padding: 15px 18px;
+  background: var(--muted-card);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+}
+
+.doc .entry--current { background: var(--brand-tint, var(--vi-tint)); border-color: var(--brand-line, var(--vi-line)); }
+.doc .entry__ver { font-size: 15px; font-weight: 700; }
+.doc .entry__date { font-size: 13px; color: var(--text-3); }
+.doc .entry__tags { display: inline-flex; gap: 8px; margin-left: auto; }
+
+.doc .entry__tags a {
+  padding: 4px 12px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  font-size: 12.5px;
+  text-decoration: none;
+  color: var(--brand-deep, var(--vi-deep));
+}
+
+.doc .empty { margin: 0; font-size: 14px; color: var(--text-3); }
+
+.doc-foot {
+  max-width: 720px;
+  margin: 20px auto 0;
+  font-size: 13px;
+  line-height: 1.8;
+  color: var(--text-3);
+  text-align: center;
+}
+
+/* ---------- 6. 响应式 ---------- */
+@media (max-width: 600px) {
+  .home .wrap { padding: 16px 14px 44px; }
+  .hero h1 { font-size: 26px; }
+  .hero .lede { font-size: 15px; }
+
+  .doc-body { padding: 16px 12px 40px; }
+  .doc { padding: 24px 20px 20px; border-radius: 12px; }
+  .doc h1 { font-size: 21px; }
+  .doc h2 { margin-top: 28px; font-size: 17px; }
+  .doc .contact dl { grid-template-columns: 1fr; gap: 2px 0; }
+  .doc .contact dt { margin-top: 6px; }
+  .doc .entry__tags { margin-left: 0; }
+}
