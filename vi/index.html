@@ -19,7 +19,9 @@
   - 维护要点：
     1. 新增课程或调整免费/付费边界时，同步本页「课程」区块；
     2. 上架应用商店后，可在本页补一个「获取 App」区块放商店直链；
-    3. 正文中成对写 .i18n-zh / .i18n-en，由 assets/site.js 切换。
+    3. 正文中成对写 .i18n-zh / .i18n-en，由 assets/site.js 切换；
+    4. 「预览」区块的运行时截图存放在 assets/shot-vi-*.png（540px 宽，App 简体中文 +
+       浅色模式实拍）；App 界面大改后重拍替换同名文件即可，无需改本页。
   ==========================================================================
 -->
 </head>
@@ -123,6 +125,49 @@
           <span class="i18n-en">No account needed. Progress and preferences are stored on your own device — no ads, no analytics.</span>
         </p>
       </div>
+    </div>
+
+    <!-- ===== 运行时截图 ===== -->
+    <h2 class="sec-title">
+      <span class="i18n-zh">预览</span>
+      <span class="i18n-en">PREVIEW</span>
+    </h2>
+    <div class="shot-strip">
+      <figure class="shot">
+        <img src="../assets/shot-vi-home.png" alt="每日越南语首页：今日续学与课程列表" loading="lazy">
+        <figcaption>
+          <span class="i18n-zh">首页 · 课程列表</span>
+          <span class="i18n-en">Home · course list</span>
+        </figcaption>
+      </figure>
+      <figure class="shot">
+        <img src="../assets/shot-vi-lessons.png" alt="入门课程目录：单元与课时" loading="lazy">
+        <figcaption>
+          <span class="i18n-zh">课程目录</span>
+          <span class="i18n-en">Course catalogue</span>
+        </figcaption>
+      </figure>
+      <figure class="shot">
+        <img src="../assets/shot-vi-lesson.png" alt="课程概览：热身对话、单词块、发音块等环节" loading="lazy">
+        <figcaption>
+          <span class="i18n-zh">课程概览</span>
+          <span class="i18n-en">Lesson overview</span>
+        </figcaption>
+      </figure>
+      <figure class="shot">
+        <img src="../assets/shot-vi-practice.png" alt="听读练习：越南语句子、音标与中文释义" loading="lazy">
+        <figcaption>
+          <span class="i18n-zh">听读练习</span>
+          <span class="i18n-en">Listen-and-read session</span>
+        </figcaption>
+      </figure>
+      <figure class="shot">
+        <img src="../assets/shot-vi-quiz.png" alt="课后小测：选择题" loading="lazy">
+        <figcaption>
+          <span class="i18n-zh">课后小测</span>
+          <span class="i18n-en">Lesson quiz</span>
+        </figcaption>
+      </figure>
     </div>
 
     <!-- ===== 课程 ===== -->
