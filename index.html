@@ -18,7 +18,9 @@
   维护要点：
     1. 新增一个 App：在下方「支持的 App」区块复制一张 .app-card，
        改标题 / 原生名 / 简介 / 目标语言，并换上该 App 的正式 logo
-       （缩到 256px 放进 assets/，用 <img class="app-logo"> 引用；暂无 logo 时用内联 SVG 占位）。
+       （缩到 256px 放进 assets/，用 <img class="app-logo"> 引用；暂无 logo 时用内联 SVG 占位）；
+       同时新建 /<appId>/index.html 详情页（照 vi/index.html 的结构），
+       卡片的「了解详情」与标题链接都指向 /<appId>/。
     2. 语言切换：正文中成对写 .i18n-zh / .i18n-en，由 assets/site.js 切换。
     3. 隐私政策**正文不在这里展示**（它主要服务于应用商店审核，按 App 归档在 /<appId>/privacy/ 下），
        但每张 .app-card 底部给一个「查看隐私政策」入口，指向该 App 自己的 /<appId>/privacy/。
@@ -69,8 +71,10 @@
           <img class="app-logo" src="assets/logo-vi.png" alt="" aria-hidden="true">
           <div>
             <h3 class="app-card__title">
-              <span class="i18n-zh">每日越南语</span>
-              <span class="i18n-en">Daily Viet</span>
+              <a href="vi/">
+                <span class="i18n-zh">每日越南语</span>
+                <span class="i18n-en">Daily Viet</span>
+              </a>
             </h3>
             <p class="app-card__native">Tiếng Việt mỗi ngày</p>
           </div>
@@ -97,6 +101,10 @@
         </dl>
 
         <p class="app-card__foot">
+          <a class="more" href="vi/">
+            <span class="i18n-zh">了解详情 →</span>
+            <span class="i18n-en">Learn more →</span>
+          </a>
           <a href="vi/privacy/">
             <span class="i18n-zh">查看隐私政策</span>
             <span class="i18n-en">View privacy policy</span>
@@ -118,8 +126,10 @@
           </svg>
           <div>
             <h3 class="app-card__title">
-              <span class="i18n-zh">每日泰语</span>
-              <span class="i18n-en">Daily Thai</span>
+              <a href="th/">
+                <span class="i18n-zh">每日泰语</span>
+                <span class="i18n-en">Daily Thai</span>
+              </a>
             </h3>
             <p class="app-card__native">ภาษาไทยทุกวัน</p>
           </div>
@@ -146,6 +156,10 @@
         </dl>
 
         <p class="app-card__foot">
+          <a class="more" href="th/">
+            <span class="i18n-zh">了解详情 →</span>
+            <span class="i18n-en">Learn more →</span>
+          </a>
           <a href="th/privacy/">
             <span class="i18n-zh">查看隐私政策</span>
             <span class="i18n-en">View privacy policy</span>

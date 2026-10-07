@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="zh-Hans" data-lang="zh-Hans"
+      data-title-zh="每日越南语 · DailyLang"
+      data-title-en="Daily Viet · DailyLang">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>每日越南语 · DailyLang</title>
+<meta name="description" content="每日越南语（Daily Viet）：用「听 → 读」的短练习学越南语。六声调发音专项、课后小测与错题回顾，界面支持简体中文、繁体中文、英文、高棉语、老挝语、日语与韩语。无需注册账号，进度只存本机。">
+<link rel="stylesheet" href="../assets/site.css">
+<!--
+  ==========================================================================
+  每日越南语（appId: vi）· App 详情页
+
+  - 地址 /vi/ ；首页 .app-card 的「了解详情」指向这里。
+  - 数据口径与 appConfig/vi/store/store-info.json、appConfig/vi.json 保持一致：
+      · 界面语言 = supportedNativeLanguages（7 种）
+      · 课程 = 入门 7 单元 / 初级 6 单元 / 进阶 6 单元（前 2 免费 + 4 付费，intermediate.paid）
+  - 维护要点：
+    1. 新增课程或调整免费/付费边界时，同步本页「课程」区块；
+    2. 上架应用商店后，可在本页补一个「获取 App」区块放商店直链；
+    3. 正文中成对写 .i18n-zh / .i18n-en，由 assets/site.js 切换。
+  ==========================================================================
+-->
+</head>
+<body class="app-page app-vi">
+<div class="wrap">
+
+  <!-- ===== 顶栏：返回首页 + 语言切换 ===== -->
+  <header class="topbar">
+    <a class="crumb" href="../">‹ DailyLang</a>
+    <div class="langswitch" role="group" aria-label="语言 / Language">
+      <button type="button" data-set-lang="zh-Hans" class="on">简体中文</button>
+      <button type="button" data-set-lang="en">English</button>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ===== 头部：logo + 名称 + 一句话简介 ===== -->
+    <section class="app-hero">
+      <img class="app-hero__logo" src="../assets/logo-vi.png" alt="" aria-hidden="true">
+      <div>
+        <h1>
+          <span class="i18n-zh">每日越南语</span>
+          <span class="i18n-en">Daily Viet</span>
+          <span class="badge badge--live">
+            <span class="i18n-zh">已上线</span>
+            <span class="i18n-en">Available</span>
+          </span>
+        </h1>
+        <p class="native">Tiếng Việt mỗi ngày</p>
+        <p class="tagline">
+          <span class="i18n-zh">每天几分钟，听读练习越南语。</span>
+          <span class="i18n-en">A few minutes a day of listen-and-read practice for Vietnamese.</span>
+        </p>
+      </div>
+    </section>
+
+    <!-- ===== 事实速览 ===== -->
+    <dl class="app-facts">
+      <div>
+        <dt><span class="i18n-zh">目标语言</span><span class="i18n-en">Language</span></dt>
+        <dd><span class="i18n-zh">越南语（vi-VN）</span><span class="i18n-en">Vietnamese (vi-VN)</span></dd>
+      </div>
+      <div>
+        <dt><span class="i18n-zh">平台</span><span class="i18n-en">Platforms</span></dt>
+        <dd>Android · iOS · HarmonyOS</dd>
+      </div>
+      <div>
+        <dt><span class="i18n-zh">界面语言</span><span class="i18n-en">Interface</span></dt>
+        <dd>简体中文 · 繁体中文 · English · ខ្មែរ · ລາວ · 日本語 · 한국어</dd>
+      </div>
+      <div>
+        <dt><span class="i18n-zh">分类</span><span class="i18n-en">Category</span></dt>
+        <dd><span class="i18n-zh">教育</span><span class="i18n-en">Education</span></dd>
+      </div>
+    </dl>
+
+    <!-- ===== 怎么学 ===== -->
+    <h2 class="sec-title">
+      <span class="i18n-zh">怎么学</span>
+      <span class="i18n-en">HOW IT WORKS</span>
+    </h2>
+    <div class="feature-grid">
+      <div class="feature-card">
+        <h3>
+          <span class="i18n-zh">「听 → 读」短练习</span>
+          <span class="i18n-en">Listen → read sessions</span>
+        </h3>
+        <p>
+          <span class="i18n-zh">每课按固定节奏推进：热身对话 → 词块 → 发音对比 → 例句 → 语法。一次练一点，句子都是日常里用得上的。</span>
+          <span class="i18n-en">Every lesson follows the same rhythm: warm-up dialogue → chunks → pronunciation contrast → sentences → grammar. A little at a time, with phrases you can actually use.</span>
+        </p>
+      </div>
+      <div class="feature-card">
+        <h3>
+          <span class="i18n-zh">发音专项</span>
+          <span class="i18n-en">Pronunciation focus</span>
+        </h3>
+        <p>
+          <span class="i18n-zh">越南语六个声调逐组过关：每课一个焦点音，配上最小对比组，先听清差别，再开口模仿。</span>
+          <span class="i18n-en">Work through the six Vietnamese tones group by group: one focus sound per lesson with minimal contrast pairs — hear the difference first, then say it aloud.</span>
+        </p>
+      </div>
+      <div class="feature-card">
+        <h3>
+          <span class="i18n-zh">课后小测</span>
+          <span class="i18n-en">Lesson quiz</span>
+        </h3>
+        <p>
+          <span class="i18n-zh">每课结束用小测检验听读；答错的句子集中列在一起，点一下就能重听。</span>
+          <span class="i18n-en">A short quiz checks your listening and reading at the end of each lesson. Missed items are listed together — tap one to hear it again.</span>
+        </p>
+      </div>
+      <div class="feature-card">
+        <h3>
+          <span class="i18n-zh">进度只存本机</span>
+          <span class="i18n-en">Progress stays on device</span>
+        </h3>
+        <p>
+          <span class="i18n-zh">不需要注册账号，学习进度与偏好保存在你自己的设备上；没有广告，也没有统计上报。</span>
+          <span class="i18n-en">No account needed. Progress and preferences are stored on your own device — no ads, no analytics.</span>
+        </p>
+      </div>
+    </div>
+
+    <!-- ===== 课程 ===== -->
+    <h2 class="sec-title">
+      <span class="i18n-zh">课程</span>
+      <span class="i18n-en">COURSES</span>
+    </h2>
+    <div class="course">
+      <h3>
+        <span class="i18n-zh">越南语入门</span>
+        <span class="i18n-en">Getting Started</span>
+      </h3>
+      <span class="course__meta">
+        <span class="i18n-zh">7 个单元 · 零基础起步</span>
+        <span class="i18n-en">7 units · for absolute beginners</span>
+      </span>
+      <span class="badge badge--free">
+        <span class="i18n-zh">免费</span>
+        <span class="i18n-en">Free</span>
+      </span>
+    </div>
+    <div class="course">
+      <h3>
+        <span class="i18n-zh">初级越南语</span>
+        <span class="i18n-en">Beginner Vietnamese</span>
+      </h3>
+      <span class="course__meta">
+        <span class="i18n-zh">6 个单元 · 日常场景</span>
+        <span class="i18n-en">6 units · everyday situations</span>
+      </span>
+      <span class="badge badge--free">
+        <span class="i18n-zh">免费</span>
+        <span class="i18n-en">Free</span>
+      </span>
+    </div>
+    <div class="course">
+      <h3>
+        <span class="i18n-zh">越南语进阶</span>
+        <span class="i18n-en">Intermediate Vietnamese</span>
+      </h3>
+      <span class="course__meta">
+        <span class="i18n-zh">6 个单元 · 前 2 个单元免费学习</span>
+        <span class="i18n-en">6 units · first 2 units are free</span>
+      </span>
+      <span class="badge badge--iap">
+        <span class="i18n-zh">一次性内购解锁</span>
+        <span class="i18n-en">One-time purchase</span>
+      </span>
+    </div>
+
+    <!-- ===== 隐私 ===== -->
+    <h2 class="sec-title">
+      <span class="i18n-zh">隐私</span>
+      <span class="i18n-en">PRIVACY</span>
+    </h2>
+    <div class="privacy-box">
+      <p>
+        <span class="i18n-zh">一句话：这个 App 不收集你的个人信息，也不需要注册账号。</span>
+        <span class="i18n-en">In one sentence: this app does not collect personal information, and no account is required.</span>
+      </p>
+      <ul>
+        <li>
+          <strong><span class="i18n-zh">不录音。</span><span class="i18n-en">No recording.</span></strong>
+          <span class="i18n-zh">听读练习只播放音频，不会打开麦克风、不会采集你的声音。</span>
+          <span class="i18n-en">Sessions only play audio; the microphone is never used and your voice is never captured.</span>
+        </li>
+        <li>
+          <strong><span class="i18n-zh">不上传。</span><span class="i18n-en">No uploads.</span></strong>
+          <span class="i18n-zh">学习进度与做题记录只保存在你自己的设备上。</span>
+          <span class="i18n-en">Progress and quiz results are stored only on your own device.</span>
+        </li>
+        <li>
+          <strong><span class="i18n-zh">不共享。</span><span class="i18n-en">No sharing.</span></strong>
+          <span class="i18n-zh">没有广告、没有统计 SDK、没有第三方拿到你的数据。</span>
+          <span class="i18n-en">No ads, no analytics SDKs, no third party ever receives your data.</span>
+        </li>
+      </ul>
+      <p class="more">
+        <a href="privacy/">
+          <span class="i18n-zh">查看完整隐私政策 →</span>
+          <span class="i18n-en">View the full privacy policy →</span>
+        </a>
+      </p>
+    </div>
+
+  </main>
+
+  <footer class="foot">
+    <span>© 2026 DailyLang</span>
+    <span><a href="../"><span class="i18n-zh">返回首页</span><span class="i18n-en">Back to home</span></a></span>
+  </footer>
+
+</div>
+<script src="../assets/site.js"></script>
+</body>
+</html>
