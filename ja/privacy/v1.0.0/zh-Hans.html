@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>隐私政策 · 每日日语</title>
+<meta name="description" content="每日日语（Daily Japanese）隐私政策：不收集个人信息，不需要账号，学习进度只保存在你的设备上。">
+<link rel="stylesheet" href="../../../assets/site.css">
+<!--
+  ==========================================================================
+  每日日语（appId: ja）隐私政策 · 简体中文 · v1.0.0
+
+  与 zh-Hant.html / en.html / ja.html 互为同文版本，内容必须保持同步。
+
+  ⚠️ 本文本尚未经法务评审：内容按**当前版本代码的实际行为**撰写，但**不构成任何特定法规
+     （GDPR / CCPA / 中国《个人信息保护法》等）的合规声明**，发布前请由法务复核。
+
+  与 DailyLang 仓库 docs/store/ja/privacy-policy.md（源草稿）和
+  appConfig/ja/store/store-info.json 的 privacyPolicyUrl / dataSafety 保持同一口径：
+  Google Play 的 Data safety 表单按本页结论填「不收集数据」。
+
+  更新协议时不要改动本文件：新建 ../../../<新版本>/zh-Hans.html 等四语正文，
+  并回到 ../../index.html 把「当前版本」与「历史版本」列表改掉。
+  ==========================================================================
+-->
+</head>
+<body class="doc-body app-ja">
+<main class="doc">
+
+  <nav class="doc-nav">
+    <a class="doc-nav__crumb" href="../../">‹ 每日日语 · 隐私政策</a>
+    <div class="doc-nav__links">
+      <a href="zh-Hans.html" class="on">简体中文</a>
+      <a href="zh-Hant.html">繁體中文</a>
+      <a href="en.html">English</a>
+      <a href="ja.html">日本語</a>
+    </div>
+  </nav>
+
+  <header>
+    <h1><span class="app">每日日语</span> · 隐私政策</h1>
+    <p class="meta">
+      适用于 Android / iOS / HarmonyOS 版「每日日语」（包名 <code>com.github.boybeak.daily.lang.ja</code>）<br>
+      版本 <strong>v1.0.0</strong> · 生效日期：<span class="fill">2026-10-10</span>
+    </p>
+  </header>
+
+  <div class="summary">
+    <p>一句话：这个 App 不收集你的个人信息，也不需要注册账号。</p>
+    <ul>
+      <li><strong>不录音。</strong>听读练习只播放音频，不会打开麦克风、不会采集你的声音。</li>
+      <li><strong>不上传。</strong>学习进度与做题记录只保存在你自己的设备上。</li>
+      <li><strong>不共享。</strong>没有广告、没有统计 SDK、没有第三方拿到你的数据。</li>
+    </ul>
+  </div>
+
+  <h2><span class="num">1.</span>我们处理哪些数据</h2>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>数据</th><th>是否处理</th><th>说明</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>学习进度（学过哪些、最近学习时间）</td><td>是</td><td>仅保存在设备本地，见第 3 节</td></tr>
+        <tr><td>做题记录（课后小测的对错）</td><td>是</td><td>仅保存在设备本地，见第 3 节</td></tr>
+        <tr><td>学习偏好（界面语言、每日目标等）</td><td>是</td><td>仅保存在设备本地，见第 3 节</td></tr>
+        <tr><td>麦克风录音、音频</td><td class="no">否</td><td>不申请麦克风权限、不录音、不上传，见第 4 节</td></tr>
+        <tr><td>账号、手机号、邮箱</td><td class="no">否</td><td>当前版本没有登录与账号体系</td></tr>
+        <tr><td>设备标识符、位置、通讯录、相册、剪贴板</td><td class="no">否</td><td>不读取、不采集</td></tr>
+        <tr><td>崩溃日志、使用统计</td><td class="no">否（仅设备本地日志）</td><td>当前版本未接入任何上报后端，见第 5 节</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2><span class="num">2.</span>App 申请了哪些系统权限</h2>
+  <p>当前版本只申请了<strong>网络权限</strong>（Android 的 <code>android.permission.INTERNET</code>），用于将来可能的内容更新；除此之外没有申请相机、麦克风、定位、通讯录、相册、通知等任何敏感权限。剪贴板、设备标识符同样未被读取。</p>
+
+  <h2><span class="num">3.</span>保存在你设备上的数据</h2>
+  <ul>
+    <li><strong>保存内容</strong>：学过哪些条目与最近学习时间、课后小测的逐题对错记录、界面语言与学习偏好（如每日目标）。</li>
+    <li><strong>保存位置</strong>：仅在你的设备上、App 的私有存储空间内，<strong>不会上传到任何服务器</strong>。</li>
+    <li><strong>如何删除</strong>：卸载 App，或在系统设置里「清除应用数据」，这些记录即被删除。App 不提供云端同步，因此删除后无法找回。</li>
+    <li><strong>不用于识别你</strong>：这些记录描述的是「这一台设备上的学习情况」，不含任何能指向你个人身份的信息。</li>
+  </ul>
+
+  <h2><span class="num">4.</span>麦克风与音频</h2>
+  <ul>
+    <li>当前版本<strong>不会申请麦克风权限，也不会录制或上传任何音频</strong>：安装包的权限清单里不存在录音相关权限。</li>
+    <li><strong>听读练习只播放音频</strong>：练习页播放的是随 App 一起提供的学习音频，不会打开麦克风、不会采集你的声音。</li>
+    <li><strong>跟读录音与发音评分不在当前版本的功能范围内</strong>。如果未来版本加入该功能，我们会在新版本上线前先更新本政策、并在此之前不会申请麦克风权限。</li>
+  </ul>
+
+  <h2><span class="num">5.</span>埋点、崩溃与日志</h2>
+  <ul>
+    <li>App 内部的事件标记（用于区分不同目标语言的 App）当前<strong>只写入设备本地日志</strong>，用于开发排查，<strong>不会上传</strong>。</li>
+    <li>当前版本<strong>未接入任何统计、广告或崩溃上报服务</strong>。</li>
+    <li>如果未来接入上述服务，本政策会同步更新，并在更新后的版本中说明收集范围。</li>
+  </ul>
+
+  <h2><span class="num">6.</span>第三方组件与数据共享</h2>
+  <ul>
+    <li>App <strong>不向第三方出售、出租或共享</strong>你的任何数据（实际上我们也没有可共享的数据）。</li>
+    <li>App 未集成广告、用户画像或数据分析类 SDK。</li>
+    <li>界面渲染与音频播放使用开源组件，这些组件在 App 内只负责绘制界面与播放随包音频，不收集你的数据。</li>
+    <li>随 App 提供的学习内容与音频由我们制作（部分日语语音由开源语音合成引擎 VOICEVOX 在发布前离线生成），不涉及你的个人信息。</li>
+  </ul>
+
+  <h2><span class="num">7.</span>未成年人</h2>
+  <p>本 App 不是面向儿童设计的产品，也不会主动收集儿童的任何个人信息。由于本 App 不收集个人信息、不需要账号，儿童在家长指导下使用不会因此产生个人数据。</p>
+
+  <h2><span class="num">8.</span>本政策的变更与联系方式</h2>
+  <p>本政策如有变更，我们会在新版本发布时同步更新本页面，并更新上方的生效日期。对数据处理的重大变更，会在应用内以显著方式提示。</p>
+  <div class="contact">
+    <dl>
+      <dt>运营主体</dt><dd><span class="fill">高云飞</span></dd>
+      <dt>联系邮箱</dt><dd><span class="fill">boybeak@gmail.com</span></dd>
+    </dl>
+  </div>
+  <p>如果你对本政策有疑问，或希望了解/删除与你相关的数据（如前所述，这些数据仅存在于你的设备上，删除应用数据即可），欢迎通过上面的邮箱联系我们。</p>
+
+  <p class="note">
+    本政策描述的是<strong>当前版本 App 的实际行为</strong>，而不是对将来版本的承诺。功能范围若有变化，
+    本页面会随之更新。
+  </p>
+</main>
+
+<footer class="doc-foot">
+  每日日语（com.github.boybeak.daily.lang.ja）· 隐私政策 v1.0.0<br>
+  生效日期：<span class="fill">2026-10-10</span> ·
+  联系方式：<span class="fill">boybeak@gmail.com</span>
+</footer>
+</body>
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>プライバシーポリシー · 毎日の日本語</title>
+<meta name="description" content="毎日の日本語（Daily Japanese）のプライバシーポリシー：個人情報を収集せず、アカウント登録も不要。学習進捗は端末内にのみ保存されます。">
+<link rel="stylesheet" href="../../../assets/site.css">
+<!--
+  ==========================================================================
+  毎日の日本語（appId: ja）プライバシーポリシー · 日本語 · v1.0.0
+
+  zh-Hans.html / zh-Hant.html / en.html と同文版。内容は必ず同期すること。
+
+  ⚠️ 法務レビュー前の文書です。内容は現行バージョンのコードの実際の挙動に基づくものであり、
+     特定の法規（GDPR / CCPA / 個人情報保護法など）への準拠声明ではありません。
+     公開前に法務による確認を行ってください。
+
+  DailyLang リポジトリの docs/store/ja/privacy-policy.md（原稿）および
+  appConfig/ja/store/store-info.json の privacyPolicyUrl / dataSafety と内容を合わせてください。
+
+  ポリシー更新時は本ファイルを編集しないこと：新しい ../../../<バージョン>/ja.html を作成し、
+  ../../index.html の「現行バージョン」「過去バージョン」一覧を更新してください。
+  ==========================================================================
+-->
+</head>
+<body class="doc-body app-ja">
+<main class="doc">
+
+  <nav class="doc-nav">
+    <a class="doc-nav__crumb" href="../../">‹ 毎日の日本語 · プライバシーポリシー</a>
+    <div class="doc-nav__links">
+      <a href="zh-Hans.html">简体中文</a>
+      <a href="zh-Hant.html">繁體中文</a>
+      <a href="en.html">English</a>
+      <a href="ja.html" class="on">日本語</a>
+    </div>
+  </nav>
+
+  <header>
+    <h1><span class="app">毎日の日本語</span> · プライバシーポリシー</h1>
+    <p class="meta">
+      Android / iOS / HarmonyOS 版「毎日の日本語」に適用（パッケージ名 <code>com.github.boybeak.daily.lang.ja</code>）<br>
+      バージョン <strong>v1.0.0</strong> · 発効日：<span class="fill">2026-10-10</span>
+    </p>
+  </header>
+
+  <div class="summary">
+    <p>ひとことで言えば：この App は個人情報を収集せず、アカウント登録も不要です。</p>
+    <ul>
+      <li><strong>録音しません。</strong>リスニング＆リーディング練習は音声の再生のみ。マイクを開かず、声を収集することもありません。</li>
+      <li><strong>アップロードしません。</strong>学習進捗と解答記録は、あなたの端末の中だけに保存されます。</li>
+      <li><strong>共有しません。</strong>広告なし、統計 SDK なし。第三者があなたのデータを受け取ることはありません。</li>
+    </ul>
+  </div>
+
+  <h2><span class="num">1.</span>扱うデータ</h2>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>データ</th><th>扱うか</th><th>説明</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>学習進捗（学習済みの項目、最終学習日時）</td><td>はい</td><td>端末内にのみ保存。第 3 節参照</td></tr>
+        <tr><td>解答記録（レッスン後テストの正誤）</td><td>はい</td><td>端末内にのみ保存。第 3 節参照</td></tr>
+        <tr><td>学習設定（表示言語、毎日の目標など）</td><td>はい</td><td>端末内にのみ保存。第 3 節参照</td></tr>
+        <tr><td>マイク録音・音声</td><td class="no">いいえ</td><td>マイク権限を申請せず、録音・アップロードもしません。第 4 節参照</td></tr>
+        <tr><td>アカウント・電話番号・メールアドレス</td><td class="no">いいえ</td><td>現行バージョンにログイン・アカウント機能はありません</td></tr>
+        <tr><td>端末識別子・位置情報・連絡先・写真・クリップボード</td><td class="no">いいえ</td><td>読み取りも収集もしません</td></tr>
+        <tr><td>クラッシュログ・利用統計</td><td class="no">いいえ（端末内ログのみ）</td><td>現行バージョンは報告バックエンドに未接続。第 5 節参照</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2><span class="num">2.</span>申請しているシステム権限</h2>
+  <p>現行バージョンが申請しているのは<strong>ネットワーク権限</strong>（Android の <code>android.permission.INTERNET</code>）のみで、将来のコンテンツ更新に備えたものです。カメラ・マイク・位置情報・連絡先・写真・通知などのセンシティブな権限は一切申請していません。クリップボードや端末識別子も読み取りません。</p>
+
+  <h2><span class="num">3.</span>端末内に保存されるデータ</h2>
+  <ul>
+    <li><strong>保存内容</strong>：学習済みの項目と最終学習日時、レッスン後テストの項目ごとの正誤記録、表示言語と学習設定（毎日の目標など）。</li>
+    <li><strong>保存場所</strong>：あなたの端末内の App 専用ストレージのみ。<strong>サーバーへアップロードされることはありません</strong>。</li>
+    <li><strong>削除方法</strong>：App をアンインストールするか、端末の設定から「アプリのデータを消去」すると、これらの記録は削除されます。クラウド同期はないため、削除後の復元はできません。</li>
+    <li><strong>個人識別には使いません</strong>：これらの記録は「この端末での学習状況」を示すものであり、あなた個人を特定できる情報は含まれていません。</li>
+  </ul>
+
+  <h2><span class="num">4.</span>マイクと音声</h2>
+  <ul>
+    <li>現行バージョンは<strong>マイク権限を申請せず、音声の録音・アップロードも一切行いません</strong>。インストールパッケージの権限一覧に録音関連の権限は存在しません。</li>
+    <li><strong>リスニング＆リーディング練習は音声の再生のみ</strong>：練習画面で再生するのは App に同梱の学習音声です。マイクを開かず、声を収集することもありません。</li>
+    <li><strong>発音練習の録音や発音採点は、現行バージョンの機能範囲外です</strong>。将来のバージョンで追加する場合は、リリース前に本ポリシーを更新し、その前までマイク権限を申請しません。</li>
+  </ul>
+
+  <h2><span class="num">5.</span>解析・クラッシュ・ログ</h2>
+  <ul>
+    <li>App 内部のイベントタグ（対象言語の異なる App を区別するためのもの）は、現在<strong>端末内のログにのみ記録</strong>され、開発時の調査に使うだけで<strong>アップロードされません</strong>。</li>
+    <li>現行バージョンは<strong>統計・広告・クラッシュ報告サービスに一切接続していません</strong>。</li>
+    <li>将来これらを導入する場合は、本ポリシーを同時に更新し、収集範囲を新しいバージョンで説明します。</li>
+  </ul>
+
+  <h2><span class="num">6.</span>サードパーティコンポーネントとデータの共有</h2>
+  <ul>
+    <li>この App は<strong>あなたのデータを第三者に販売・貸与・共有しません</strong>（そもそも共有できるデータがありません）。</li>
+    <li>広告、プロファイリング、データ分析系の SDK は未統合です。</li>
+    <li>画面描画と音声再生にはオープンソースコンポーネントを使用していますが、App 内では画面の描画と同梱音声の再生だけを行い、データを収集しません。</li>
+    <li>App に同梱される学習コンテンツと音声は当方が制作したものです（日本語音声の一部は、公開前にオープンソースの音声合成エンジン VOICEVOX でオフライン生成したもの）。あなたの個人情報は一切含まれません。</li>
+  </ul>
+
+  <h2><span class="num">7.</span>未成年者</h2>
+  <p>本 App は児童向けに設計された製品ではなく、児童の個人情報を意図的に収集することもありません。個人情報を収集せずアカウントも不要なため、保護者の指導のもとで児童が利用しても、個人のデータが生じることはありません。</p>
+
+  <h2><span class="num">8.</span>本ポリシーの変更と連絡先</h2>
+  <p>本ポリシーを変更する場合は、新しいバージョンのリリースと同時にこのページを更新し、上記の発効日を改めます。データ処理に関する重要な変更は、アプリ内でも目立つ方法でお知らせします。</p>
+  <div class="contact">
+    <dl>
+      <dt>運営主体</dt><dd><span class="fill">高云飞</span></dd>
+      <dt>連絡先メール</dt><dd><span class="fill">boybeak@gmail.com</span></dd>
+    </dl>
+  </div>
+  <p>本ポリシーについてご質問がある場合、またはご自身に関わるデータの確認・削除をご希望の場合は（前述のとおり、このデータはあなたの端末内にしか存在しません。アプリのデータを消去すれば削除されます）、上記のメールアドレスまでご連絡ください。</p>
+
+  <p class="note">
+    本ポリシーは<strong>現行バージョンの App の実際の挙動</strong>を説明するものであり、将来のバージョンへの約束ではありません。
+    機能範囲が変われば、本ページも合わせて更新します。
+  </p>
+</main>
+
+<footer class="doc-foot">
+  毎日の日本語（com.github.boybeak.daily.lang.ja）· プライバシーポリシー v1.0.0<br>
+  発効日：<span class="fill">2026-10-10</span> ·
+  連絡先：<span class="fill">boybeak@gmail.com</span>
+</footer>
+</body>
+</html>
