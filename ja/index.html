@@ -20,8 +20,8 @@
   - 数据口径与 appConfig/ja/store/store-info.json、appConfig/ja.json 保持一致：
       · 目标语言 = 日语（ja-JP）；界面语言 = 简体中文 / 繁体中文 / 英文（3 种）
   - 隐私政策为正式版（/ja/privacy/，与 store-info 的 privacyPolicyUrl 同址）。
-  - logo：暂未产出正式 logo 资产，先用内联 SVG（日の丸）占位；正式 logo 产出后
-    缩到 256px 放进 assets/，改用 <img class="app-logo"> 引用。
+  - logo：与 App 内正式图标同源（docs/ja/assets/logo-clean.png 缩到 256px），存于 assets/logo-ja.png，
+    以 <img class="app-hero__logo"> 引用；App 图标更新时需同步重新导出此文件。
   ==========================================================================
 -->
 </head>
@@ -41,13 +41,7 @@
 
     <!-- ===== 头部：logo + 名称 + 一句话简介 ===== -->
     <section class="app-hero">
-      <svg class="app-icon" viewBox="0 0 48 48" role="img" aria-label="日语 / Japanese">
-        <clipPath id="ja-flag-lg"><rect width="48" height="48" rx="13"/></clipPath>
-        <g clip-path="url(#ja-flag-lg)">
-          <rect width="48" height="48" fill="#FFFFFF"/>
-          <circle cx="24" cy="24" r="10" fill="#BC002D"/>
-        </g>
-      </svg>
+      <img class="app-hero__logo" src="../assets/logo-ja.png" alt="" aria-hidden="true">
       <div>
         <h1>
           <span class="i18n-zh">每日日语</span>
