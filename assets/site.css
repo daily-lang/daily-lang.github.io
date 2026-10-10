@@ -668,6 +668,28 @@ html[data-lang="en"] .i18n-zh { display: none !important; }
 .app-hero .badge { font-size: 12px; }
 .app-hero .native { margin: 2px 0 0; color: var(--text-3); font-size: 14px; }
 .app-hero .tagline { margin: 8px 0 0; color: var(--text-2); max-width: 56ch; }
+.app-hero .hero-cta { margin-top: 16px; }
+
+/* 商店徽章（官方 badge）：等高排布，hover 轻抬 */
+.store-badge { display: inline-flex; }
+.store-badge img {
+  height: 56px;
+  width: auto;
+  display: block;
+  transition: transform .2s var(--ease-out);
+}
+.store-badge:hover img { transform: translateY(-2px); }
+
+/* iOS 待上线提示块：与商店徽章同高（56px）同角形（≈13px 圆角），作为第三个徽章槽位 */
+.store-soon {
+  display: inline-flex;
+  align-items: center;
+  height: 56px;
+  padding: 0 18px;
+  border-radius: 13px;
+  font-size: 13px;
+  white-space: nowrap;
+}
 
 /* 事实速览：目标语言 / 平台 / 界面语言 / 分类 */
 .app-facts {
