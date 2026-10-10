@@ -630,11 +630,12 @@ html[data-lang="en"] .i18n-zh { display: none !important; }
 .app-page.app-th, .doc-body.app-th { --brand: var(--th); --brand-deep: var(--th-deep); --brand-tint: var(--th-tint); --brand-line: var(--th-line); }
 .app-page.app-ja, .doc-body.app-ja { --brand: var(--ja); --brand-deep: var(--ja-deep); --brand-tint: var(--ja-tint); --brand-line: var(--ja-line); }
 
-/* 头部：logo + 名称 + 一句话简介，整块做成品牌色渐变卡片 */
+/* Hero 布局：品牌色渐变卡片；第一行 = 图标 + 应用名称（垂直居中）；
+   宣传口号、商店按钮各自独立成行，用 margin 明确分层 */
 .app-hero {
   display: flex;
-  align-items: center;
-  gap: 18px;
+  flex-direction: column;
+  align-items: flex-start;
   margin-top: 10px;
   padding: 24px 26px;
   background: linear-gradient(140deg, #FFFFFF 52%, var(--brand-tint, #FAF8F7) 135%);
@@ -652,6 +653,14 @@ html[data-lang="en"] .i18n-zh { display: none !important; }
   object-fit: contain;
 }
 
+.app-hero__head {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.app-hero__title { min-width: 0; }
+
 .app-hero .app-icon { width: 76px; height: 76px; border-radius: 17px; }
 
 .app-hero h1 {
@@ -667,29 +676,46 @@ html[data-lang="en"] .i18n-zh { display: none !important; }
 
 .app-hero .badge { font-size: 12px; }
 .app-hero .native { margin: 2px 0 0; color: var(--text-3); font-size: 14px; }
-.app-hero .tagline { margin: 8px 0 0; color: var(--text-2); max-width: 56ch; }
+.app-hero .tagline { margin: 14px 0 0; color: var(--text-2); max-width: 56ch; }
 .app-hero .hero-cta { margin-top: 16px; }
 
-/* 商店徽章（官方 badge）：等高排布，hover 轻抬 */
-.store-badge { display: inline-flex; }
-.store-badge img {
-  height: 56px;
-  width: auto;
-  display: block;
-  transition: transform .2s var(--ease-out);
-}
-.store-badge:hover img { transform: translateY(-2px); }
-
-/* iOS 待上线提示块：与商店徽章同高（56px）同角形（≈13px 圆角），作为第三个徽章槽位 */
-.store-soon {
+/* 商店入口按钮：icon + 两行文字（引导语 + 商店名），三个按钮同构同尺寸 */
+.store-btn {
   display: inline-flex;
   align-items: center;
-  height: 56px;
+  gap: 10px;
+  height: 52px;
   padding: 0 18px;
   border-radius: 13px;
-  font-size: 13px;
+  background: rgba(255, 255, 255, .85);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow-card);
+  text-decoration: none;
+  transition: transform .2s var(--ease-out), border-color .2s, box-shadow .2s;
+}
+.store-btn:hover {
+  transform: translateY(-2px);
+  border-color: #D8CFC9;
+  box-shadow: 0 10px 24px -10px rgba(31, 26, 25, .2);
+}
+.store-btn img { width: 28px; height: 28px; flex: none; }
+.store-btn__text { display: flex; flex-direction: column; line-height: 1.2; }
+.store-btn__caption {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: .4px;
+  color: var(--text-3);
+  text-transform: uppercase;
   white-space: nowrap;
 }
+.store-btn__name { font-size: 14.5px; font-weight: 700; color: var(--text); white-space: nowrap; }
+.store-btn--soon {
+  background: var(--muted-card);
+  box-shadow: none;
+  cursor: default;
+}
+.store-btn--soon .store-btn__caption,
+.store-btn--soon .store-btn__name { color: var(--text-3); }
 
 /* 事实速览：目标语言 / 平台 / 界面语言 / 分类 */
 .app-facts {
@@ -1063,7 +1089,7 @@ html[data-lang="en"] .i18n-zh { display: none !important; }
   .hero .lede { font-size: 15px; }
   .hero-cta .btn { flex: 1 1 auto; justify-content: center; }
 
-  .app-hero { gap: 14px; padding: 18px 16px; }
+  .app-hero { padding: 18px 16px; }
   .app-hero h1 { font-size: 23px; }
   .app-hero .tagline { font-size: 14.5px; }
   .app-hero__logo { height: 58px; max-width: 130px; }

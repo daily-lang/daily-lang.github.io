@@ -21,12 +21,11 @@
       · 课程 = 入门 7 单元 / 初级 6 单元 / 进阶 6 单元（前 2 免费 + 4 付费，intermediate.paid）
   - 维护要点：
     1. 新增课程或调整免费/付费边界时，同步本页「课程」区块；
-    2. 商店直链在头部 hero 区，用官方徽章图（assets/badge-*.svg）：
-       · Google Play：badge-google-play-{zh,en}.svg，随语言切换；
-       · AppGallery（鸿蒙）：badge-appgallery.svg，暂用英文版（简中版需从 AGC 控制台
-         「获取徽章链接」导出后替换同名文件）；链接为官方 App Linking 形式
-         https://appgallery.huawei.com/app/detail?id={包名}（设备端拉起应用市场）；
-       · iOS 上架后在本区块补 App Store 徽章；
+    2. 商店直链在头部 hero 区，入口为「icon + 文字」统一按钮（.store-btn，图标在
+       assets/icon-*.png）：Google Play 与 AppGallery（鸿蒙）可点，iOS 为置灰
+       「即将上线」占位；AppGallery 链接为官方 App Linking 形式
+       https://appgallery.huawei.com/app/detail?id={包名}（设备端拉起应用市场）；
+       iOS 上架后把占位按钮替换为 App Store 链接并补图标；
     3. 正文中成对写 .i18n-zh / .i18n-en，由 assets/site.js 切换；
     4. 「预览」区块的运行时截图存放在 assets/shot-vi-*.png（540px 宽，App 简体中文 +
        浅色模式实拍）；App 界面大改后重拍替换同名文件即可，无需改本页。
@@ -49,32 +48,44 @@
 
     <!-- ===== 头部：logo + 名称 + 一句话简介 ===== -->
     <section class="app-hero">
-      <img class="app-hero__logo" src="../assets/logo-vi.png" alt="" aria-hidden="true">
-      <div>
-        <h1>
-          <span class="i18n-zh">每日越南语</span>
-          <span class="i18n-en">Daily Viet</span>
-          <span class="badge badge--live">
-            <span class="i18n-zh">已上线</span>
-            <span class="i18n-en">Available</span>
-          </span>
-        </h1>
-        <p class="native">Tiếng Việt mỗi ngày</p>
-        <p class="tagline">
-          <span class="i18n-zh">每天几分钟，听读练习越南语。</span>
-          <span class="i18n-en">A few minutes a day of listen-and-read practice for Vietnamese.</span>
-        </p>
+      <div class="app-hero__head">
+        <img class="app-hero__logo" src="../assets/logo-vi.png" alt="" aria-hidden="true">
+        <div class="app-hero__title">
+          <h1>
+            <span class="i18n-zh">每日越南语</span>
+            <span class="i18n-en">Daily Viet</span>
+            <span class="badge badge--live">
+              <span class="i18n-zh">已上线</span>
+              <span class="i18n-en">Available</span>
+            </span>
+          </h1>
+          <p class="native">Tiếng Việt mỗi ngày</p>
+        </div>
+      </div>
+      <p class="tagline">
+        <span class="i18n-zh">每天几分钟，听读练习越南语。</span>
+        <span class="i18n-en">A few minutes a day of listen-and-read practice for Vietnamese.</span>
+      </p>
         <div class="hero-cta app-hero__cta">
-          <a class="store-badge" href="https://play.google.com/store/apps/details?id=com.github.boybeak.daily.lang.vi" target="_blank" rel="noopener">
-            <img class="i18n-zh" src="../assets/badge-google-play-zh.svg" alt="在 Google Play 获取" width="155" height="60">
-            <img class="i18n-en" src="../assets/badge-google-play-en.svg" alt="Get it on Google Play" width="155" height="60">
+          <a class="store-btn" href="https://play.google.com/store/apps/details?id=com.github.boybeak.daily.lang.vi" target="_blank" rel="noopener">
+            <img src="../assets/icon-google-play.png" alt="" aria-hidden="true" width="28" height="28">
+            <span class="store-btn__text">
+              <span class="store-btn__caption"><span class="i18n-zh">立即下载</span><span class="i18n-en">GET IT ON</span></span>
+              <span class="store-btn__name">Google Play</span>
+            </span>
           </a>
-          <a class="store-badge" href="https://appgallery.huawei.com/app/detail?id=com.github.boybeak.daily.lang.vi" target="_blank" rel="noopener">
-            <img src="../assets/badge-appgallery.svg" alt="Explore it on AppGallery" width="201" height="60">
+          <a class="store-btn" href="https://appgallery.huawei.com/app/detail?id=com.github.boybeak.daily.lang.vi" target="_blank" rel="noopener">
+            <img src="../assets/icon-appgallery.png" alt="" aria-hidden="true" width="28" height="28">
+            <span class="store-btn__text">
+              <span class="store-btn__caption"><span class="i18n-zh">立即下载</span><span class="i18n-en">GET IT ON</span></span>
+              <span class="store-btn__name">AppGallery</span>
+            </span>
           </a>
-          <span class="badge badge--soon store-soon">
-            <span class="i18n-zh">iOS · 即将上线</span>
-            <span class="i18n-en">iOS · Coming soon</span>
+          <span class="store-btn store-btn--soon">
+            <span class="store-btn__text">
+              <span class="store-btn__caption"><span class="i18n-zh">即将上线</span><span class="i18n-en">COMING SOON</span></span>
+              <span class="store-btn__name">iOS</span>
+            </span>
           </span>
         </div>
       </div>
