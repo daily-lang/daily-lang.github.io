@@ -26,6 +26,8 @@
        但每张 .app-card 底部给一个「查看隐私政策」入口，指向该 App 自己的 /<appId>/privacy/。
     4. 本页不写「免登录 / 免费 / 数据只存本机 / 无广告」这类承诺：它们只是当前阶段
        的产品状态，不是长期承诺；需要对外说明的内容以隐私政策页为准。
+    5. hero 里的 .hero-deco 词气泡与 .points 三亮点均为装饰/静态介绍：
+       词气泡是 aria-hidden 纯装饰（勿塞语义）；亮点条成对写 .i18n-zh / .i18n-en。
   ==========================================================================
 -->
 </head>
@@ -46,19 +48,90 @@
 
   <!-- ===== 主视觉 ===== -->
   <section class="hero">
+    <!-- 漂浮词气泡：纯装饰，不计入语义 -->
+    <div class="hero-deco" aria-hidden="true">
+      <span class="chip chip--1">Xin chào</span>
+      <span class="chip chip--2">こんにちは</span>
+      <span class="chip chip--3">สวัสดี</span>
+      <span class="chip chip--4">Hello</span>
+    </div>
+
+    <p class="eyebrow">
+      <span class="i18n-zh">轻量语言学习 · 以听读为主</span>
+      <span class="i18n-en">Lightweight learning · listen &amp; read first</span>
+    </p>
     <h1>
-      <span class="i18n-zh">每天几分钟，学一门新语言</span>
-      <span class="i18n-en">A few minutes a day, one language at a time</span>
+      <span class="i18n-zh">每天几分钟，<em class="hl">学一门新语言</em></span>
+      <span class="i18n-en">A few minutes a day, <em class="hl">one language</em> at a time</span>
     </h1>
     <p class="lede">
       <span class="i18n-zh">DailyLang 把语言学习拆成「听 → 读」的短练习：一次练一点，学的是日常里用得上的句子。</span>
       <span class="i18n-en">DailyLang breaks language learning into short listen-and-read sessions — a little at a time, with phrases you can actually use.</span>
     </p>
+    <div class="hero-cta">
+      <a class="btn btn--primary" href="#apps">
+        <span class="i18n-zh">看看有哪些 App</span>
+        <span class="i18n-en">Browse the apps</span>
+      </a>
+      <a class="btn btn--ghost" href="vi/">
+        <span class="i18n-zh">从越南语开始 →</span>
+        <span class="i18n-en">Start with Vietnamese →</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- ===== 三亮点 ===== -->
+  <section class="points" aria-label="DailyLang 的特点">
+    <div class="point point--a">
+      <span class="point__icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24"><path d="M4 14v-2a8 8 0 0 1 16 0v2"/><rect x="3" y="14" width="4" height="6" rx="2"/><rect x="17" y="14" width="4" height="6" rx="2"/></svg>
+      </span>
+      <div>
+        <h3>
+          <span class="i18n-zh">「听 → 读」短练习</span>
+          <span class="i18n-en">Listen → read sessions</span>
+        </h3>
+        <p>
+          <span class="i18n-zh">每课固定节奏推进，碎片时间就能完成一课。</span>
+          <span class="i18n-en">A fixed rhythm per lesson that fits into spare minutes.</span>
+        </p>
+      </div>
+    </div>
+    <div class="point point--b">
+      <span class="point__icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24"><path d="M4 10v4M8 7v10M12 4v16M16 7v10M20 10v4"/></svg>
+      </span>
+      <div>
+        <h3>
+          <span class="i18n-zh">发音专项过关</span>
+          <span class="i18n-en">Pronunciation focus</span>
+        </h3>
+        <p>
+          <span class="i18n-zh">最小对比组先听清差别，再开口逐组模仿。</span>
+          <span class="i18n-en">Minimal contrast pairs — hear the difference, then say it.</span>
+        </p>
+      </div>
+    </div>
+    <div class="point point--c">
+      <span class="point__icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3z"/><path d="M9.5 12l2 2 3.5-4"/></svg>
+      </span>
+      <div>
+        <h3>
+          <span class="i18n-zh">进度只存本机</span>
+          <span class="i18n-en">Progress stays on device</span>
+        </h3>
+        <p>
+          <span class="i18n-zh">无需注册账号，没有广告，也没有统计上报。</span>
+          <span class="i18n-en">No account, no ads, no analytics.</span>
+        </p>
+      </div>
+    </div>
   </section>
 
   <main>
     <!-- ===== 支持的 App ===== -->
-    <h2 class="sec-title">
+    <h2 class="sec-title" id="apps">
       <span class="i18n-zh">支持的 App</span>
       <span class="i18n-en">SUPPORTED APPS</span>
     </h2>
