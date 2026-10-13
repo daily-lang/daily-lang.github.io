@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://daily-lang.github.io/sitemap.xml
