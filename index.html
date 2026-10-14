@@ -1,7 +1,13 @@
 <!DOCTYPE html>
 <html lang="zh-Hans" data-lang="zh-Hans"
       data-title-zh="DailyLang · 每天几分钟，学一门新语言"
-      data-title-en="DailyLang · A few minutes a day, one language at a time">
+      data-title-zh-Hant="DailyLang · 每天幾分鐘，學一門新語言"
+      data-title-en="DailyLang · A few minutes a day, one language at a time"
+      data-title-vi="DailyLang · Mỗi ngày vài phút, học một ngôn ngữ mới"
+      data-title-ja="DailyLang · 毎日数分、新しい言語を学ぼう"
+      data-title-ko="DailyLang · 하루 몇 분, 새로운 언어를 배우세요"
+      data-title-km="DailyLang · រៀនភាសាថ្មីមួយ ក្នុងមួយថ្ងៃចំនួនប៉ុន្មាននាទីប៉ុណ្ណោះ"
+      data-title-lo="DailyLang · ມື້ລະໆແຕ່ຈັກນາທີ ຮຽນພາສາໃໝ່">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -24,13 +30,15 @@
        （缩到 256px 放进 assets/，用 <img class="app-logo"> 引用；暂无 logo 时用内联 SVG 占位）；
        同时新建 /<appId>/index.html 详情页（照 vi/index.html 的结构），
        卡片的「了解详情」与标题链接都指向 /<appId>/。
-    2. 语言切换：正文中成对写 .i18n-zh / .i18n-en，由 assets/site.js 切换。
+    2. 语言切换：正文按语言写 .i18n-zh / .i18n-zh-Hant / .i18n-en / .i18n-vi /
+       .i18n-ja / .i18n-ko / .i18n-km / .i18n-lo 八份节点，由 assets/site.js + 顶栏下拉切换；
+       新增界面语言时同步 site.js 的 SUPPORTED、site.css 的显隐规则与本页 <option>。
     3. 隐私政策**正文不在这里展示**（它主要服务于应用商店审核，按 App 归档在 /<appId>/privacy/ 下），
        但每张 .app-card 底部给一个「查看隐私政策」入口，指向该 App 自己的 /<appId>/privacy/。
     4. 本页不写「免登录 / 免费 / 数据只存本机 / 无广告」这类承诺：它们只是当前阶段
        的产品状态，不是长期承诺；需要对外说明的内容以隐私政策页为准。
     5. hero 里的 .hero-deco 词气泡与 .points 三亮点均为装饰/静态介绍：
-       词气泡是 aria-hidden 纯装饰（勿塞语义）；亮点条成对写 .i18n-zh / .i18n-en。
+       词气泡是 aria-hidden 纯装饰（勿塞语义）；亮点条按语言写 .i18n-* 八份。
   ==========================================================================
 -->
 <!-- Google tag (gtag.js) -->
@@ -51,9 +59,17 @@
       <span class="brand__mark">DL</span>
       <span class="brand__name">DailyLang</span>
     </a>
-    <div class="langswitch" role="group" aria-label="语言 / Language">
-      <button type="button" data-set-lang="zh-Hans" class="on">简体中文</button>
-      <button type="button" data-set-lang="en">English</button>
+    <div class="langswitch">
+      <select data-lang-select aria-label="语言 / Language">
+        <option value="zh-Hans">简体中文</option>
+        <option value="zh-Hant">繁體中文</option>
+        <option value="en">English</option>
+        <option value="vi">Tiếng Việt</option>
+        <option value="ja">日本語</option>
+        <option value="ko">한국어</option>
+        <option value="km">ខ្មែរ</option>
+        <option value="lo">ລາວ</option>
+      </select>
     </div>
   </header>
 
@@ -69,24 +85,54 @@
 
     <p class="eyebrow">
       <span class="i18n-zh">轻量语言学习 · 以听读为主</span>
+      <span class="i18n-zh-Hant">輕量語言學習 · 以聽讀為主</span>
       <span class="i18n-en">Lightweight learning · listen &amp; read first</span>
+      <span class="i18n-vi">Học ngôn ngữ nhẹ nhàng · nghe và đọc trước</span>
+      <span class="i18n-ja">軽やかに言語学習 · 聴く＆読むから</span>
+      <span class="i18n-ko">가벼운 언어 학습 · 듣기와 읽기 중심</span>
+      <span class="i18n-km">ការរៀនភាសាស្រាល · ស្តាប់និងអានជាដំបូង</span>
+      <span class="i18n-lo">ການຮຽນພາສາແບບບາງເບົາ · ຟັງ ແລະ ອ່ານເປັນຫຼັກ</span>
     </p>
     <h1>
       <span class="i18n-zh">每天几分钟，<em class="hl">学一门新语言</em></span>
+      <span class="i18n-zh-Hant">每天幾分鐘，<em class="hl">學一門新語言</em></span>
       <span class="i18n-en">A few minutes a day, <em class="hl">one language</em> at a time</span>
+      <span class="i18n-vi">Mỗi ngày vài phút, <em class="hl">học một ngôn ngữ mới</em></span>
+      <span class="i18n-ja">毎日数分で、<em class="hl">新しい言語</em>を学ぼう</span>
+      <span class="i18n-ko">하루 몇 분이면, <em class="hl">새로운 언어</em>를 배울 수 있어요</span>
+      <span class="i18n-km">រាល់ថ្ងៃៗចំនួនប៉ុន្មាននាទី <em class="hl">រៀនភាសាថ្មីមួយ</em></span>
+      <span class="i18n-lo">ມື້ລະໆແຕ່ຈັກນາທີ <em class="hl">ຮຽນພາສາໃໝ່</em></span>
     </h1>
     <p class="lede">
       <span class="i18n-zh">DailyLang 把语言学习拆成「听 → 读」的短练习：一次练一点，学的是日常里用得上的句子。</span>
+      <span class="i18n-zh-Hant">DailyLang 把語言學習拆成「聽 → 讀」的短練習：一次練一點，學的是日常裡用得上的句子。</span>
       <span class="i18n-en">DailyLang breaks language learning into short listen-and-read sessions — a little at a time, with phrases you can actually use.</span>
+      <span class="i18n-vi">DailyLang chia việc học ngôn ngữ thành các buổi “nghe → đọc” ngắn: mỗi lần một chút, học những câu dùng được ngay trong đời thường.</span>
+      <span class="i18n-ja">DailyLang は言語学習を「聴く → 読む」の短いセッションに分けます。1回に少しずつ、日常で実際に使える表現を学べます。</span>
+      <span class="i18n-ko">DailyLang은 언어 학습을 '듣기 → 읽기' 짧은 세션으로 나눕니다. 한 번에 조금씩, 일상에서 실제로 쓰이는 표현을 배워요.</span>
+      <span class="i18n-km">DailyLang បំបែកការរៀនភាសាទៅជាវគ្គសិក្សាខ្លី “ស្តាប់ → អាន”៖ ម្តងបន្តិចៗ រៀនប្រយោគដែលប្រើបានក្នុងជីវិតប្រចាំថ្ងៃ។</span>
+      <span class="i18n-lo">DailyLang ແບ່ງການຮຽນພາສາເປັນບົດຝຶກສັ້ນ “ຟັງ → ອ່ານ”: ເທື່ອລະໜ້ອຍ ຮຽນປະໂຫຍກທີ່ໃຊ້ໄດ້ຈິງໃນຊີວິດປະຈຳວັນ.</span>
     </p>
     <div class="hero-cta">
       <a class="btn btn--primary" href="#apps">
         <span class="i18n-zh">看看有哪些 App</span>
+        <span class="i18n-zh-Hant">看看有哪些 App</span>
         <span class="i18n-en">Browse the apps</span>
+        <span class="i18n-vi">Xem các ứng dụng</span>
+        <span class="i18n-ja">アプリを見る</span>
+        <span class="i18n-ko">앱 살펴보기</span>
+        <span class="i18n-km">មើលកម្មវិធីទាំងអស់</span>
+        <span class="i18n-lo">ເບິ່ງແອັບທັງໝົດ</span>
       </a>
       <a class="btn btn--ghost" href="vi/">
         <span class="i18n-zh">从越南语开始 →</span>
+        <span class="i18n-zh-Hant">從越南語開始 →</span>
         <span class="i18n-en">Start with Vietnamese →</span>
+        <span class="i18n-vi">Bắt đầu với tiếng Việt →</span>
+        <span class="i18n-ja">ベトナム語から始める →</span>
+        <span class="i18n-ko">베트남어로 시작하기 →</span>
+        <span class="i18n-km">ចាប់ផ្តើមពីភាសាវៀតណាម →</span>
+        <span class="i18n-lo">ເລີ່ມຈາກພາສາຫວຽດນາມ →</span>
       </a>
     </div>
   </section>
@@ -100,11 +146,23 @@
       <div>
         <h3>
           <span class="i18n-zh">「听 → 读」短练习</span>
+          <span class="i18n-zh-Hant">「聽 → 讀」短練習</span>
           <span class="i18n-en">Listen → read sessions</span>
+          <span class="i18n-vi">Buổi “nghe → đọc” ngắn</span>
+          <span class="i18n-ja">「聴く → 読む」短いセッション</span>
+          <span class="i18n-ko">‘듣기 → 읽기’ 짧은 세션</span>
+          <span class="i18n-km">វគ្គខ្លី “ស្តាប់ → អាន”</span>
+          <span class="i18n-lo">ບົດຝຶກສັ້ນ “ຟັງ → ອ່ານ”</span>
         </h3>
         <p>
           <span class="i18n-zh">每课固定节奏推进，碎片时间就能完成一课。</span>
+          <span class="i18n-zh-Hant">每課固定節奏推進，碎片時間就能完成一課。</span>
           <span class="i18n-en">A fixed rhythm per lesson that fits into spare minutes.</span>
+          <span class="i18n-vi">Mỗi bài đi theo nhịp cố định, thời gian rảnh là xong một bài.</span>
+          <span class="i18n-ja">レッスンごとに一定のリズムで進むので、スキマ時間で1レッスン完了できます。</span>
+          <span class="i18n-ko">레슨마다 일정한 리듬으로 진행되어 자투리 시간에 한 레슨을 끝낼 수 있어요.</span>
+          <span class="i18n-km">មេរៀននីមួយៗដើរតាមចង្វាក់ជាក់លាក់ ពេលទំនេរបន្តិចបន្តួចក៏បញ្ចប់មេរៀនមួយបាន។</span>
+          <span class="i18n-lo">ແຕ່ລະບົດດຳເນີນຕາມຈັງຫວະທີ່ແນ່ນອນ ໃຊ້ເວລາຫວ່າງເລັກນ້ອຍກໍຮຽນຈົບໜຶ່ງບົດໄດ້.</span>
         </p>
       </div>
     </div>
@@ -115,11 +173,23 @@
       <div>
         <h3>
           <span class="i18n-zh">发音专项过关</span>
+          <span class="i18n-zh-Hant">發音專項過關</span>
           <span class="i18n-en">Pronunciation focus</span>
+          <span class="i18n-vi">Luyện phát âm</span>
+          <span class="i18n-ja">発音トレーニング</span>
+          <span class="i18n-ko">발음 집중 훈련</span>
+          <span class="i18n-km">ហ្វឹកហាត់ការបញ្ចេញសំឡេង</span>
+          <span class="i18n-lo">ຝຶກການອອກສຽງ</span>
         </h3>
         <p>
           <span class="i18n-zh">最小对比组先听清差别，再开口逐组模仿。</span>
+          <span class="i18n-zh-Hant">最小對比組先聽清差別，再開口逐組模仿。</span>
           <span class="i18n-en">Minimal contrast pairs — hear the difference, then say it.</span>
+          <span class="i18n-vi">Nghe rõ khác biệt qua các cặp đối âm tối thiểu, rồi bắt chước từng cặp.</span>
+          <span class="i18n-ja">最小対比ペアで違いをまず聞き分け、グループごとに声に出して真似します。</span>
+          <span class="i18n-ko">최소 대비 쌍으로 차이를 먼저 듣고, 그룹씩 따라 말해요.</span>
+          <span class="i18n-km">ស្តាប់ភាពខុសគ្នាឱ្យច្បាស់ដោយគូប្រៀបធៀបតូចបំផុតសិន រួចអានតាមម្តងមួយគូៗ។</span>
+          <span class="i18n-lo">ຟັງຄວາມແຕກຕ່າງດ້ວຍຄູ່ສຽງຄ້າຍກັນທີ່ສຸດກ່ອນ ແລ້ວອອກສຽງຕາມທີລະຄູ່.</span>
         </p>
       </div>
     </div>
@@ -130,11 +200,23 @@
       <div>
         <h3>
           <span class="i18n-zh">进度只存本机</span>
+          <span class="i18n-zh-Hant">進度只存本機</span>
           <span class="i18n-en">Progress stays on device</span>
+          <span class="i18n-vi">Tiến trình chỉ lưu trên máy</span>
+          <span class="i18n-ja">進捗は端末内だけ</span>
+          <span class="i18n-ko">진도는 기기에만 저장</span>
+          <span class="i18n-km">វឌ្ឍនភាពរក្សាទុកក្នុងឧបករណ៍តែប៉ុណ្ណោះ</span>
+          <span class="i18n-lo">ຄວາມຄືບໜ້າເກັບຢູ່ໃນເຄື່ອງສະເພາະ</span>
         </h3>
         <p>
           <span class="i18n-zh">无需注册账号，没有广告，也没有统计上报。</span>
+          <span class="i18n-zh-Hant">無需註冊帳號，沒有廣告，也沒有統計上報。</span>
           <span class="i18n-en">No account, no ads, no analytics.</span>
+          <span class="i18n-vi">Không cần đăng ký tài khoản, không quảng cáo, không thu thập số liệu.</span>
+          <span class="i18n-ja">アカウント登録不要。広告も統計送信もありません。</span>
+          <span class="i18n-ko">계정 등록이 필요 없고, 광고도 통계 수집도 없어요.</span>
+          <span class="i18n-km">មិនត្រូវការចុះឈ្មោះ គ្មានពាណិជ្ជកម្ម ហើយក៏គ្មានការបញ្ជូនទិន្នន័យស្ថិតិដែរ។</span>
+          <span class="i18n-lo">ບໍ່ຕ້ອງລົງທະບຽນບັນຊີ ບໍ່ມີໂຄສະນາ ແລະ ບໍ່ມີການສົ່ງຂໍ້ມູນ.</span>
         </p>
       </div>
     </div>
@@ -144,7 +226,13 @@
     <!-- ===== 支持的 App ===== -->
     <h2 class="sec-title" id="apps">
       <span class="i18n-zh">支持的 App</span>
+      <span class="i18n-zh-Hant">支援的 App</span>
       <span class="i18n-en">SUPPORTED APPS</span>
+      <span class="i18n-vi">CÁC ỨNG DỤNG</span>
+      <span class="i18n-ja">対応アプリ</span>
+      <span class="i18n-ko">지원 앱</span>
+      <span class="i18n-km">កម្មវិធីដែលមាន</span>
+      <span class="i18n-lo">ແອັບທີ່ມີໃຫ້ບໍລິການ</span>
     </h2>
 
     <div class="app-grid">
@@ -157,29 +245,74 @@
             <h3 class="app-card__title">
               <a href="vi/">
                 <span class="i18n-zh">每日越南语</span>
+                <span class="i18n-zh-Hant">每日越南語</span>
                 <span class="i18n-en">Daily Viet</span>
+                <span class="i18n-vi">Tiếng Việt mỗi ngày</span>
+                <span class="i18n-ja">毎日のベトナム語</span>
+                <span class="i18n-ko">매일 베트남어</span>
+                <span class="i18n-km">វៀតណាមរាល់ថ្ងៃ</span>
+                <span class="i18n-lo">ຫວຽດນາມປະຈຳວັນ</span>
               </a>
             </h3>
             <p class="app-card__native">Tiếng Việt mỗi ngày</p>
           </div>
           <span class="badge badge--live">
             <span class="i18n-zh">已上线</span>
+            <span class="i18n-zh-Hant">已上線</span>
             <span class="i18n-en">Available</span>
+            <span class="i18n-vi">Đã ra mắt</span>
+            <span class="i18n-ja">リリース中</span>
+            <span class="i18n-ko">출시됨</span>
+            <span class="i18n-km">ដាក់ឲ្យប្រើហើយ</span>
+            <span class="i18n-lo">ເປີດໃຫ້ໃຊ້ແລ້ວ</span>
           </span>
         </div>
 
         <p class="app-card__desc">
           <span class="i18n-zh">学越南语：六声调、发音与高频场景短句，配「听 → 读」的短练习。</span>
+          <span class="i18n-zh-Hant">學越南語：六聲調、發音與高頻場景短句，配「聽 → 讀」的短練習。</span>
           <span class="i18n-en">Learn Vietnamese: six tones, pronunciation and everyday phrases, practised through short listen-and-read sessions.</span>
+          <span class="i18n-vi">Học tiếng Việt: sáu thanh điệu, phát âm và câu ngắn theo tình huống thường gặp, luyện qua các buổi “nghe → đọc” ngắn.</span>
+          <span class="i18n-ja">ベトナム語を学ぶ：6つの声調、発音、よく使う場面の短い表現を、「聴く → 読む」の短いセッションで練習。</span>
+          <span class="i18n-ko">베트남어 배우기: 6성조, 발음, 자주 쓰이는 상황 표현을 '듣기 → 읽기' 짧은 세션으로 연습해요.</span>
+          <span class="i18n-km">រៀនភាសាវៀតណាម៖ សំឡេង៦យ៉ាង ការបញ្ចេញសំឡេង និងប្រយោគខ្លីតាមស្ថានភាពញឹកញាប់ ហ្វឹកហាត់តាមវគ្គខ្លី “ស្តាប់ → អាន”។</span>
+          <span class="i18n-lo">ຮຽນພາສາຫວຽດນາມ: ວອນທັງ ໖, ການອອກສຽງ ແລະ ປະໂຫຍກສັ້ນທີ່ໃຊ້ເລື້ອຍໆ ຝຶກຜ່ານບົດຝຶກສັ້ນ “ຟັງ → ອ່ານ”.</span>
         </p>
 
         <dl class="app-meta">
           <div>
-            <dt><span class="i18n-zh">目标语言</span><span class="i18n-en">Language</span></dt>
-            <dd><span class="i18n-zh">越南语（vi-VN）</span><span class="i18n-en">Vietnamese (vi-VN)</span></dd>
+            <dt>
+              <span class="i18n-zh">目标语言</span>
+              <span class="i18n-zh-Hant">目標語言</span>
+              <span class="i18n-en">Language</span>
+              <span class="i18n-vi">Ngôn ngữ mục tiêu</span>
+              <span class="i18n-ja">学習言語</span>
+              <span class="i18n-ko">학습 언어</span>
+              <span class="i18n-km">ភាសាគោលដៅ</span>
+              <span class="i18n-lo">ພາສາເປົ້າໝາຍ</span>
+            </dt>
+            <dd>
+              <span class="i18n-zh">越南语（vi-VN）</span>
+              <span class="i18n-zh-Hant">越南語（vi-VN）</span>
+              <span class="i18n-en">Vietnamese (vi-VN)</span>
+              <span class="i18n-vi">Tiếng Việt (vi-VN)</span>
+              <span class="i18n-ja">ベトナム語（vi-VN）</span>
+              <span class="i18n-ko">베트남어 (vi-VN)</span>
+              <span class="i18n-km">ភាសាវៀតណាម (vi-VN)</span>
+              <span class="i18n-lo">ພາສາຫວຽດນາມ (vi-VN)</span>
+            </dd>
           </div>
           <div>
-            <dt><span class="i18n-zh">平台</span><span class="i18n-en">Platforms</span></dt>
+            <dt>
+              <span class="i18n-zh">平台</span>
+              <span class="i18n-zh-Hant">平台</span>
+              <span class="i18n-en">Platforms</span>
+              <span class="i18n-vi">Nền tảng</span>
+              <span class="i18n-ja">プラットフォーム</span>
+              <span class="i18n-ko">플랫폼</span>
+              <span class="i18n-km">វេទិកា</span>
+              <span class="i18n-lo">ແພລດຟອມ</span>
+            </dt>
             <dd>Android · iOS · HarmonyOS</dd>
           </div>
         </dl>
@@ -187,11 +320,23 @@
         <p class="app-card__foot">
           <a class="more" href="vi/">
             <span class="i18n-zh">了解详情 →</span>
+            <span class="i18n-zh-Hant">瞭解詳情 →</span>
             <span class="i18n-en">Learn more →</span>
+            <span class="i18n-vi">Tìm hiểu thêm →</span>
+            <span class="i18n-ja">詳しく見る →</span>
+            <span class="i18n-ko">자세히 보기 →</span>
+            <span class="i18n-km">មើលលម្អិត →</span>
+            <span class="i18n-lo">ເບິ່ງລາຍລະອຽດ →</span>
           </a>
           <a href="vi/privacy/">
             <span class="i18n-zh">查看隐私政策</span>
+            <span class="i18n-zh-Hant">查看隱私權政策</span>
             <span class="i18n-en">View privacy policy</span>
+            <span class="i18n-vi">Xem chính sách quyền riêng tư</span>
+            <span class="i18n-ja">プライバシーポリシーを見る</span>
+            <span class="i18n-ko">개인정보 처리방침 보기</span>
+            <span class="i18n-km">មើលគោលការណ៍ភាពឯកជន</span>
+            <span class="i18n-lo">ເບິ່ງນະໂຍບາຍຄວາມເປັນສ່ວນຕົວ</span>
           </a>
         </p>
       </article>
@@ -204,29 +349,74 @@
             <h3 class="app-card__title">
               <a href="ja/">
                 <span class="i18n-zh">每日日语</span>
+                <span class="i18n-zh-Hant">每日日語</span>
                 <span class="i18n-en">Daily Japanese</span>
+                <span class="i18n-vi">Tiếng Nhật mỗi ngày</span>
+                <span class="i18n-ja">毎日の日本語</span>
+                <span class="i18n-ko">매일 일본어</span>
+                <span class="i18n-km">ជប៉ុនរាល់ថ្ងៃ</span>
+                <span class="i18n-lo">ຍີ່ປຸ່ນປະຈຳວັນ</span>
               </a>
             </h3>
             <p class="app-card__native">毎日の日本語</p>
           </div>
           <span class="badge badge--soon">
             <span class="i18n-zh">即将推出</span>
+            <span class="i18n-zh-Hant">即將推出</span>
             <span class="i18n-en">Coming soon</span>
+            <span class="i18n-vi">Sắp ra mắt</span>
+            <span class="i18n-ja">近日公開</span>
+            <span class="i18n-ko">출시 예정</span>
+            <span class="i18n-km">នឹងមកក្នុងពេលឆាប់ៗ</span>
+            <span class="i18n-lo">ຈະມາໃນບໍ່ດົນ</span>
           </span>
         </div>
 
         <p class="app-card__desc">
           <span class="i18n-zh">学日语：五十音、发音与日常短句，配「听 → 读」的短练习，正在准备上架。</span>
+          <span class="i18n-zh-Hant">學日語：五十音、發音與日常短句，配「聽 → 讀」的短練習，正在準備上架。</span>
           <span class="i18n-en">Learn Japanese: kana, pronunciation and everyday phrases, practised through short listen-and-read sessions. Release in preparation.</span>
+          <span class="i18n-vi">Học tiếng Nhật: kana, phát âm và câu ngắn hằng ngày, luyện qua các buổi “nghe → đọc” ngắn. Đang chuẩn bị phát hành.</span>
+          <span class="i18n-ja">日本語を学ぶ：かな、発音、日常の短い表現を「聴く → 読む」の短いセッションで練習。リリース準備中。</span>
+          <span class="i18n-ko">일본어 배우기: 가나, 발음, 일상 표현을 '듣기 → 읽기' 짧은 세션으로 연습해요. 출시를 준비 중이에요.</span>
+          <span class="i18n-km">រៀនភាសាជប៉ុន៖ អក្សរកាណា ការបញ្ចេញសំឡេង និងប្រយោគខ្លីប្រចាំថ្ងៃ ហ្វឹកហាត់តាមវគ្គខ្លី “ស្តាប់ → អាន” កំពុងរៀបចំដាក់ឲ្យប្រើ។</span>
+          <span class="i18n-lo">ຮຽນພາສາຍີ່ປຸ່ນ: ຄານະ, ການອອກສຽງ ແລະ ປະໂຫຍກສັ້ນປະຈຳວັນ ຝຶກຜ່ານບົດຝຶກສັ້ນ “ຟັງ → ອ່ານ” ກຳລັງກຽມວາງຕະຫຼາດ.</span>
         </p>
 
         <dl class="app-meta">
           <div>
-            <dt><span class="i18n-zh">目标语言</span><span class="i18n-en">Language</span></dt>
-            <dd><span class="i18n-zh">日语（ja-JP）</span><span class="i18n-en">Japanese (ja-JP)</span></dd>
+            <dt>
+              <span class="i18n-zh">目标语言</span>
+              <span class="i18n-zh-Hant">目標語言</span>
+              <span class="i18n-en">Language</span>
+              <span class="i18n-vi">Ngôn ngữ mục tiêu</span>
+              <span class="i18n-ja">学習言語</span>
+              <span class="i18n-ko">학습 언어</span>
+              <span class="i18n-km">ភាសាគោលដៅ</span>
+              <span class="i18n-lo">ພາສາເປົ້າໝາຍ</span>
+            </dt>
+            <dd>
+              <span class="i18n-zh">日语（ja-JP）</span>
+              <span class="i18n-zh-Hant">日語（ja-JP）</span>
+              <span class="i18n-en">Japanese (ja-JP)</span>
+              <span class="i18n-vi">Tiếng Nhật (ja-JP)</span>
+              <span class="i18n-ja">日本語（ja-JP）</span>
+              <span class="i18n-ko">일본어 (ja-JP)</span>
+              <span class="i18n-km">ភាសាជប៉ុន (ja-JP)</span>
+              <span class="i18n-lo">ພາສາຍີ່ປຸ່ນ (ja-JP)</span>
+            </dd>
           </div>
           <div>
-            <dt><span class="i18n-zh">平台</span><span class="i18n-en">Platforms</span></dt>
+            <dt>
+              <span class="i18n-zh">平台</span>
+              <span class="i18n-zh-Hant">平台</span>
+              <span class="i18n-en">Platforms</span>
+              <span class="i18n-vi">Nền tảng</span>
+              <span class="i18n-ja">プラットフォーム</span>
+              <span class="i18n-ko">플랫폼</span>
+              <span class="i18n-km">វេទិកា</span>
+              <span class="i18n-lo">ແພລດຟອມ</span>
+            </dt>
             <dd>Android · iOS · HarmonyOS</dd>
           </div>
         </dl>
@@ -234,11 +424,23 @@
         <p class="app-card__foot">
           <a class="more" href="ja/">
             <span class="i18n-zh">了解详情 →</span>
+            <span class="i18n-zh-Hant">瞭解詳情 →</span>
             <span class="i18n-en">Learn more →</span>
+            <span class="i18n-vi">Tìm hiểu thêm →</span>
+            <span class="i18n-ja">詳しく見る →</span>
+            <span class="i18n-ko">자세히 보기 →</span>
+            <span class="i18n-km">មើលលម្អិត →</span>
+            <span class="i18n-lo">ເບິ່ງລາຍລະອຽດ →</span>
           </a>
           <a href="ja/privacy/">
             <span class="i18n-zh">查看隐私政策</span>
+            <span class="i18n-zh-Hant">查看隱私權政策</span>
             <span class="i18n-en">View privacy policy</span>
+            <span class="i18n-vi">Xem chính sách quyền riêng tư</span>
+            <span class="i18n-ja">プライバシーポリシーを見る</span>
+            <span class="i18n-ko">개인정보 처리방침 보기</span>
+            <span class="i18n-km">មើលគោលការណ៍ភាពឯកជន</span>
+            <span class="i18n-lo">ເບິ່ງນະໂຍບາຍຄວາມເປັນສ່ວນຕົວ</span>
           </a>
         </p>
       </article>
@@ -259,29 +461,74 @@
             <h3 class="app-card__title">
               <a href="th/">
                 <span class="i18n-zh">每日泰语</span>
+                <span class="i18n-zh-Hant">每日泰語</span>
                 <span class="i18n-en">Daily Thai</span>
+                <span class="i18n-vi">Tiếng Thái mỗi ngày</span>
+                <span class="i18n-ja">毎日のタイ語</span>
+                <span class="i18n-ko">매일 태국어</span>
+                <span class="i18n-km">ថៃរាល់ថ្ងៃ</span>
+                <span class="i18n-lo">ໄທປະຈຳວັນ</span>
               </a>
             </h3>
             <p class="app-card__native">ภาษาไทยทุกวัน</p>
           </div>
           <span class="badge badge--soon">
             <span class="i18n-zh">即将推出</span>
+            <span class="i18n-zh-Hant">即將推出</span>
             <span class="i18n-en">Coming soon</span>
+            <span class="i18n-vi">Sắp ra mắt</span>
+            <span class="i18n-ja">近日公開</span>
+            <span class="i18n-ko">출시 예정</span>
+            <span class="i18n-km">នឹងមកក្នុងពេលឆាប់ៗ</span>
+            <span class="i18n-lo">ຈະມາໃນບໍ່ດົນ</span>
           </span>
         </div>
 
         <p class="app-card__desc">
           <span class="i18n-zh">学泰语：同样的「听 → 读」短练习，正在制作中。</span>
+          <span class="i18n-zh-Hant">學泰語：同樣的「聽 → 讀」短練習，正在製作中。</span>
           <span class="i18n-en">Learn Thai: the same listen-and-read short sessions, currently in the works.</span>
+          <span class="i18n-vi">Học tiếng Thái: cùng kiểu buổi “nghe → đọc” ngắn, đang được xây dựng.</span>
+          <span class="i18n-ja">タイ語を学ぶ：同じ「聴く → 読む」の短いセッション。制作中。</span>
+          <span class="i18n-ko">태국어 배우기: 같은 '듣기 → 읽기' 짧은 세션. 제작 중이에요.</span>
+          <span class="i18n-km">រៀនភាសាថៃ៖ វគ្គខ្លី “ស្តាប់ → អាន” ដូចគ្នា កំពុងសាងសង់។</span>
+          <span class="i18n-lo">ຮຽນພາສາໄທ: ບົດຝຶກສັ້ນ “ຟັງ → ອ່ານ” ແບບດຽວກັນ ກຳລັງສ້າງ.</span>
         </p>
 
         <dl class="app-meta">
           <div>
-            <dt><span class="i18n-zh">目标语言</span><span class="i18n-en">Language</span></dt>
-            <dd><span class="i18n-zh">泰语（th-TH）</span><span class="i18n-en">Thai (th-TH)</span></dd>
+            <dt>
+              <span class="i18n-zh">目标语言</span>
+              <span class="i18n-zh-Hant">目標語言</span>
+              <span class="i18n-en">Language</span>
+              <span class="i18n-vi">Ngôn ngữ mục tiêu</span>
+              <span class="i18n-ja">学習言語</span>
+              <span class="i18n-ko">학습 언어</span>
+              <span class="i18n-km">ភាសាគោលដៅ</span>
+              <span class="i18n-lo">ພາສາເປົ້າໝາຍ</span>
+            </dt>
+            <dd>
+              <span class="i18n-zh">泰语（th-TH）</span>
+              <span class="i18n-zh-Hant">泰語（th-TH）</span>
+              <span class="i18n-en">Thai (th-TH)</span>
+              <span class="i18n-vi">Tiếng Thái (th-TH)</span>
+              <span class="i18n-ja">タイ語（th-TH）</span>
+              <span class="i18n-ko">태국어 (th-TH)</span>
+              <span class="i18n-km">ភាសាថៃ (th-TH)</span>
+              <span class="i18n-lo">ພາສາໄທ (th-TH)</span>
+            </dd>
           </div>
           <div>
-            <dt><span class="i18n-zh">平台</span><span class="i18n-en">Platforms</span></dt>
+            <dt>
+              <span class="i18n-zh">平台</span>
+              <span class="i18n-zh-Hant">平台</span>
+              <span class="i18n-en">Platforms</span>
+              <span class="i18n-vi">Nền tảng</span>
+              <span class="i18n-ja">プラットフォーム</span>
+              <span class="i18n-ko">플랫폼</span>
+              <span class="i18n-km">វេទិកា</span>
+              <span class="i18n-lo">ແພລດຟອມ</span>
+            </dt>
             <dd>Android · iOS · HarmonyOS</dd>
           </div>
         </dl>
@@ -289,11 +536,23 @@
         <p class="app-card__foot">
           <a class="more" href="th/">
             <span class="i18n-zh">了解详情 →</span>
+            <span class="i18n-zh-Hant">瞭解詳情 →</span>
             <span class="i18n-en">Learn more →</span>
+            <span class="i18n-vi">Tìm hiểu thêm →</span>
+            <span class="i18n-ja">詳しく見る →</span>
+            <span class="i18n-ko">자세히 보기 →</span>
+            <span class="i18n-km">មើលលម្អិត →</span>
+            <span class="i18n-lo">ເບິ່ງລາຍລະອຽດ →</span>
           </a>
           <a href="th/privacy/">
             <span class="i18n-zh">查看隐私政策</span>
+            <span class="i18n-zh-Hant">查看隱私權政策</span>
             <span class="i18n-en">View privacy policy</span>
+            <span class="i18n-vi">Xem chính sách quyền riêng tư</span>
+            <span class="i18n-ja">プライバシーポリシーを見る</span>
+            <span class="i18n-ko">개인정보 처리방침 보기</span>
+            <span class="i18n-km">មើលគោលការណ៍ភាពឯកជន</span>
+            <span class="i18n-lo">ເບິ່ງນະໂຍບາຍຄວາມເປັນສ່ວນຕົວ</span>
           </a>
         </p>
       </article>
@@ -305,7 +564,13 @@
     <span>© 2026 DailyLang</span>
     <span>
       <span class="i18n-zh">本站由 GitHub Pages 托管</span>
+      <span class="i18n-zh-Hant">本站由 GitHub Pages 託管</span>
       <span class="i18n-en">Hosted on GitHub Pages</span>
+      <span class="i18n-vi">Trang này được lưu trữ trên GitHub Pages</span>
+      <span class="i18n-ja">本サイトは GitHub Pages でホストされています</span>
+      <span class="i18n-ko">이 사이트는 GitHub Pages에서 호스팅됩니다</span>
+      <span class="i18n-km">គេហទំព័រនេះផ្ទុកលើ GitHub Pages</span>
+      <span class="i18n-lo">ເວັບໄຊນີ້ໂຮດໂດຍ GitHub Pages</span>
     </span>
   </footer>
 

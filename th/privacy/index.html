@@ -1,7 +1,13 @@
 <!DOCTYPE html>
 <html lang="zh-Hans" data-lang="zh-Hans"
       data-title-zh="每日泰语 · 隐私政策（尚未发布）"
-      data-title-en="Daily Thai · Privacy Policy (not yet published)">
+      data-title-zh-Hant="每日泰語 · 隱私權政策（尚未發布）"
+      data-title-en="Daily Thai · Privacy Policy (not yet published)"
+      data-title-vi="Tiếng Thái mỗi ngày · Chính sách quyền riêng tư (chưa phát hành)"
+      data-title-ja="毎日のタイ語 · プライバシーポリシー（未公開）"
+      data-title-ko="매일 태국어 · 개인정보 처리방침 (미게시)"
+      data-title-km="ថៃរាល់ថ្ងៃ · គោលការណ៍ភាពឯកជន (មិនទាន់ប្រកាស)"
+      data-title-lo="ໄທປະຈຳວັນ · ນະໂຍບາຍຄວາມເປັນສ່ວນຕົວ (ຍັງບໍ່ທັນເຜີຍແຜ່)">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -21,6 +27,10 @@
     th/privacy/v1.0.0/zh-Hans.html  简体中文正文
     th/privacy/v1.0.0/en.html       英文正文
   多语言 App 各自持有独立隐私政策，互不替代。
+
+  - 页面框架（导航/说明/页脚）按语言写 .i18n-zh / .i18n-zh-Hant / .i18n-en /
+    .i18n-vi / .i18n-ja / .i18n-ko / .i18n-km / .i18n-lo 八份节点，
+    由 assets/site.js + 顶栏下拉选择切换。
   ==========================================================================
 -->
 <!-- Google tag (gtag.js) -->
@@ -37,51 +47,116 @@
 
   <nav class="doc-nav">
     <a class="doc-nav__crumb" href="../../">DailyLang</a>
-    <div class="langswitch" role="group" aria-label="语言 / Language">
-      <button type="button" data-set-lang="zh-Hans" class="on">简体中文</button>
-      <button type="button" data-set-lang="en">English</button>
+    <div class="langswitch">
+      <select data-lang-select aria-label="语言 / Language">
+        <option value="zh-Hans">简体中文</option>
+        <option value="zh-Hant">繁體中文</option>
+        <option value="en">English</option>
+        <option value="vi">Tiếng Việt</option>
+        <option value="ja">日本語</option>
+        <option value="ko">한국어</option>
+        <option value="km">ខ្មែរ</option>
+        <option value="lo">ລາວ</option>
+      </select>
     </div>
   </nav>
 
   <header>
     <h1>
       <span class="app i18n-zh">每日泰语</span>
+      <span class="app i18n-zh-Hant">每日泰語</span>
       <span class="app i18n-en">Daily Thai</span>
+      <span class="app i18n-vi">Tiếng Thái mỗi ngày</span>
+      <span class="app i18n-ja">毎日のタイ語</span>
+      <span class="app i18n-ko">매일 태국어</span>
+      <span class="app i18n-km">ថៃរាល់ថ្ងៃ</span>
+      <span class="app i18n-lo">ໄທປະຈຳວັນ</span>
       <span class="i18n-zh"> · 隐私政策</span>
+      <span class="i18n-zh-Hant"> · 隱私權政策</span>
       <span class="i18n-en"> · Privacy Policy</span>
+      <span class="i18n-vi"> · Chính sách quyền riêng tư</span>
+      <span class="i18n-ja"> · プライバシーポリシー</span>
+      <span class="i18n-ko"> · 개인정보 처리방침</span>
+      <span class="i18n-km"> · គោលការណ៍ភាពឯកជន</span>
+      <span class="i18n-lo"> · ນະໂຍບາຍຄວາມເປັນສ່ວນຕົວ</span>
     </h1>
     <p class="meta">
       <span class="i18n-zh">适用于 Android / iOS / HarmonyOS 版「每日泰语」（包名 <code>com.github.boybeak.daily.lang.th</code>）</span>
+      <span class="i18n-zh-Hant">適用於 Android / iOS / HarmonyOS 版「每日泰語」（套件名稱 <code>com.github.boybeak.daily.lang.th</code>）</span>
       <span class="i18n-en">For the Android / iOS / HarmonyOS versions of “Daily Thai” (package name <code>com.github.boybeak.daily.lang.th</code>)</span>
+      <span class="i18n-vi">Dành cho bản Android / iOS / HarmonyOS của “Tiếng Thái mỗi ngày” (tên gói <code>com.github.boybeak.daily.lang.th</code>)</span>
+      <span class="i18n-ja">Android / iOS / HarmonyOS 版「毎日のタイ語」（パッケージ名 <code>com.github.boybeak.daily.lang.th</code>）向け</span>
+      <span class="i18n-ko">Android / iOS / HarmonyOS용 ‘매일 태국어’ (패키지 이름 <code>com.github.boybeak.daily.lang.th</code>)</span>
+      <span class="i18n-km">សម្រាប់កំណែ Android / iOS / HarmonyOS នៃ «ថៃរាល់ថ្ងៃ» (ឈ្មោះកញ្ចប់ <code>com.github.boybeak.daily.lang.th</code>)</span>
+      <span class="i18n-lo">ສຳລັບເວີຊັນ Android / iOS / HarmonyOS ຂອງ «ໄທປະຈຳວັນ» (ຊື່ແພັກເກັດ <code>com.github.boybeak.daily.lang.th</code>)</span>
     </p>
   </header>
 
   <div class="summary">
     <p>
       <span class="i18n-zh">尚未发布</span>
+      <span class="i18n-zh-Hant">尚未發布</span>
       <span class="i18n-en">Not yet published</span>
+      <span class="i18n-vi">Chưa phát hành</span>
+      <span class="i18n-ja">未公開</span>
+      <span class="i18n-ko">미게시</span>
+      <span class="i18n-km">មិនទាន់ប្រកាស</span>
+      <span class="i18n-lo">ຍັງບໍ່ທັນເຜີຍແຜ່</span>
     </p>
     <ul>
       <li>
         <span class="i18n-zh">泰语 App 尚未上线，其隐私政策会在上线前发布于本地址。</span>
+        <span class="i18n-zh-Hant">泰語 App 尚未上線，其隱私權政策會在上線前發布於本網址。</span>
         <span class="i18n-en">The Thai app has not launched yet; its privacy policy will be published at this address before it does.</span>
+        <span class="i18n-vi">Ứng dụng tiếng Thái chưa ra mắt; chính sách quyền riêng tư sẽ được công bố tại địa chỉ này trước khi ứng dụng phát hành.</span>
+        <span class="i18n-ja">タイ語アプリはまだリリースされていません。プライバシーポリシーはリリース前にこのアドレスで公開します。</span>
+        <span class="i18n-ko">태국어 앱은 아직 출시되지 않았습니다. 개인정보 처리방침은 출시 전에 이 주소에 게시될 예정입니다.</span>
+        <span class="i18n-km">កម្មវិធីភាសាថៃមិនទាន់ចេញផ្សាយទេ។ គោលការណ៍ភាពឯកជននឹងត្រូវប្រកាសនៅអាសយដ្ឋាននេះមុនពេលចេញផ្សាយ។</span>
+        <span class="i18n-lo">ແອັບພາສາໄທຍັງບໍ່ທັນອອກວາງ. ນະໂຍບາຍຄວາມເປັນສ່ວນຕົວຈະຖືກເຜີຍແຜ່ຢູ່ທີ່ອານນີ້ກ່ອນການອອກວາງ.</span>
       </li>
       <li>
         <span class="i18n-zh">「每日泰语」是独立 App，隐私政策与越南语版各自独立，互不替代。</span>
+        <span class="i18n-zh-Hant">「每日泰語」是獨立 App，隱私權政策與越南語版各自獨立，互不替代。</span>
         <span class="i18n-en">“Daily Thai” is a standalone app; its policy is independent of the Vietnamese app's, and neither substitutes for the other.</span>
+        <span class="i18n-vi">“Tiếng Thái mỗi ngày” là ứng dụng độc lập; chính sách của ứng dụng này độc lập với bản của ứng dụng tiếng Việt, không thay thế lẫn nhau.</span>
+        <span class="i18n-ja">「毎日のタイ語」は独立したアプリで、プライバシーポリシーはベトナム語版とはそれぞれ独立しており、互いに代替しません。</span>
+        <span class="i18n-ko">‘매일 태국어’는 독립 앱이며, 개인정보 처리방침은 베트남어 버전과 각각 독립적이고 서로를 대체하지 않습니다.</span>
+        <span class="i18n-km">«ថៃរាល់ថ្ងៃ» ជាកម្មវិធីដាច់ដោយឡែក។ គោលការណ៍ភាពឯកជនរបស់វាមានលក្ខណៈឯករាជ្យពីកំណែភាសាវៀតណាម ហើយមិនជំនួសគ្នាទេ។</span>
+        <span class="i18n-lo">«ໄທປະຈຳວັນ» ເປັນແອັບທີ່ເປັນເອກະລາດ. ນະໂຍບາຍຄວາມເປັນສ່ວນຕົວຂອງມັນເປັນເອກະລາດຈາກເວີຊັນພາສາຫວຽດ ບໍ່ແທນກັນ.</span>
       </li>
     </ul>
   </div>
 
-  <h2><span class="i18n-zh">说明</span><span class="i18n-en">About this page</span></h2>
+  <h2>
+    <span class="i18n-zh">说明</span>
+    <span class="i18n-zh-Hant">說明</span>
+    <span class="i18n-en">About this page</span>
+    <span class="i18n-vi">Giới thiệu về trang này</span>
+    <span class="i18n-ja">このページについて</span>
+    <span class="i18n-ko">안내</span>
+    <span class="i18n-km">អំពីទំព័រនេះ</span>
+    <span class="i18n-lo">ກ່ຽວກັບໜ້ານີ້</span>
+  </h2>
   <ul>
     <li>
       <span class="i18n-zh">隐私政策按 appId 归档：<code>/&lt;appId&gt;/privacy/</code>。</span>
+      <span class="i18n-zh-Hant">隱私權政策按 appId 歸檔：<code>/&lt;appId&gt;/privacy/</code>。</span>
       <span class="i18n-en">Privacy policies are filed by appId: <code>/&lt;appId&gt;/privacy/</code>.</span>
+      <span class="i18n-vi">Chính sách quyền riêng tư được lưu trữ theo appId: <code>/&lt;appId&gt;/privacy/</code>.</span>
+      <span class="i18n-ja">プライバシーポリシーは appId ごとに保存します：<code>/&lt;appId&gt;/privacy/</code>。</span>
+      <span class="i18n-ko">개인정보 처리방침은 appId별로 보관됩니다: <code>/&lt;appId&gt;/privacy/</code>.</span>
+      <span class="i18n-km">គោលការណ៍ភាពឯកជនត្រូវរក្សាទុកតាម appId៖ <code>/&lt;appId&gt;/privacy/</code>។</span>
+      <span class="i18n-lo">ນະໂຍບາຍຄວາມເປັນສ່ວນຕົວເກັບໄວ້ຕາມ appId: <code>/&lt;appId&gt;/privacy/</code>.</span>
     </li>
     <li>
       <span class="i18n-zh">正式发布后结构与越南语版一致：版本入口页 + <code>&lt;版本&gt;/{zh-Hans,en}.html</code>。</span>
+      <span class="i18n-zh-Hant">正式發布後結構與越南語版一致：版本入口頁 + <code>&lt;版本&gt;/{zh-Hans,en}.html</code>。</span>
       <span class="i18n-en">Once published, the layout matches the Vietnamese app: a version index plus <code>&lt;version&gt;/{zh-Hans,en}.html</code>.</span>
+      <span class="i18n-vi">Sau khi phát hành chính thức, cấu trúc sẽ giống bản tiếng Việt: trang mục lục phiên bản + <code>&lt;phiên bản&gt;/{zh-Hans,en}.html</code>.</span>
+      <span class="i18n-ja">正式公開後の構成はベトナム語版と同じです：バージョン入り口ページ + <code>&lt;バージョン&gt;/{zh-Hans,en}.html</code>。</span>
+      <span class="i18n-ko">정식 출시 후 구조는 베트남어 버전과 동일합니다: 버전 진입 페이지 + <code>&lt;버전&gt;/{zh-Hans,en}.html</code>.</span>
+      <span class="i18n-km">បន្ទាប់ពីប្រកាសជាផ្លូវការ រចនាសម្ព័ន្ធនឹងដូចកំណែភាសាវៀតណាម៖ ទំព័រចូលកំណែ + <code>&lt;កំណែ&gt;/{zh-Hans,en}.html</code>។</span>
+      <span class="i18n-lo">ຫຼັງຈາກເຜີຍແຜ່ຢ່າງເປັນທາງການ ໂຄງສ້າງຈະຄືກັນກັບເວີຊັນພາສາຫວຽດ: ໜ້າທາງເຂົ້າເວີຊັນ + <code>&lt;ເວີຊັນ&gt;/{zh-Hans,en}.html</code>.</span>
     </li>
   </ul>
 
@@ -89,7 +164,13 @@
 
 <footer class="doc-foot">
   <span class="i18n-zh">每日泰语（com.github.boybeak.daily.lang.th）· 隐私政策</span>
+  <span class="i18n-zh-Hant">每日泰語（com.github.boybeak.daily.lang.th）· 隱私權政策</span>
   <span class="i18n-en">Daily Thai (com.github.boybeak.daily.lang.th) · Privacy Policy</span>
+  <span class="i18n-vi">Tiếng Thái mỗi ngày (com.github.boybeak.daily.lang.th) · Chính sách quyền riêng tư</span>
+  <span class="i18n-ja">毎日のタイ語（com.github.boybeak.daily.lang.th）· プライバシーポリシー</span>
+  <span class="i18n-ko">매일 태국어 (com.github.boybeak.daily.lang.th) · 개인정보 처리방침</span>
+  <span class="i18n-km">ថៃរាល់ថ្ងៃ (com.github.boybeak.daily.lang.th) · គោលការណ៍ភាពឯកជន</span>
+  <span class="i18n-lo">ໄທປະຈຳວັນ (com.github.boybeak.daily.lang.th) · ນະໂຍບາຍຄວາມເປັນສ່ວນຕົວ</span>
 </footer>
 
 <script src="../../assets/site.js"></script>

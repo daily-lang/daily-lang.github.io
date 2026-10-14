@@ -1,7 +1,13 @@
 <!DOCTYPE html>
 <html lang="zh-Hans" data-lang="zh-Hans"
       data-title-zh="每日日语 · 隐私政策"
-      data-title-en="Daily Japanese · Privacy Policy">
+      data-title-zh-Hant="每日日語 · 隱私權政策"
+      data-title-en="Daily Japanese · Privacy Policy"
+      data-title-vi="Tiếng Nhật mỗi ngày · Chính sách quyền riêng tư"
+      data-title-ja="毎日の日本語 · プライバシーポリシー"
+      data-title-ko="매일 일본어 · 개인정보 처리방침"
+      data-title-km="ជប៉ុនរាល់ថ្ងៃ · គោលការណ៍ភាពឯកជន"
+      data-title-lo="ຍີ່ປຸ່ນປະຈຳວັນ · ນະໂຍບາຍຄວາມເປັນສ່ວນຕົວ">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -26,6 +32,9 @@
          shared i18n 的 privacy.* 键与 PrivacyConsent.VERSION（生效日期即应用内同意版本）、
          appConfig/ja/store/store-info.json 的 privacyPolicyUrl(s)。
   - 每日越南语 / 每日泰语等（appId: vi / th）为独立 App，各有独立政策，互不替代。
+  - 页面框架（导航/说明/页脚）按语言写 .i18n-zh / .i18n-zh-Hant / .i18n-en / .i18n-vi /
+    .i18n-ja / .i18n-ko / .i18n-km / .i18n-lo 八份节点，由 assets/site.js + 下拉切换；
+    正文各语言文件的入口在「版本条目」的语言标签里。
   ==========================================================================
 -->
 <!-- Google tag (gtag.js) -->
@@ -42,33 +51,72 @@
 
   <nav class="doc-nav">
     <a class="doc-nav__crumb" href="../../">DailyLang</a>
-    <div class="langswitch" role="group" aria-label="语言 / Language">
-      <button type="button" data-set-lang="zh-Hans" class="on">简体中文</button>
-      <button type="button" data-set-lang="en">English</button>
-      <a href="v1.0.0/zh-Hant.html" hreflang="zh-Hant">繁體中文</a>
-      <a href="v1.0.0/ja.html" hreflang="ja">日本語</a>
+    <div class="langswitch">
+      <select data-lang-select aria-label="语言 / Language">
+        <option value="zh-Hans">简体中文</option>
+        <option value="zh-Hant">繁體中文</option>
+        <option value="en">English</option>
+        <option value="vi">Tiếng Việt</option>
+        <option value="ja">日本語</option>
+        <option value="ko">한국어</option>
+        <option value="km">ខ្មែរ</option>
+        <option value="lo">ລາວ</option>
+      </select>
     </div>
   </nav>
 
   <header>
     <h1>
       <span class="app i18n-zh">每日日语</span>
+      <span class="app i18n-zh-Hant">每日日語</span>
       <span class="app i18n-en">Daily Japanese</span>
+      <span class="app i18n-vi">Tiếng Nhật mỗi ngày</span>
+      <span class="app i18n-ja">毎日の日本語</span>
+      <span class="app i18n-ko">매일 일본어</span>
+      <span class="app i18n-km">ជប៉ុនរាល់ថ្ងៃ</span>
+      <span class="app i18n-lo">ຍີ່ປຸ່ນປະຈຳວັນ</span>
       <span class="i18n-zh"> · 隐私政策</span>
+      <span class="i18n-zh-Hant"> · 隱私權政策</span>
       <span class="i18n-en"> · Privacy Policy</span>
+      <span class="i18n-vi"> · Chính sách quyền riêng tư</span>
+      <span class="i18n-ja"> · プライバシーポリシー</span>
+      <span class="i18n-ko"> · 개인정보 처리방침</span>
+      <span class="i18n-km"> · គោលការណ៍ភាពឯកជន</span>
+      <span class="i18n-lo"> · ນະໂຍບາຍຄວາມເປັນສ່ວນຕົວ</span>
     </h1>
     <p class="meta">
       <span class="i18n-zh">适用于 Android / iOS / HarmonyOS 版「每日日语」（包名 <code>com.github.boybeak.daily.lang.ja</code>）</span>
+      <span class="i18n-zh-Hant">適用於 Android / iOS / HarmonyOS 版「每日日語」（套件名稱 <code>com.github.boybeak.daily.lang.ja</code>）</span>
       <span class="i18n-en">For the Android / iOS / HarmonyOS versions of “Daily Japanese” (package name <code>com.github.boybeak.daily.lang.ja</code>)</span>
+      <span class="i18n-vi">Dành cho bản Android / iOS / HarmonyOS của “Tiếng Nhật mỗi ngày” (tên gói <code>com.github.boybeak.daily.lang.ja</code>)</span>
+      <span class="i18n-ja">Android / iOS / HarmonyOS 版「毎日の日本語」（パッケージ名 <code>com.github.boybeak.daily.lang.ja</code>）向け</span>
+      <span class="i18n-ko">Android / iOS / HarmonyOS용 ‘매일 일본어’ (패키지 이름 <code>com.github.boybeak.daily.lang.ja</code>)</span>
+      <span class="i18n-km">សម្រាប់កំណែ Android / iOS / HarmonyOS នៃ «ជប៉ុនរាល់ថ្ងៃ» (ឈ្មោះកញ្ចប់ <code>com.github.boybeak.daily.lang.ja</code>)</span>
+      <span class="i18n-lo">ສຳລັບເວີຊັນ Android / iOS / HarmonyOS ຂອງ «ຍີ່ປຸ່ນປະຈຳວັນ» (ຊື່ແພັກເກັດ <code>com.github.boybeak.daily.lang.ja</code>)</span>
     </p>
   </header>
 
-  <h2><span class="i18n-zh">当前版本</span><span class="i18n-en">Current version</span></h2>
+  <h2>
+    <span class="i18n-zh">当前版本</span>
+    <span class="i18n-zh-Hant">目前版本</span>
+    <span class="i18n-en">Current version</span>
+    <span class="i18n-vi">Phiên bản hiện tại</span>
+    <span class="i18n-ja">現在のバージョン</span>
+    <span class="i18n-ko">현재 버전</span>
+    <span class="i18n-km">កំណែបច្ចុប្បន្ន</span>
+    <span class="i18n-lo">ເວີຊັນປັດຈຸບັນ</span>
+  </h2>
   <div class="entry entry--current">
     <span class="entry__ver">v1.0.0</span>
     <span class="entry__date">
       <span class="i18n-zh">生效日期：<span class="fill">2026-10-10</span></span>
+      <span class="i18n-zh-Hant">生效日期：<span class="fill">2026-10-10</span></span>
       <span class="i18n-en">Effective date: <span class="fill">2026-10-10</span></span>
+      <span class="i18n-vi">Hiệu lực từ: <span class="fill">2026-10-10</span></span>
+      <span class="i18n-ja">発効日：<span class="fill">2026-10-10</span></span>
+      <span class="i18n-ko">시행일: <span class="fill">2026-10-10</span></span>
+      <span class="i18n-km">មានប្រសិទ្ធភាពចាប់ពី៖ <span class="fill">2026-10-10</span></span>
+      <span class="i18n-lo">ມີຜົນບັງຄັບໃຊ້ນັບແຕ່: <span class="fill">2026-10-10</span></span>
     </span>
     <span class="entry__tags">
       <a href="v1.0.0/zh-Hans.html">简体中文</a>
@@ -78,40 +126,100 @@
     </span>
   </div>
 
-  <h2><span class="i18n-zh">历史版本</span><span class="i18n-en">Previous versions</span></h2>
+  <h2>
+    <span class="i18n-zh">历史版本</span>
+    <span class="i18n-zh-Hant">歷史版本</span>
+    <span class="i18n-en">Previous versions</span>
+    <span class="i18n-vi">Các phiên bản cũ</span>
+    <span class="i18n-ja">過去のバージョン</span>
+    <span class="i18n-ko">이전 버전</span>
+    <span class="i18n-km">កំណែចាស់</span>
+    <span class="i18n-lo">ເວີຊັນເກົ່າ</span>
+  </h2>
   <p class="empty">
     <span class="i18n-zh">暂无历史版本。协议一经更新，旧版本正文会永久保留在本目录下，不会被覆盖。</span>
+    <span class="i18n-zh-Hant">暫無歷史版本。協議一經更新，舊版本正文會永久保留在本目錄下，不會被覆蓋。</span>
     <span class="i18n-en">No previous versions yet. Once the policy is updated, earlier versions are kept here permanently and are never overwritten.</span>
+    <span class="i18n-vi">Chưa có phiên bản cũ. Khi chính sách được cập nhật, bản của các phiên bản trước sẽ được lưu vĩnh viễn trong thư mục này, không bị ghi đè.</span>
+    <span class="i18n-ja">過去のバージョンはまだありません。ポリシーを更新した際、旧バージョンの本文はこのディレクトリに恒久保存され、上書きされません。</span>
+    <span class="i18n-ko">아직 이전 버전이 없습니다. 방침이 업데이트되면 이전 버전 본문은 이 디렉터리에 영구 보관되며 덮어쓰지 않아요.</span>
+    <span class="i18n-km">មិនទាន់មានកំណែចាស់ទេ។ ពេលធ្វើបច្ចុប្បន្នភាពគោលការណ៍ អត្ថបទកំណែចាស់នឹងរក្សាទុកជាអចិន្ត្រៃយ៍ក្នុងថតនេះ មិនត្រូវសរសេរជាន់លើទេ។</span>
+    <span class="i18n-lo">ຍັງບໍ່ມີເວີຊັນເກົ່າ. ເມື່ອອັບເດດນະໂຍບາຍ ເນື້ອໃນຂອງເວີຊັນເກົ່າຈະເກັບໄວ້ຖາວອນໃນໂຟນເດີນີ້ ບໍ່ຖືກຂຽນທັບ.</span>
   </p>
 
-  <h2><span class="i18n-zh">说明</span><span class="i18n-en">About this page</span></h2>
+  <h2>
+    <span class="i18n-zh">说明</span>
+    <span class="i18n-zh-Hant">說明</span>
+    <span class="i18n-en">About this page</span>
+    <span class="i18n-vi">Giới thiệu về trang này</span>
+    <span class="i18n-ja">このページについて</span>
+    <span class="i18n-ko">안내</span>
+    <span class="i18n-km">អំពីទំព័រនេះ</span>
+    <span class="i18n-lo">ກ່ຽວກັບໜ້ານີ້</span>
+  </h2>
   <ul>
     <li>
       <span class="i18n-zh">每个版本按语言分文件保存：简体中文 <code>zh-Hans.html</code>、繁体中文 <code>zh-Hant.html</code>、英文 <code>en.html</code>、日文 <code>ja.html</code>。</span>
+      <span class="i18n-zh-Hant">每個版本按語言分檔案保存：簡體中文 <code>zh-Hans.html</code>、繁體中文 <code>zh-Hant.html</code>、英文 <code>en.html</code>、日文 <code>ja.html</code>。</span>
       <span class="i18n-en">Each version is split by language: Simplified Chinese (<code>zh-Hans.html</code>), Traditional Chinese (<code>zh-Hant.html</code>), English (<code>en.html</code>) and Japanese (<code>ja.html</code>).</span>
+      <span class="i18n-vi">Mỗi phiên bản được lưu theo từng ngôn ngữ: tiếng Trung giản thể (<code>zh-Hans.html</code>), tiếng Trung phồn thể (<code>zh-Hant.html</code>), tiếng Anh (<code>en.html</code>) và tiếng Nhật (<code>ja.html</code>).</span>
+      <span class="i18n-ja">各バージョンは言語ごとにファイルで保存します：簡体字中国語 <code>zh-Hans.html</code>、繁体字中国語 <code>zh-Hant.html</code>、英語 <code>en.html</code>、日本語 <code>ja.html</code>。</span>
+      <span class="i18n-ko">각 버전은 언어별 파일로 저장됩니다: 간체 중국어(<code>zh-Hans.html</code>), 번체 중국어(<code>zh-Hant.html</code>), 영어(<code>en.html</code>), 일본어(<code>ja.html</code>).</span>
+      <span class="i18n-km">កំណែនីមួយៗរក្សាទុកតាមភាសា៖ ចិនកាត់ <code>zh-Hans.html</code> ចិនពេញ <code>zh-Hant.html</code> អង់គ្លេស <code>en.html</code> និងជប៉ុន <code>ja.html</code>។</span>
+      <span class="i18n-lo">ແຕ່ລະເວີຊັນເກັບແຍກຕາມພາສາ: ຈີນຕົວຫຍໍ້ <code>zh-Hans.html</code> ຈີນຕົວເຕັມ <code>zh-Hant.html</code> ອັງກິດ <code>en.html</code> ແລະ ຍີ່ປຸ່ນ <code>ja.html</code>.</span>
     </li>
     <li>
       <span class="i18n-zh">本页地址长期不变，可作为应用商店中填写的隐私政策网址。</span>
+      <span class="i18n-zh-Hant">本頁地址長期不變，可作為應用程式商店中填寫的隱私權政策網址。</span>
       <span class="i18n-en">This page has a stable address and can be used as the privacy policy URL in app stores.</span>
+      <span class="i18n-vi">Địa chỉ trang này không đổi trong thời gian dài, có thể dùng làm URL chính sách quyền riêng tư khai trên cửa hàng ứng dụng.</span>
+      <span class="i18n-ja">このページのアドレスは長期にわたり変わらないため、アプリストアに記入するプライバシーポリシーのURLとして利用できます。</span>
+      <span class="i18n-ko">이 페이지 주소는 장기간 변경되지 않으므로 앱 스토어에 입력할 개인정보 처리방침 URL로 쓸 수 있어요.</span>
+      <span class="i18n-km">អាសយដ្ឋានទំព័រនេះមិនផ្លាស់ប្តូររយៈពេលយូរទេ អាចប្រើជាតំណគោលការណ៍ភាពឯកជនក្នុងហាងកម្មវិធី។</span>
+      <span class="i18n-lo">ທີ່ຢູ່ໜ້ານີ້ບໍ່ປ່ຽນເປັນເວລາດົນ ໃຊ້ເປັນ URL ນະໂຍບາຍຄວາມເປັນສ່ວນຕົວໃນຮ້ານແອັບໄດ້.</span>
     </li>
     <li>
       <span class="i18n-zh">「每日日语」是独立 App，与其他目标语言的 App 各自持有独立政策，互不替代。</span>
+      <span class="i18n-zh-Hant">「每日日語」是獨立 App，與其他目標語言的 App 各自持有獨立政策，互不替代。</span>
       <span class="i18n-en">“Daily Japanese” is a standalone app; apps for other target languages each keep their own policy, and none substitutes for another.</span>
+      <span class="i18n-vi">“Tiếng Nhật mỗi ngày” là ứng dụng độc lập; các ứng dụng cho ngôn ngữ mục tiêu khác mỗi bên giữ chính sách riêng, không bên nào thay thế bên nào.</span>
+      <span class="i18n-ja">「毎日の日本語」は独立したアプリであり、他の学習言語向けアプリはそれぞれ独自のポリシーを持ち、互いに代替しません。</span>
+      <span class="i18n-ko">‘매일 일본어’는 독립 앱이며, 다른 학습 언어용 앱들은 각자 별도의 방침을 가집니다. 서로를 대체하지 않아요.</span>
+      <span class="i18n-km">«ជប៉ុនរាល់ថ្ងៃ» ជាកម្មវិធីដាច់ដោយឡែក កម្មវិធីសម្រាប់ភាសាគោលដៅផ្សេងទៀតមានគោលការណ៍ដាច់ដោយឡែកគ្នា មិនជំនួសគ្នាទេ។</span>
+      <span class="i18n-lo">«ຍີ່ປຸ່ນປະຈຳວັນ» ເປັນແອັບອິດສະຫຼະ ແອັບສຳລັບພາສາເປົ້າໝາຍອື່ນໆມີນະໂຍບາຍຂອງຕົນເອງ ບໍ່ແທນກັນ.</span>
     </li>
   </ul>
 
   <p class="note">
     <span class="i18n-zh">本政策描述的是<strong>当前版本 App 的实际行为</strong>，而不是对将来版本的承诺。功能范围若有变化，本页面会随之更新。</span>
+    <span class="i18n-zh-Hant">本政策描述的是<strong>目前版本 App 的實際行為</strong>，而不是對將來版本的承諾。功能範圍若有變化，本頁面會隨之更新。</span>
     <span class="i18n-en">This policy describes the <strong>actual behaviour of the current app version</strong>, not a commitment about future versions. If the feature set changes, this page will be updated accordingly.</span>
+    <span class="i18n-vi">Chính sách này mô tả <strong>hành vi thực tế của phiên bản ứng dụng hiện tại</strong>, không phải cam kết cho các phiên bản tương lai. Nếu phạm vi tính năng thay đổi, trang này sẽ được cập nhật theo.</span>
+    <span class="i18n-ja">本ポリシーは<strong>現在のアプリバージョンの実際の動作</strong>を説明するものであり、将来のバージョンへの約束ではありません。機能範囲が変われば、本ページも更新されます。</span>
+    <span class="i18n-ko">이 방침은 <strong>현재 앱 버전의 실제 동작</strong>을 설명하는 것이며, 미래 버전에 대한 약속이 아닙니다. 기능 범위가 바뀌면 이 페이지도 함께 업데이트돼요.</span>
+    <span class="i18n-km">គោលការណ៍នេះពណ៌នា <strong>ឥរិយាបថពិតប្រាកដរបស់កំណែកម្មវិធីបច្ចុប្បន្ន</strong> មិនមែនជាការសន្យាចំពោះកំណែនាពេលអនាគតទេ។ បើវិសាលភាពមុខងារផ្លាស់ប្តូរ ទំព័រនេះនឹងធ្វើបច្ចុប្បន្នភាពតាម។</span>
+    <span class="i18n-lo">ນະໂຍບາຍນີ້ອະທິບາຍ <strong>ພຶດຕິກຳຕົວຈິງຂອງເວີຊັນແອັບປັດຈຸບັນ</strong> ບໍ່ແມ່ນຄຳໝັ້ນສັນຍາສຳລັບເວີຊັນໃນອະນາຄົດ. ຖ້າຂອບເຂດຟັງຊັນປ່ຽນ ໜ້ານີ້ຈະຖືກອັບເດດຕາມ.</span>
   </p>
 
 </main>
 
 <footer class="doc-foot">
   <span class="i18n-zh">每日日语（com.github.boybeak.daily.lang.ja）· 隐私政策</span>
-  <span class="i18n-en">Daily Japanese (com.github.boybeak.daily.lang.ja) · Privacy Policy</span><br>
+  <span class="i18n-zh-Hant">每日日語（com.github.boybeak.daily.lang.ja）· 隱私權政策</span>
+  <span class="i18n-en">Daily Japanese (com.github.boybeak.daily.lang.ja) · Privacy Policy</span>
+  <span class="i18n-vi">Tiếng Nhật mỗi ngày (com.github.boybeak.daily.lang.ja) · Chính sách quyền riêng tư</span>
+  <span class="i18n-ja">毎日の日本語（com.github.boybeak.daily.lang.ja）· プライバシーポリシー</span>
+  <span class="i18n-ko">매일 일본어 (com.github.boybeak.daily.lang.ja) · 개인정보 처리방침</span>
+  <span class="i18n-km">ជប៉ុនរាល់ថ្ងៃ (com.github.boybeak.daily.lang.ja) · គោលការណ៍ភាពឯកជន</span>
+  <span class="i18n-lo">ຍີ່ປຸ່ນປະຈຳວັນ (com.github.boybeak.daily.lang.ja) · ນະໂຍບາຍຄວາມເປັນສ່ວນຕົວ</span><br>
   <span class="i18n-zh">联系方式：<span class="fill">boybeak@gmail.com</span></span>
+  <span class="i18n-zh-Hant">聯絡方式：<span class="fill">boybeak@gmail.com</span></span>
   <span class="i18n-en">Contact: <span class="fill">boybeak@gmail.com</span></span>
+  <span class="i18n-vi">Liên hệ: <span class="fill">boybeak@gmail.com</span></span>
+  <span class="i18n-ja">連絡先：<span class="fill">boybeak@gmail.com</span></span>
+  <span class="i18n-ko">연락처: <span class="fill">boybeak@gmail.com</span></span>
+  <span class="i18n-km">ទំនាក់ទំនង៖ <span class="fill">boybeak@gmail.com</span></span>
+  <span class="i18n-lo">ຕິດຕໍ່: <span class="fill">boybeak@gmail.com</span></span>
 </footer>
 
 <script src="../../assets/site.js"></script>

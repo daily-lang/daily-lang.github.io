@@ -1,7 +1,13 @@
 <!DOCTYPE html>
 <html lang="zh-Hans" data-lang="zh-Hans"
       data-title-zh="每日越南语 · DailyLang"
-      data-title-en="Daily Viet · DailyLang">
+      data-title-zh-Hant="每日越南語 · DailyLang"
+      data-title-en="Daily Viet · DailyLang"
+      data-title-vi="Tiếng Việt mỗi ngày · DailyLang"
+      data-title-ja="毎日のベトナム語 · DailyLang"
+      data-title-ko="매일 베트남어 · DailyLang"
+      data-title-km="វៀតណាមរាល់ថ្ងៃ · DailyLang"
+      data-title-lo="ຫວຽດນາມປະຈຳວັນ · DailyLang">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -9,7 +15,7 @@
 <link rel="alternate icon" href="../assets/favicon.png" type="image/png">
 <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
 <title>每日越南语 · DailyLang</title>
-<meta name="description" content="每日越南语（Daily Viet）：用「听 → 读」的短练习学越南语。六声调发音专项、课后小测与错题回顾，界面支持简体中文、繁体中文、英文、高棉语、老挝语、日语与韩语。无需注册账号，进度只存本机。">
+<meta name="description" content="每日越南语（Daily Viet）：用「听 → 读」的短练习学越南语。六声调发音专项、课后小测与错题回顾，界面支持简体中文、繁体中文、英文、越南语、高棉语、老挝语、日语与韩语。无需注册账号，进度只存本机。">
 <link rel="stylesheet" href="../assets/site.css">
 <!--
   ==========================================================================
@@ -26,7 +32,8 @@
        「即将上线」占位；AppGallery 链接为官方 App Linking 形式
        https://appgallery.huawei.com/app/detail?id={包名}（设备端拉起应用市场）；
        iOS 上架后把占位按钮替换为 App Store 链接并补图标；
-    3. 正文中成对写 .i18n-zh / .i18n-en，由 assets/site.js 切换；
+    3. 正文按语言写 .i18n-zh / .i18n-zh-Hant / .i18n-en / .i18n-vi / .i18n-ja /
+       .i18n-ko / .i18n-km / .i18n-lo 八份节点，由 assets/site.js + 顶栏下拉切换；
     4. 「预览」区块的运行时截图存放在 assets/shot-vi-*.png（540px 宽，App 简体中文 +
        浅色模式实拍）；App 界面大改后重拍替换同名文件即可，无需改本页。
   ==========================================================================
@@ -46,9 +53,17 @@
   <!-- ===== 顶栏：返回首页 + 语言切换 ===== -->
   <header class="topbar">
     <a class="crumb" href="../">‹ DailyLang</a>
-    <div class="langswitch" role="group" aria-label="语言 / Language">
-      <button type="button" data-set-lang="zh-Hans" class="on">简体中文</button>
-      <button type="button" data-set-lang="en">English</button>
+    <div class="langswitch">
+      <select data-lang-select aria-label="语言 / Language">
+        <option value="zh-Hans">简体中文</option>
+        <option value="zh-Hant">繁體中文</option>
+        <option value="en">English</option>
+        <option value="vi">Tiếng Việt</option>
+        <option value="ja">日本語</option>
+        <option value="ko">한국어</option>
+        <option value="km">ខ្មែរ</option>
+        <option value="lo">ລາວ</option>
+      </select>
     </div>
   </header>
 
@@ -61,10 +76,22 @@
         <div class="app-hero__title">
           <h1>
             <span class="i18n-zh">每日越南语</span>
+            <span class="i18n-zh-Hant">每日越南語</span>
             <span class="i18n-en">Daily Viet</span>
+            <span class="i18n-vi">Tiếng Việt mỗi ngày</span>
+            <span class="i18n-ja">毎日のベトナム語</span>
+            <span class="i18n-ko">매일 베트남어</span>
+            <span class="i18n-km">វៀតណាមរាល់ថ្ងៃ</span>
+            <span class="i18n-lo">ຫວຽດນາມປະຈຳວັນ</span>
             <span class="badge badge--live">
               <span class="i18n-zh">已上线</span>
+              <span class="i18n-zh-Hant">已上線</span>
               <span class="i18n-en">Available</span>
+              <span class="i18n-vi">Đã ra mắt</span>
+              <span class="i18n-ja">リリース中</span>
+              <span class="i18n-ko">출시됨</span>
+              <span class="i18n-km">ដាក់ឲ្យប្រើហើយ</span>
+              <span class="i18n-lo">ເປີດໃຫ້ໃຊ້ແລ້ວ</span>
             </span>
           </h1>
           <p class="native">Tiếng Việt mỗi ngày</p>
@@ -72,26 +99,59 @@
       </div>
       <p class="tagline">
         <span class="i18n-zh">每天几分钟，听读练习越南语。</span>
+        <span class="i18n-zh-Hant">每天幾分鐘，聽讀練習越南語。</span>
         <span class="i18n-en">A few minutes a day of listen-and-read practice for Vietnamese.</span>
+        <span class="i18n-vi">Mỗi ngày vài phút, luyện nghe đọc tiếng Việt.</span>
+        <span class="i18n-ja">毎日数分、ベトナム語の聴読練習。</span>
+        <span class="i18n-ko">하루 몇 분, 베트남어 듣기·읽기 연습.</span>
+        <span class="i18n-km">រាល់ថ្ងៃប៉ុន្មាននាទី ហ្វឹកហាត់ស្តាប់-អានភាសាវៀតណាម។</span>
+        <span class="i18n-lo">ມື້ລະໆຈັກນາທີ ຝຶກຟັງ-ອ່ານພາສາຫວຽດນາມ.</span>
       </p>
       <div class="hero-cta app-hero__cta">
         <a class="store-btn" href="https://play.google.com/store/apps/details?id=com.github.boybeak.daily.lang.vi" target="_blank" rel="noopener">
           <img src="../assets/icon-google-play.png" alt="" aria-hidden="true" width="28" height="28">
           <span class="store-btn__text">
-            <span class="store-btn__caption"><span class="i18n-zh">立即下载</span><span class="i18n-en">GET IT ON</span></span>
+            <span class="store-btn__caption">
+              <span class="i18n-zh">立即下载</span>
+              <span class="i18n-zh-Hant">立即下載</span>
+              <span class="i18n-en">GET IT ON</span>
+              <span class="i18n-vi">TẢI NGAY</span>
+              <span class="i18n-ja">今すぐダウンロード</span>
+              <span class="i18n-ko">지금 다운로드</span>
+              <span class="i18n-km">ទាញយកឥឡូវនេះ</span>
+              <span class="i18n-lo">ດາວໂຫລດດຽວນີ້</span>
+            </span>
             <span class="store-btn__name">Google Play</span>
           </span>
         </a>
         <a class="store-btn" href="https://appgallery.huawei.com/app/detail?id=com.github.boybeak.daily.lang.vi" target="_blank" rel="noopener">
           <img src="../assets/icon-appgallery.png" alt="" aria-hidden="true" width="28" height="28">
           <span class="store-btn__text">
-            <span class="store-btn__caption"><span class="i18n-zh">立即下载</span><span class="i18n-en">GET IT ON</span></span>
+            <span class="store-btn__caption">
+              <span class="i18n-zh">立即下载</span>
+              <span class="i18n-zh-Hant">立即下載</span>
+              <span class="i18n-en">GET IT ON</span>
+              <span class="i18n-vi">TẢI NGAY</span>
+              <span class="i18n-ja">今すぐダウンロード</span>
+              <span class="i18n-ko">지금 다운로드</span>
+              <span class="i18n-km">ទាញយកឥឡូវនេះ</span>
+              <span class="i18n-lo">ດາວໂຫລດດຽວນີ້</span>
+            </span>
             <span class="store-btn__name">AppGallery</span>
           </span>
         </a>
         <span class="store-btn store-btn--soon">
           <span class="store-btn__text">
-            <span class="store-btn__caption"><span class="i18n-zh">即将上线</span><span class="i18n-en">COMING SOON</span></span>
+            <span class="store-btn__caption">
+              <span class="i18n-zh">即将上线</span>
+              <span class="i18n-zh-Hant">即將上線</span>
+              <span class="i18n-en">COMING SOON</span>
+              <span class="i18n-vi">SẮP RA MẮT</span>
+              <span class="i18n-ja">近日公開</span>
+              <span class="i18n-ko">출시 예정</span>
+              <span class="i18n-km">នឹងមកក្នុងពេលឆាប់ៗ</span>
+              <span class="i18n-lo">ຈະມາໃນບໍ່ດົນ</span>
+            </span>
             <span class="store-btn__name">iOS</span>
           </span>
         </span>
@@ -101,67 +161,175 @@
     <!-- ===== 事实速览 ===== -->
     <dl class="app-facts">
       <div>
-        <dt><span class="i18n-zh">目标语言</span><span class="i18n-en">Language</span></dt>
-        <dd><span class="i18n-zh">越南语（vi-VN）</span><span class="i18n-en">Vietnamese (vi-VN)</span></dd>
+        <dt>
+          <span class="i18n-zh">目标语言</span>
+          <span class="i18n-zh-Hant">目標語言</span>
+          <span class="i18n-en">Language</span>
+          <span class="i18n-vi">Ngôn ngữ mục tiêu</span>
+          <span class="i18n-ja">学習言語</span>
+          <span class="i18n-ko">학습 언어</span>
+          <span class="i18n-km">ភាសាគោលដៅ</span>
+          <span class="i18n-lo">ພາສາເປົ້າໝາຍ</span>
+        </dt>
+        <dd>
+          <span class="i18n-zh">越南语（vi-VN）</span>
+          <span class="i18n-zh-Hant">越南語（vi-VN）</span>
+          <span class="i18n-en">Vietnamese (vi-VN)</span>
+          <span class="i18n-vi">Tiếng Việt (vi-VN)</span>
+          <span class="i18n-ja">ベトナム語（vi-VN）</span>
+          <span class="i18n-ko">베트남어 (vi-VN)</span>
+          <span class="i18n-km">ភាសាវៀតណាម (vi-VN)</span>
+          <span class="i18n-lo">ພາສາຫວຽດນາມ (vi-VN)</span>
+        </dd>
       </div>
       <div>
-        <dt><span class="i18n-zh">平台</span><span class="i18n-en">Platforms</span></dt>
+        <dt>
+          <span class="i18n-zh">平台</span>
+          <span class="i18n-zh-Hant">平台</span>
+          <span class="i18n-en">Platforms</span>
+          <span class="i18n-vi">Nền tảng</span>
+          <span class="i18n-ja">プラットフォーム</span>
+          <span class="i18n-ko">플랫폼</span>
+          <span class="i18n-km">វេទិកា</span>
+          <span class="i18n-lo">ແພລດຟອມ</span>
+        </dt>
         <dd>Android · iOS · HarmonyOS</dd>
       </div>
       <div>
-        <dt><span class="i18n-zh">界面语言</span><span class="i18n-en">Interface</span></dt>
+        <dt>
+          <span class="i18n-zh">界面语言</span>
+          <span class="i18n-zh-Hant">介面語言</span>
+          <span class="i18n-en">Interface</span>
+          <span class="i18n-vi">Ngôn ngữ giao diện</span>
+          <span class="i18n-ja">表示言語</span>
+          <span class="i18n-ko">인터페이스 언어</span>
+          <span class="i18n-km">ភាសាក្នុងកម្មវិធី</span>
+          <span class="i18n-lo">ພາສາໃນແອັບ</span>
+        </dt>
         <dd>简体中文 · 繁体中文 · English · ខ្មែរ · ລາວ · 日本語 · 한국어</dd>
       </div>
       <div>
-        <dt><span class="i18n-zh">分类</span><span class="i18n-en">Category</span></dt>
-        <dd><span class="i18n-zh">教育</span><span class="i18n-en">Education</span></dd>
+        <dt>
+          <span class="i18n-zh">分类</span>
+          <span class="i18n-zh-Hant">分類</span>
+          <span class="i18n-en">Category</span>
+          <span class="i18n-vi">Thể loại</span>
+          <span class="i18n-ja">カテゴリー</span>
+          <span class="i18n-ko">카테고리</span>
+          <span class="i18n-km">ប្រភេទ</span>
+          <span class="i18n-lo">ໝວດ</span>
+        </dt>
+        <dd>
+          <span class="i18n-zh">教育</span>
+          <span class="i18n-zh-Hant">教育</span>
+          <span class="i18n-en">Education</span>
+          <span class="i18n-vi">Giáo dục</span>
+          <span class="i18n-ja">教育</span>
+          <span class="i18n-ko">교육</span>
+          <span class="i18n-km">អប់រំ</span>
+          <span class="i18n-lo">ການສຶກສາ</span>
+        </dd>
       </div>
     </dl>
 
     <!-- ===== 怎么学 ===== -->
     <h2 class="sec-title">
       <span class="i18n-zh">怎么学</span>
+      <span class="i18n-zh-Hant">怎麼學</span>
       <span class="i18n-en">HOW IT WORKS</span>
+      <span class="i18n-vi">CÁCH HỌC</span>
+      <span class="i18n-ja">学び方</span>
+      <span class="i18n-ko">학습 방법</span>
+      <span class="i18n-km">របៀបរៀន</span>
+      <span class="i18n-lo">ວິທີຮຽນ</span>
     </h2>
     <div class="feature-grid">
       <div class="feature-card">
         <h3>
           <span class="i18n-zh">「听 → 读」短练习</span>
+          <span class="i18n-zh-Hant">「聽 → 讀」短練習</span>
           <span class="i18n-en">Listen → read sessions</span>
+          <span class="i18n-vi">Buổi “nghe → đọc” ngắn</span>
+          <span class="i18n-ja">「聴く → 読む」短いセッション</span>
+          <span class="i18n-ko">‘듣기 → 읽기’ 짧은 세션</span>
+          <span class="i18n-km">វគ្គខ្លី “ស្តាប់ → អាន”</span>
+          <span class="i18n-lo">ບົດຝຶກສັ້ນ “ຟັງ → ອ່ານ”</span>
         </h3>
         <p>
           <span class="i18n-zh">每课按固定节奏推进：热身对话 → 词块 → 发音对比 → 例句 → 语法。一次练一点，句子都是日常里用得上的。</span>
+          <span class="i18n-zh-Hant">每課按固定節奏推進：熱身對話 → 詞塊 → 發音對比 → 例句 → 語法。一次練一點，句子都是日常裡用得上的。</span>
           <span class="i18n-en">Every lesson follows the same rhythm: warm-up dialogue → chunks → pronunciation contrast → sentences → grammar. A little at a time, with phrases you can actually use.</span>
+          <span class="i18n-vi">Mỗi bài đi theo nhịp cố định: hội thoại khởi động → khối từ → đối âm → câu ví dụ → ngữ pháp. Mỗi lần một chút, toàn câu dùng được trong đời thường.</span>
+          <span class="i18n-ja">レッスンは決まったリズムで進みます：ウォームアップ会話 → チャンク → 発音対比 → 例文 → 文法。1回に少しずつ、日常で使える文を。</span>
+          <span class="i18n-ko">레슨은 일정한 리듬으로 진행돼요: 워밍업 대화 → 청크 → 발음 대비 → 예문 → 문법. 한 번에 조금씩, 일상에서 쓰이는 문장으로.</span>
+          <span class="i18n-km">មេរៀននីមួយៗដើរតាមចង្វាក់ជាក់លាក់៖ ការសន្ទនាផ្តើម → ក្រុមពាក្យ → ការប្រៀបធៀបសំឡេង → ប្រយោគគំរូ → វេយ្យាករណ៍។ ម្តងបន្តិចៗ ទាំងអស់ជាប្រយោគប្រើក្នុងជីវិតប្រចាំថ្ងៃ។</span>
+          <span class="i18n-lo">ແຕ່ລະບົດດຳເນີນຕາມຈັງຫວະແນ່ນອນ: ບົດສົນທະນາອົບອຸ່ນ → ກຸ່ມຄຳສັບ → ການປຽບທຽບສຽງ → ປະໂຫຍກຕົວຢ່າງ → ໄວຍາກອນ. ເທື່ອລະໜ້ອຍ ທັງໝົດແມ່ນປະໂຫຍກທີ່ໃຊ້ໄດ້ໃນຊີວິດປະຈຳວັນ.</span>
         </p>
       </div>
       <div class="feature-card">
         <h3>
           <span class="i18n-zh">发音专项</span>
+          <span class="i18n-zh-Hant">發音專項</span>
           <span class="i18n-en">Pronunciation focus</span>
+          <span class="i18n-vi">Luyện phát âm</span>
+          <span class="i18n-ja">発音トレーニング</span>
+          <span class="i18n-ko">발음 집중 훈련</span>
+          <span class="i18n-km">ហ្វឹកហាត់ការបញ្ចេញសំឡេង</span>
+          <span class="i18n-lo">ຝຶກການອອກສຽງ</span>
         </h3>
         <p>
           <span class="i18n-zh">越南语六个声调逐组过关：每课一个焦点音，配上最小对比组，先听清差别，再开口模仿。</span>
+          <span class="i18n-zh-Hant">越南語六個聲調逐組過關：每課一個焦點音，配上最小對比組，先聽清差別，再開口模仿。</span>
           <span class="i18n-en">Work through the six Vietnamese tones group by group: one focus sound per lesson with minimal contrast pairs — hear the difference first, then say it aloud.</span>
+          <span class="i18n-vi">Sáu thanh điệu tiếng Việt được luyện từng nhóm: mỗi bài một âm trọng tâm với các cặp đối âm tối thiểu — nghe rõ khác biệt trước, rồi bắt chước.</span>
+          <span class="i18n-ja">ベトナム語の6声調をグループごとにクリア：レッスンごとに焦点音を1つ取り上げ、最小対比ペアで違いを聞き分けてから声に出して真似します。</span>
+          <span class="i18n-ko">베트남어 6성조를 그룹씩 통과해요: 레슨마다 초점 음 하나를 최소 대비 쌍과 함께 다루고, 차이를 먼저 듣고 따라 말해요.</span>
+          <span class="i18n-km">សំឡេងវៀតណាមទាំង៦យ៉ាង ហ្វឹកហាត់ម្តងមួយក្រុមៗ៖ មេរៀននីមួយមានសំឡេងផ្តោតមួយ ជាមួយគូប្រៀបធៀបតូចបំផុត ស្តាប់ភាពខុសគ្នាឱ្យច្បាស់សិន រួចធ្វើតាម។</span>
+          <span class="i18n-lo">ວອນທັງ ໖ ຂອງພາສາຫວຽດນາມ ຝຶກທີລະກຸ່ມ: ແຕ່ລະບົດມີສຽງໂຟກັສໜຶ່ງ ພ້ອມຄູ່ສຽງຄ້າຍກັນທີ່ສຸດ ຟັງຄວາມແຕກຕ່າງໃຫ້ຈະແຈ້ງກ່ອນ ແລ້ວອອກສຽງຕາມ.</span>
         </p>
       </div>
       <div class="feature-card">
         <h3>
           <span class="i18n-zh">课后小测</span>
+          <span class="i18n-zh-Hant">課後小測驗</span>
           <span class="i18n-en">Lesson quiz</span>
+          <span class="i18n-vi">Câu hỏi cuối bài</span>
+          <span class="i18n-ja">レッスンクイズ</span>
+          <span class="i18n-ko">레슨 퀴즈</span>
+          <span class="i18n-km">តេស្តចុងមេរៀន</span>
+          <span class="i18n-lo">ແບບທົດສອບທ້າຍບົດ</span>
         </h3>
         <p>
           <span class="i18n-zh">每课结束用小测检验听读；答错的句子集中列在一起，点一下就能重听。</span>
+          <span class="i18n-zh-Hant">每課結束用小測驗檢驗聽讀；答錯的句子集中列在一起，點一下就能重聽。</span>
           <span class="i18n-en">A short quiz checks your listening and reading at the end of each lesson. Missed items are listed together — tap one to hear it again.</span>
+          <span class="i18n-vi">Cuối mỗi bài có câu hỏi nhỏ kiểm tra nghe đọc; các câu làm sai được gom lại một chỗ, chạm một cái là nghe lại.</span>
+          <span class="i18n-ja">レッスンの最後にクイズで聴解と読解をチェック。間違えた文はまとめて表示され、タップすればもう一度聞けます。</span>
+          <span class="i18n-ko">레슨이 끝나면 짧은 퀴즈로 듣기·읽기를 확인해요. 틀린 문장은 한곳에 모아 보여주고, 탭하면 다시 들을 수 있어요.</span>
+          <span class="i18n-km">នៅចុងមេរៀនមានតេស្តតូចពិនិត្យការស្តាប់-អាន។ ប្រយោគឆ្លើយខុសត្រូវដាក់រួមគ្នា ចុចម្តងក៏ស្តាប់ឡើងវិញបាន។</span>
+          <span class="i18n-lo">ຈົບແຕ່ລະບົດມີແບບທົດສອບສັ້ນເພື່ອກວດຟັງ-ອ່ານ; ປະໂຫຍກທີ່ຕອບຜິດຈະຖືກລວມໄວ້ຮ່ວມກັນ ກົດໜຶ່ງຄັ້ງກໍຟັງຄືນໄດ້.</span>
         </p>
       </div>
       <div class="feature-card">
         <h3>
           <span class="i18n-zh">进度只存本机</span>
+          <span class="i18n-zh-Hant">進度只存本機</span>
           <span class="i18n-en">Progress stays on device</span>
+          <span class="i18n-vi">Tiến trình chỉ lưu trên máy</span>
+          <span class="i18n-ja">進捗は端末内だけ</span>
+          <span class="i18n-ko">진도는 기기에만 저장</span>
+          <span class="i18n-km">វឌ្ឍនភាពរក្សាទុកក្នុងឧបករណ៍តែប៉ុណ្ណោះ</span>
+          <span class="i18n-lo">ຄວາມຄືບໜ້າເກັບຢູ່ໃນເຄື່ອງສະເພາະ</span>
         </h3>
         <p>
           <span class="i18n-zh">不需要注册账号，学习进度与偏好保存在你自己的设备上；没有广告，也没有统计上报。</span>
+          <span class="i18n-zh-Hant">不需要註冊帳號，學習進度與偏好保存在你自己的設備上；沒有廣告，也沒有統計上報。</span>
           <span class="i18n-en">No account needed. Progress and preferences are stored on your own device — no ads, no analytics.</span>
+          <span class="i18n-vi">Không cần đăng ký tài khoản. Tiến trình và tùy chỉnh được lưu trên thiết bị của bạn — không quảng cáo, không thu thập số liệu.</span>
+          <span class="i18n-ja">アカウント登録不要。学習の進捗と設定はあなたの端末内に保存されます。広告も統計送信もありません。</span>
+          <span class="i18n-ko">계정 등록이 필요 없어요. 학습 진도와 설정은 내 기기에만 저장됩니다. 광고도 통계 수집도 없어요.</span>
+          <span class="i18n-km">មិនត្រូវការចុះឈ្មោះ។ វឌ្ឍនភាពនិងចំណង់ចំណូលចិត្តរក្សាទុកក្នុងឧបករណ៍របស់អ្នក គ្មានពាណិជ្ជកម្ម គ្មានការបញ្ជូនទិន្នន័យ។</span>
+          <span class="i18n-lo">ບໍ່ຕ້ອງລົງທະບຽນບັນຊີ. ຄວາມຄືບໜ້າແລະການຕັ້ງຄ່າເກັບຢູ່ໃນເຄື່ອງຂອງເຈົ້າ ບໍ່ມີໂຄສະນາ ບໍ່ມີການສົ່ງຂໍ້ມູນ.</span>
         </p>
       </div>
     </div>
@@ -169,42 +337,78 @@
     <!-- ===== 运行时截图 ===== -->
     <h2 class="sec-title">
       <span class="i18n-zh">预览</span>
+      <span class="i18n-zh-Hant">預覽</span>
       <span class="i18n-en">PREVIEW</span>
+      <span class="i18n-vi">XEM TRƯỚC</span>
+      <span class="i18n-ja">プレビュー</span>
+      <span class="i18n-ko">미리보기</span>
+      <span class="i18n-km">ការមើលជាមុន</span>
+      <span class="i18n-lo">ເບິ່ງກ່ອນ</span>
     </h2>
     <div class="shot-strip">
       <figure class="shot">
         <img src="../assets/shot-vi-home.png" alt="每日越南语首页：今日续学与课程列表" loading="lazy">
         <figcaption>
           <span class="i18n-zh">首页 · 课程列表</span>
+          <span class="i18n-zh-Hant">首頁 · 課程列表</span>
           <span class="i18n-en">Home · course list</span>
+          <span class="i18n-vi">Trang chủ · danh sách bài học</span>
+          <span class="i18n-ja">ホーム · レッスン一覧</span>
+          <span class="i18n-ko">홈 · 레슨 목록</span>
+          <span class="i18n-km">ទំព័រដើម · បញ្ជីមេរៀន</span>
+          <span class="i18n-lo">ໜ້າຫຼັກ · ລາຍການບົດຮຽນ</span>
         </figcaption>
       </figure>
       <figure class="shot">
         <img src="../assets/shot-vi-lessons.png" alt="入门课程目录：单元与课时" loading="lazy">
         <figcaption>
           <span class="i18n-zh">课程目录</span>
+          <span class="i18n-zh-Hant">課程目錄</span>
           <span class="i18n-en">Course catalogue</span>
+          <span class="i18n-vi">Mục lục khóa học</span>
+          <span class="i18n-ja">コース目次</span>
+          <span class="i18n-ko">코스 목록</span>
+          <span class="i18n-km">បញ្ជីវគ្គសិក្សា</span>
+          <span class="i18n-lo">ລາຍການຫຼັກສູດ</span>
         </figcaption>
       </figure>
       <figure class="shot">
         <img src="../assets/shot-vi-lesson.png" alt="课程概览：热身对话、单词块、发音块等环节" loading="lazy">
         <figcaption>
           <span class="i18n-zh">课程概览</span>
+          <span class="i18n-zh-Hant">課程概覽</span>
           <span class="i18n-en">Lesson overview</span>
+          <span class="i18n-vi">Tổng quan bài học</span>
+          <span class="i18n-ja">レッスン概要</span>
+          <span class="i18n-ko">레슨 개요</span>
+          <span class="i18n-km">ទិដ្ឋភាពទូទៅមេរៀន</span>
+          <span class="i18n-lo">ພາບລວມບົດຮຽນ</span>
         </figcaption>
       </figure>
       <figure class="shot">
         <img src="../assets/shot-vi-practice.png" alt="听读练习：越南语句子、音标与中文释义" loading="lazy">
         <figcaption>
           <span class="i18n-zh">听读练习</span>
+          <span class="i18n-zh-Hant">聽讀練習</span>
           <span class="i18n-en">Listen-and-read session</span>
+          <span class="i18n-vi">Luyện nghe đọc</span>
+          <span class="i18n-ja">聴読セッション</span>
+          <span class="i18n-ko">듣기·읽기 연습</span>
+          <span class="i18n-km">ការហ្វឹកហាត់ស្តាប់-អាន</span>
+          <span class="i18n-lo">ຝຶກຟັງ-ອ່ານ</span>
         </figcaption>
       </figure>
       <figure class="shot">
         <img src="../assets/shot-vi-quiz.png" alt="课后小测：选择题" loading="lazy">
         <figcaption>
           <span class="i18n-zh">课后小测</span>
+          <span class="i18n-zh-Hant">課後小測驗</span>
           <span class="i18n-en">Lesson quiz</span>
+          <span class="i18n-vi">Câu hỏi cuối bài</span>
+          <span class="i18n-ja">レッスンクイズ</span>
+          <span class="i18n-ko">레슨 퀴즈</span>
+          <span class="i18n-km">តេស្តចុងមេរៀន</span>
+          <span class="i18n-lo">ແບບທົດສອບທ້າຍບົດ</span>
         </figcaption>
       </figure>
     </div>
@@ -212,82 +416,205 @@
     <!-- ===== 课程 ===== -->
     <h2 class="sec-title">
       <span class="i18n-zh">课程</span>
+      <span class="i18n-zh-Hant">課程</span>
       <span class="i18n-en">COURSES</span>
+      <span class="i18n-vi">KHÓA HỌC</span>
+      <span class="i18n-ja">コース</span>
+      <span class="i18n-ko">코스</span>
+      <span class="i18n-km">វគ្គសិក្សា</span>
+      <span class="i18n-lo">ຫຼັກສູດ</span>
     </h2>
     <div class="course">
       <h3>
         <span class="i18n-zh">越南语入门</span>
+        <span class="i18n-zh-Hant">越南語入門</span>
         <span class="i18n-en">Getting Started</span>
+        <span class="i18n-vi">Tiếng Việt nhập môn</span>
+        <span class="i18n-ja">ベトナム語入門</span>
+        <span class="i18n-ko">베트남어 입문</span>
+        <span class="i18n-km">ចាប់ផ្តើមភាសាវៀតណាម</span>
+        <span class="i18n-lo">ເລີ່ມຕົ້ນພາສາຫວຽດນາມ</span>
       </h3>
       <span class="course__meta">
         <span class="i18n-zh">7 个单元 · 零基础起步</span>
+        <span class="i18n-zh-Hant">7 個單元 · 零基礎起步</span>
         <span class="i18n-en">7 units · for absolute beginners</span>
+        <span class="i18n-vi">7 đơn vị · dành cho người mới bắt đầu</span>
+        <span class="i18n-ja">7ユニット · まったくの初心者向け</span>
+        <span class="i18n-ko">7개 유닛 · 완전 초보자용</span>
+        <span class="i18n-km">៧ឯកតា · សម្រាប់អ្នកចាប់ផ្តើមដំបូង</span>
+        <span class="i18n-lo">7ໜ່ວຍ · ສຳລັບຜູ້ເລີ່ມຕົ້ນ</span>
       </span>
       <span class="badge badge--free">
         <span class="i18n-zh">免费</span>
+        <span class="i18n-zh-Hant">免費</span>
         <span class="i18n-en">Free</span>
+        <span class="i18n-vi">Miễn phí</span>
+        <span class="i18n-ja">無料</span>
+        <span class="i18n-ko">무료</span>
+        <span class="i18n-km">ឥតគិតថ្លៃ</span>
+        <span class="i18n-lo">ຟຣີ</span>
       </span>
     </div>
     <div class="course">
       <h3>
         <span class="i18n-zh">初级越南语</span>
+        <span class="i18n-zh-Hant">初級越南語</span>
         <span class="i18n-en">Beginner Vietnamese</span>
+        <span class="i18n-vi">Tiếng Việt sơ cấp</span>
+        <span class="i18n-ja">初級ベトナム語</span>
+        <span class="i18n-ko">초급 베트남어</span>
+        <span class="i18n-km">ភាសាវៀតណាមជាន់ទាប</span>
+        <span class="i18n-lo">ພາສາຫວຽດນາມລະດັບຕົ້ນ</span>
       </h3>
       <span class="course__meta">
         <span class="i18n-zh">6 个单元 · 日常场景</span>
+        <span class="i18n-zh-Hant">6 個單元 · 日常場景</span>
         <span class="i18n-en">6 units · everyday situations</span>
+        <span class="i18n-vi">6 đơn vị · tình huống hằng ngày</span>
+        <span class="i18n-ja">6ユニット · 日常の場面</span>
+        <span class="i18n-ko">6개 유닛 · 일상 상황</span>
+        <span class="i18n-km">៦ឯកតា · ស្ថានភាពប្រចាំថ្ងៃ</span>
+        <span class="i18n-lo">6ໜ່ວຍ · ສະຖານະການປະຈຳວັນ</span>
       </span>
       <span class="badge badge--free">
         <span class="i18n-zh">免费</span>
+        <span class="i18n-zh-Hant">免費</span>
         <span class="i18n-en">Free</span>
+        <span class="i18n-vi">Miễn phí</span>
+        <span class="i18n-ja">無料</span>
+        <span class="i18n-ko">무료</span>
+        <span class="i18n-km">ឥតគិតថ្លៃ</span>
+        <span class="i18n-lo">ຟຣີ</span>
       </span>
     </div>
     <div class="course">
       <h3>
         <span class="i18n-zh">越南语进阶</span>
+        <span class="i18n-zh-Hant">越南語進階</span>
         <span class="i18n-en">Intermediate Vietnamese</span>
+        <span class="i18n-vi">Tiếng Việt trung cấp</span>
+        <span class="i18n-ja">中級ベトナム語</span>
+        <span class="i18n-ko">중급 베트남어</span>
+        <span class="i18n-km">ភាសាវៀតណាមជាន់ខ្ពស់</span>
+        <span class="i18n-lo">ພາສາຫວຽດນາມລະດັບກາງ</span>
       </h3>
       <span class="course__meta">
         <span class="i18n-zh">6 个单元 · 前 2 个单元免费学习</span>
+        <span class="i18n-zh-Hant">6 個單元 · 前 2 個單元免費學習</span>
         <span class="i18n-en">6 units · first 2 units are free</span>
+        <span class="i18n-vi">6 đơn vị · 2 đơn vị đầu miễn phí</span>
+        <span class="i18n-ja">6ユニット · 最初の2ユニットは無料</span>
+        <span class="i18n-ko">6개 유닛 · 처음 2개 유닛은 무료</span>
+        <span class="i18n-km">៦ឯកតា · ២ឯកតាដំបូងរៀនឥតគិតថ្លៃ</span>
+        <span class="i18n-lo">6ໜ່ວຍ · 2ໜ່ວຍທຳອິດຮຽນຟຣີ</span>
       </span>
       <span class="badge badge--iap">
         <span class="i18n-zh">一次性内购解锁</span>
+        <span class="i18n-zh-Hant">一次性內購解鎖</span>
         <span class="i18n-en">One-time purchase</span>
+        <span class="i18n-vi">Mở khóa bằng mua trong ứng dụng</span>
+        <span class="i18n-ja">買い切りで解放</span>
+        <span class="i18n-ko">일회성 구매로 잠금 해제</span>
+        <span class="i18n-km">ដោះសោដោយទិញម្តងចប់</span>
+        <span class="i18n-lo">ປົດລັອກດ້ວຍການຊື້ຄັ້ງດຽວ</span>
       </span>
     </div>
 
     <!-- ===== 隐私 ===== -->
     <h2 class="sec-title">
       <span class="i18n-zh">隐私</span>
+      <span class="i18n-zh-Hant">隱私</span>
       <span class="i18n-en">PRIVACY</span>
+      <span class="i18n-vi">QUYỀN RIÊNG TƯ</span>
+      <span class="i18n-ja">プライバシー</span>
+      <span class="i18n-ko">개인정보</span>
+      <span class="i18n-km">ភាពឯកជន</span>
+      <span class="i18n-lo">ຄວາມເປັນສ່ວນຕົວ</span>
     </h2>
     <div class="privacy-box">
       <p>
         <span class="i18n-zh">一句话：这个 App 不收集你的个人信息，也不需要注册账号。</span>
+        <span class="i18n-zh-Hant">一句話：這個 App 不收集你的個人資訊，也不需要註冊帳號。</span>
         <span class="i18n-en">In one sentence: this app does not collect personal information, and no account is required.</span>
+        <span class="i18n-vi">Tóm lại: ứng dụng này không thu thập thông tin cá nhân của bạn và không cần đăng ký tài khoản.</span>
+        <span class="i18n-ja">ひとことで：このアプリは個人情報を収集せず、アカウント登録も不要です。</span>
+        <span class="i18n-ko">한마디로: 이 앱은 개인정보를 수집하지 않고 계정 등록도 필요 없어요.</span>
+        <span class="i18n-km">ខ្លីៗ៖ កម្មវិធីនេះមិនប្រមូលព័ត៌មានផ្ទាល់ខ្លួនរបស់អ្នក ហើយក៏មិនត្រូវការចុះឈ្មោះដែរ។</span>
+        <span class="i18n-lo">ໂດຍຫຍໍ້: ແອັບນີ້ບໍ່ເກັບກຳຂໍ້ມູນສ່ວນຕົວຂອງເຈົ້າ ແລະ ບໍ່ຕ້ອງລົງທະບຽນບັນຊີ.</span>
       </p>
       <ul>
         <li>
-          <strong><span class="i18n-zh">不录音。</span><span class="i18n-en">No recording.</span></strong>
+          <strong>
+            <span class="i18n-zh">不录音。</span>
+            <span class="i18n-zh-Hant">不錄音。</span>
+            <span class="i18n-en">No recording.</span>
+            <span class="i18n-vi">Không ghi âm.</span>
+            <span class="i18n-ja">録音しません。</span>
+            <span class="i18n-ko">녹음하지 않아요.</span>
+            <span class="i18n-km">មិនថតសំឡេង។</span>
+            <span class="i18n-lo">ບໍ່ອັດສຽງ.</span>
+          </strong>
           <span class="i18n-zh">听读练习只播放音频，不会打开麦克风、不会采集你的声音。</span>
+          <span class="i18n-zh-Hant">聽讀練習只播放音訊，不會打開麥克風、不會採集你的聲音。</span>
           <span class="i18n-en">Sessions only play audio; the microphone is never used and your voice is never captured.</span>
+          <span class="i18n-vi">Buổi luyện tập chỉ phát âm thanh; không bao giờ dùng micro hay ghi lại giọng nói của bạn.</span>
+          <span class="i18n-ja">セッションは音声の再生のみ。マイクは一切使わず、声を収録することもありません。</span>
+          <span class="i18n-ko">세션은 오디오 재생만 해요. 마이크를 쓰지 않고 목소리를 수집하지도 않아요.</span>
+          <span class="i18n-km">វគ្គហ្វឹកហាត់ត្រូវលេងសំឡេងតែប៉ុណ្ណោះ មិនបើកមីក្រូហ្វូន ហើយមិនប្រមូលសំឡេងរបស់អ្នកទេ។</span>
+          <span class="i18n-lo">ບົດຝຶກເປີດສຽງສະເພາະ ບໍ່ເປີດໄມໂຄຣ ບໍ່ເກັບສຽງຂອງເຈົ້າ.</span>
         </li>
         <li>
-          <strong><span class="i18n-zh">不上传。</span><span class="i18n-en">No uploads.</span></strong>
+          <strong>
+            <span class="i18n-zh">不上传。</span>
+            <span class="i18n-zh-Hant">不上傳。</span>
+            <span class="i18n-en">No uploads.</span>
+            <span class="i18n-vi">Không tải lên.</span>
+            <span class="i18n-ja">アップロードしません。</span>
+            <span class="i18n-ko">업로드하지 않아요.</span>
+            <span class="i18n-km">មិនបញ្ជូនឡើង។</span>
+            <span class="i18n-lo">ບໍ່ອັບໂຫລດ.</span>
+          </strong>
           <span class="i18n-zh">学习进度与做题记录只保存在你自己的设备上。</span>
+          <span class="i18n-zh-Hant">學習進度與做題記錄只保存在你自己的設備上。</span>
           <span class="i18n-en">Progress and quiz results are stored only on your own device.</span>
+          <span class="i18n-vi">Tiến trình học và kết quả câu hỏi chỉ được lưu trên thiết bị của bạn.</span>
+          <span class="i18n-ja">学習の進捗とクイズの結果はあなたの端末内にのみ保存されます。</span>
+          <span class="i18n-ko">학습 진도와 퀴즈 결과는 내 기기에만 저장돼요.</span>
+          <span class="i18n-km">វឌ្ឍនភាពសិក្សានិងលទ្ធផលតេស្តរក្សាទុកតែក្នុងឧបករណ៍របស់អ្នកប៉ុណ្ណោះ។</span>
+          <span class="i18n-lo">ຄວາມຄືບໜ້າແລະຜົນແບບທົດສອບເກັບຢູ່ໃນເຄື່ອງຂອງເຈົ້າສະເພາະ.</span>
         </li>
         <li>
-          <strong><span class="i18n-zh">不共享。</span><span class="i18n-en">No sharing.</span></strong>
+          <strong>
+            <span class="i18n-zh">不共享。</span>
+            <span class="i18n-zh-Hant">不共享。</span>
+            <span class="i18n-en">No sharing.</span>
+            <span class="i18n-vi">Không chia sẻ.</span>
+            <span class="i18n-ja">共有しません。</span>
+            <span class="i18n-ko">공유하지 않아요.</span>
+            <span class="i18n-km">មិនចែករំលែក។</span>
+            <span class="i18n-lo">ບໍ່ແບ່ງປັນ.</span>
+          </strong>
           <span class="i18n-zh">没有广告、没有统计 SDK、没有第三方拿到你的数据。</span>
+          <span class="i18n-zh-Hant">沒有廣告、沒有統計 SDK、沒有第三方拿到你的資料。</span>
           <span class="i18n-en">No ads, no analytics SDKs, no third party ever receives your data.</span>
+          <span class="i18n-vi">Không quảng cáo, không SDK thống kê, không bên thứ ba nào nhận dữ liệu của bạn.</span>
+          <span class="i18n-ja">広告も統計SDKもなく、第三者があなたのデータを受け取ることはありません。</span>
+          <span class="i18n-ko">광고도 통계 SDK도 없고, 제3자가 데이터를 받는 일도 없어요.</span>
+          <span class="i18n-km">គ្មានពាណិជ្ជកម្ម គ្មាន SDK ស្ថិតិ ហើយគ្មានភាគីទីបីណាមួយទទួលបានទិន្នន័យរបស់អ្នក។</span>
+          <span class="i18n-lo">ບໍ່ມີໂຄສະນາ ບໍ່ມີ SDK ສະຖິຕິ ບໍ່ມີພາກສ່ວນທີສາມໄດ້ຮັບຂໍ້ມູນຂອງເຈົ້າ.</span>
         </li>
       </ul>
       <p class="more">
         <a href="privacy/">
           <span class="i18n-zh">查看完整隐私政策 →</span>
+          <span class="i18n-zh-Hant">查看完整隱私權政策 →</span>
           <span class="i18n-en">View the full privacy policy →</span>
+          <span class="i18n-vi">Xem toàn bộ chính sách quyền riêng tư →</span>
+          <span class="i18n-ja">プライバシーポリシー全文を見る →</span>
+          <span class="i18n-ko">전체 개인정보 처리방침 보기 →</span>
+          <span class="i18n-km">មើលគោលការណ៍ភាពឯកជនពេញលេញ →</span>
+          <span class="i18n-lo">ເບິ່ງນະໂຍບາຍຄວາມເປັນສ່ວນຕົວເຕັມ →</span>
         </a>
       </p>
     </div>
@@ -296,7 +623,16 @@
 
   <footer class="foot">
     <span>© 2026 DailyLang</span>
-    <span><a href="../"><span class="i18n-zh">返回首页</span><span class="i18n-en">Back to home</span></a></span>
+    <span><a href="../">
+      <span class="i18n-zh">返回首页</span>
+      <span class="i18n-zh-Hant">返回首頁</span>
+      <span class="i18n-en">Back to home</span>
+      <span class="i18n-vi">Về trang chủ</span>
+      <span class="i18n-ja">ホームへ戻る</span>
+      <span class="i18n-ko">홈으로 돌아가기</span>
+      <span class="i18n-km">ត្រឡប់ទៅទំព័រដើម</span>
+      <span class="i18n-lo">ກັບໄປໜ້າຫຼັກ</span>
+    </a></span>
   </footer>
 
 </div>

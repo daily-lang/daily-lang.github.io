@@ -1,7 +1,13 @@
 <!DOCTYPE html>
 <html lang="zh-Hans" data-lang="zh-Hans"
       data-title-zh="每日越南语 · 隐私政策"
-      data-title-en="Daily Viet · Privacy Policy">
+      data-title-zh-Hant="每日越南語 · 隱私權政策"
+      data-title-en="Daily Viet · Privacy Policy"
+      data-title-vi="Tiếng Việt mỗi ngày · Chính sách quyền riêng tư"
+      data-title-ja="毎日のベトナム語 · プライバシーポリシー"
+      data-title-ko="매일 베트남어 · 개인정보 처리방침"
+      data-title-km="វៀតណាមរាល់ថ្ងៃ · គោលការណ៍ភាពឯកជន"
+      data-title-lo="ຫວຽດນາມປະຈຳວັນ · ນະໂຍບາຍຄວາມເປັນສ່ວນຕົວ">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -27,6 +33,9 @@
          appConfig/vi/store/store-info.json 的 privacyPolicyUrl(s)。
   - 源草稿：appConfig/vi/store/privacy-policy.md（与本页保持同一口径）。
   - 每日泰语（appId: th）为独立 App，另有独立政策，互不替代。
+  - 页面框架（导航/说明/页脚）按语言写 .i18n-zh / .i18n-zh-Hant / .i18n-en / .i18n-vi /
+    .i18n-ja / .i18n-ko / .i18n-km / .i18n-lo 八份节点，由 assets/site.js + 下拉切换；
+    正文各语言文件的入口在「版本条目」的语言标签里。
   ==========================================================================
 -->
 <!-- Google tag (gtag.js) -->
@@ -43,33 +52,72 @@
 
   <nav class="doc-nav">
     <a class="doc-nav__crumb" href="../../">DailyLang</a>
-    <div class="langswitch" role="group" aria-label="语言 / Language">
-      <button type="button" data-set-lang="zh-Hans" class="on">简体中文</button>
-      <button type="button" data-set-lang="en">English</button>
-      <a href="v1.0.0/ja.html" hreflang="ja">日本語</a>
-      <a href="v1.0.0/ko.html" hreflang="ko">한국어</a>
+    <div class="langswitch">
+      <select data-lang-select aria-label="语言 / Language">
+        <option value="zh-Hans">简体中文</option>
+        <option value="zh-Hant">繁體中文</option>
+        <option value="en">English</option>
+        <option value="vi">Tiếng Việt</option>
+        <option value="ja">日本語</option>
+        <option value="ko">한국어</option>
+        <option value="km">ខ្មែរ</option>
+        <option value="lo">ລາວ</option>
+      </select>
     </div>
   </nav>
 
   <header>
     <h1>
       <span class="app i18n-zh">每日越南语</span>
+      <span class="app i18n-zh-Hant">每日越南語</span>
       <span class="app i18n-en">Daily Viet</span>
+      <span class="app i18n-vi">Tiếng Việt mỗi ngày</span>
+      <span class="app i18n-ja">毎日のベトナム語</span>
+      <span class="app i18n-ko">매일 베트남어</span>
+      <span class="app i18n-km">វៀតណាមរាល់ថ្ងៃ</span>
+      <span class="app i18n-lo">ຫວຽດນາມປະຈຳວັນ</span>
       <span class="i18n-zh"> · 隐私政策</span>
+      <span class="i18n-zh-Hant"> · 隱私權政策</span>
       <span class="i18n-en"> · Privacy Policy</span>
+      <span class="i18n-vi"> · Chính sách quyền riêng tư</span>
+      <span class="i18n-ja"> · プライバシーポリシー</span>
+      <span class="i18n-ko"> · 개인정보 처리방침</span>
+      <span class="i18n-km"> · គោលការណ៍ភាពឯកជន</span>
+      <span class="i18n-lo"> · ນະໂຍບາຍຄວາມເປັນສ່ວນຕົວ</span>
     </h1>
     <p class="meta">
       <span class="i18n-zh">适用于 Android / iOS / HarmonyOS 版「每日越南语」（包名 <code>com.github.boybeak.daily.lang.vi</code>）</span>
+      <span class="i18n-zh-Hant">適用於 Android / iOS / HarmonyOS 版「每日越南語」（套件名稱 <code>com.github.boybeak.daily.lang.vi</code>）</span>
       <span class="i18n-en">For the Android / iOS / HarmonyOS versions of “Daily Viet” (package name <code>com.github.boybeak.daily.lang.vi</code>)</span>
+      <span class="i18n-vi">Dành cho bản Android / iOS / HarmonyOS của “Tiếng Việt mỗi ngày” (tên gói <code>com.github.boybeak.daily.lang.vi</code>)</span>
+      <span class="i18n-ja">Android / iOS / HarmonyOS 版「毎日のベトナム語」（パッケージ名 <code>com.github.boybeak.daily.lang.vi</code>）向け</span>
+      <span class="i18n-ko">Android / iOS / HarmonyOS용 ‘매일 베트남어’ (패키지 이름 <code>com.github.boybeak.daily.lang.vi</code>)</span>
+      <span class="i18n-km">សម្រាប់កំណែ Android / iOS / HarmonyOS នៃ «វៀតណាមរាល់ថ្ងៃ» (ឈ្មោះកញ្ចប់ <code>com.github.boybeak.daily.lang.vi</code>)</span>
+      <span class="i18n-lo">ສຳລັບເວີຊັນ Android / iOS / HarmonyOS ຂອງ «ຫວຽດນາມປະຈຳວັນ» (ຊື່ແພັກເກັດ <code>com.github.boybeak.daily.lang.vi</code>)</span>
     </p>
   </header>
 
-  <h2><span class="i18n-zh">当前版本</span><span class="i18n-en">Current version</span></h2>
+  <h2>
+    <span class="i18n-zh">当前版本</span>
+    <span class="i18n-zh-Hant">目前版本</span>
+    <span class="i18n-en">Current version</span>
+    <span class="i18n-vi">Phiên bản hiện tại</span>
+    <span class="i18n-ja">現在のバージョン</span>
+    <span class="i18n-ko">현재 버전</span>
+    <span class="i18n-km">កំណែបច្ចុប្បន្ន</span>
+    <span class="i18n-lo">ເວີຊັນປັດຈຸບັນ</span>
+  </h2>
   <div class="entry entry--current">
     <span class="entry__ver">v2.0.0</span>
     <span class="entry__date">
       <span class="i18n-zh">生效日期：<span class="fill">2026-10-10</span></span>
+      <span class="i18n-zh-Hant">生效日期：<span class="fill">2026-10-10</span></span>
       <span class="i18n-en">Effective date: <span class="fill">2026-10-10</span></span>
+      <span class="i18n-vi">Hiệu lực từ: <span class="fill">2026-10-10</span></span>
+      <span class="i18n-ja">発効日：<span class="fill">2026-10-10</span></span>
+      <span class="i18n-ko">시행일: <span class="fill">2026-10-10</span></span>
+      <span class="i18n-km">មានប្រសិទ្ធភាពចាប់ពី៖ <span class="fill">2026-10-10</span></span>
+      <span class="i18n-lo">ມີຜົນບັງຄັບໃຊ້ນັບແຕ່: <span class="fill">2026-10-10</span></span>
     </span>
     <span class="entry__tags">
       <a href="v2.0.0/zh-Hans.html">简体中文</a>
@@ -81,12 +129,27 @@
     </span>
   </div>
 
-  <h2><span class="i18n-zh">历史版本</span><span class="i18n-en">Previous versions</span></h2>
+  <h2>
+    <span class="i18n-zh">历史版本</span>
+    <span class="i18n-zh-Hant">歷史版本</span>
+    <span class="i18n-en">Previous versions</span>
+    <span class="i18n-vi">Các phiên bản cũ</span>
+    <span class="i18n-ja">過去のバージョン</span>
+    <span class="i18n-ko">이전 버전</span>
+    <span class="i18n-km">កំណែចាស់</span>
+    <span class="i18n-lo">ເວີຊັນເກົ່າ</span>
+  </h2>
   <div class="entry">
     <span class="entry__ver">v1.0.0</span>
     <span class="entry__date">
       <span class="i18n-zh">生效日期：<span class="fill">2026-09-30</span></span>
+      <span class="i18n-zh-Hant">生效日期：<span class="fill">2026-09-30</span></span>
       <span class="i18n-en">Effective date: <span class="fill">2026-09-30</span></span>
+      <span class="i18n-vi">Hiệu lực từ: <span class="fill">2026-09-30</span></span>
+      <span class="i18n-ja">発効日：<span class="fill">2026-09-30</span></span>
+      <span class="i18n-ko">시행일: <span class="fill">2026-09-30</span></span>
+      <span class="i18n-km">មានប្រសិទ្ធភាពចាប់ពី៖ <span class="fill">2026-09-30</span></span>
+      <span class="i18n-lo">ມີຜົນບັງຄັບໃຊ້ນັບແຕ່: <span class="fill">2026-09-30</span></span>
     </span>
     <span class="entry__tags">
       <a href="v1.0.0/zh-Hans.html">简体中文</a>
@@ -98,34 +161,79 @@
     </span>
   </div>
 
-  <h2><span class="i18n-zh">说明</span><span class="i18n-en">About this page</span></h2>
+  <h2>
+    <span class="i18n-zh">说明</span>
+    <span class="i18n-zh-Hant">說明</span>
+    <span class="i18n-en">About this page</span>
+    <span class="i18n-vi">Giới thiệu về trang này</span>
+    <span class="i18n-ja">このページについて</span>
+    <span class="i18n-ko">안내</span>
+    <span class="i18n-km">អំពីទំព័រនេះ</span>
+    <span class="i18n-lo">ກ່ຽວກັບໜ້ານີ້</span>
+  </h2>
   <ul>
     <li>
       <span class="i18n-zh">每个版本按语言分文件保存：简体中文 <code>zh-Hans.html</code>、英文 <code>en.html</code>、高棉语 <code>km.html</code>、老挝语 <code>lo.html</code>、日语 <code>ja.html</code>、韩语 <code>ko.html</code>。</span>
+      <span class="i18n-zh-Hant">每個版本按語言分檔案保存：簡體中文 <code>zh-Hans.html</code>、英文 <code>en.html</code>、高棉語 <code>km.html</code>、老撾語 <code>lo.html</code>、日語 <code>ja.html</code>、韓語 <code>ko.html</code>。</span>
       <span class="i18n-en">Each version is split by language: Simplified Chinese (<code>zh-Hans.html</code>), English (<code>en.html</code>), Khmer (<code>km.html</code>), Lao (<code>lo.html</code>), Japanese (<code>ja.html</code>) and Korean (<code>ko.html</code>).</span>
+      <span class="i18n-vi">Mỗi phiên bản được lưu theo từng ngôn ngữ: tiếng Trung giản thể (<code>zh-Hans.html</code>), tiếng Anh (<code>en.html</code>), tiếng Khmer (<code>km.html</code>), tiếng Lào (<code>lo.html</code>), tiếng Nhật (<code>ja.html</code>) và tiếng Hàn (<code>ko.html</code>).</span>
+      <span class="i18n-ja">各バージョンは言語ごとにファイルで保存します：簡体字中国語 <code>zh-Hans.html</code>、英語 <code>en.html</code>、クメール語 <code>km.html</code>、ラーオ語 <code>lo.html</code>、日本語 <code>ja.html</code>、韓国語 <code>ko.html</code>。</span>
+      <span class="i18n-ko">각 버전은 언어별 파일로 저장됩니다: 간체 중국어(<code>zh-Hans.html</code>), 영어(<code>en.html</code>), 크메르어(<code>km.html</code>), 라오어(<code>lo.html</code>), 일본어(<code>ja.html</code>), 한국어(<code>ko.html</code>).</span>
+      <span class="i18n-km">កំណែនីមួយៗរក្សាទុកតាមភាសា៖ ចិនកាត់ <code>zh-Hans.html</code> អង់គ្លេស <code>en.html</code> ខ្មែរ <code>km.html</code> ឡាវ <code>lo.html</code> ជប៉ុន <code>ja.html</code> និងកូរ៉េ <code>ko.html</code>។</span>
+      <span class="i18n-lo">ແຕ່ລະເວີຊັນເກັບແຍກຕາມພາສາ: ຈີນຕົວຫຍໍ້ <code>zh-Hans.html</code> ອັງກິດ <code>en.html</code> ຂະແມ <code>km.html</code> ລາວ <code>lo.html</code> ຍີ່ປຸ່ນ <code>ja.html</code> ແລະ ເກົາຫຼີ <code>ko.html</code>.</span>
     </li>
     <li>
       <span class="i18n-zh">本页地址长期不变，可作为应用商店中填写的隐私政策网址。</span>
+      <span class="i18n-zh-Hant">本頁地址長期不變，可作為應用程式商店中填寫的隱私權政策網址。</span>
       <span class="i18n-en">This page has a stable address and can be used as the privacy policy URL in app stores.</span>
+      <span class="i18n-vi">Địa chỉ trang này không đổi trong thời gian dài, có thể dùng làm URL chính sách quyền riêng tư khai trên cửa hàng ứng dụng.</span>
+      <span class="i18n-ja">このページのアドレスは長期にわたり変わらないため、アプリストアに記入するプライバシーポリシーのURLとして利用できます。</span>
+      <span class="i18n-ko">이 페이지 주소는 장기간 변경되지 않으므로 앱 스토어에 입력할 개인정보 처리방침 URL로 쓸 수 있어요.</span>
+      <span class="i18n-km">អាសយដ្ឋានទំព័រនេះមិនផ្លាស់ប្តូររយៈពេលយូរទេ អាចប្រើជាតំណគោលការណ៍ភាពឯកជនក្នុងហាងកម្មវិធី។</span>
+      <span class="i18n-lo">ທີ່ຢູ່ໜ້ານີ້ບໍ່ປ່ຽນເປັນເວລາດົນ ໃຊ້ເປັນ URL ນະໂຍບາຍຄວາມເປັນສ່ວນຕົວໃນຮ້ານແອັບໄດ້.</span>
     </li>
     <li>
       <span class="i18n-zh">「每日越南语」是独立 App，与其他目标语言的 App 各自持有独立政策，互不替代。</span>
+      <span class="i18n-zh-Hant">「每日越南語」是獨立 App，與其他目標語言的 App 各自持有獨立政策，互不替代。</span>
       <span class="i18n-en">“Daily Viet” is a standalone app; apps for other target languages each keep their own policy, and none substitutes for another.</span>
+      <span class="i18n-vi">“Tiếng Việt mỗi ngày” là ứng dụng độc lập; các ứng dụng cho ngôn ngữ mục tiêu khác mỗi bên giữ chính sách riêng, không bên nào thay thế bên nào.</span>
+      <span class="i18n-ja">「毎日のベトナム語」は独立したアプリであり、他の学習言語向けアプリはそれぞれ独自のポリシーを持ち、互いに代替しません。</span>
+      <span class="i18n-ko">‘매일 베트남어’는 독립 앱이며, 다른 학습 언어용 앱들은 각자 별도의 방침을 가집니다. 서로를 대체하지 않아요.</span>
+      <span class="i18n-km">«វៀតណាមរាល់ថ្ងៃ» ជាកម្មវិធីដាច់ដោយឡែក កម្មវិធីសម្រាប់ភាសាគោលដៅផ្សេងទៀតមានគោលការណ៍ដាច់ដោយឡែកគ្នា មិនជំនួសគ្នាទេ។</span>
+      <span class="i18n-lo">«ຫວຽດນາມປະຈຳວັນ» ເປັນແອັບອິດສະຫຼະ ແອັບສຳລັບພາສາເປົ້າໝາຍອື່ນໆມີນະໂຍບາຍຂອງຕົນເອງ ບໍ່ແທນກັນ.</span>
     </li>
   </ul>
 
   <p class="note">
     <span class="i18n-zh">本政策描述的是<strong>当前版本 App 的实际行为</strong>，而不是对将来版本的承诺。功能范围若有变化，本页面会随之更新。</span>
+    <span class="i18n-zh-Hant">本政策描述的是<strong>目前版本 App 的實際行為</strong>，而不是對將來版本的承諾。功能範圍若有變化，本頁面會隨之更新。</span>
     <span class="i18n-en">This policy describes the <strong>actual behaviour of the current app version</strong>, not a commitment about future versions. If the feature set changes, this page will be updated accordingly.</span>
+    <span class="i18n-vi">Chính sách này mô tả <strong>hành vi thực tế của phiên bản ứng dụng hiện tại</strong>, không phải cam kết cho các phiên bản tương lai. Nếu phạm vi tính năng thay đổi, trang này sẽ được cập nhật theo.</span>
+    <span class="i18n-ja">本ポリシーは<strong>現在のアプリバージョンの実際の動作</strong>を説明するものであり、将来のバージョンへの約束ではありません。機能範囲が変われば、本ページも更新されます。</span>
+    <span class="i18n-ko">이 방침은 <strong>현재 앱 버전의 실제 동작</strong>을 설명하는 것이며, 미래 버전에 대한 약속이 아닙니다. 기능 범위가 바뀌면 이 페이지도 함께 업데이트돼요.</span>
+    <span class="i18n-km">គោលការណ៍នេះពណ៌នា <strong>ឥរិយាបថពិតប្រាកដរបស់កំណែកម្មវិធីបច្ចុប្បន្ន</strong> មិនមែនជាការសន្យាចំពោះកំណែនាពេលអនាគតទេ។ បើវិសាលភាពមុខងារផ្លាស់ប្តូរ ទំព័រនេះនឹងធ្វើបច្ចុប្បន្នភាពតាម។</span>
+    <span class="i18n-lo">ນະໂຍບາຍນີ້ອະທິບາຍ <strong>ພຶດຕິກຳຕົວຈິງຂອງເວີຊັນແອັບປັດຈຸບັນ</strong> ບໍ່ແມ່ນຄຳໝັ້ນສັນຍາສຳລັບເວີຊັນໃນອະນາຄົດ. ຖ້າຂອບເຂດຟັງຊັນປ່ຽນ ໜ້ານີ້ຈະຖືກອັບເດດຕາມ.</span>
   </p>
 
 </main>
 
 <footer class="doc-foot">
   <span class="i18n-zh">每日越南语（com.github.boybeak.daily.lang.vi）· 隐私政策</span>
-  <span class="i18n-en">Daily Viet (com.github.boybeak.daily.lang.vi) · Privacy Policy</span><br>
+  <span class="i18n-zh-Hant">每日越南語（com.github.boybeak.daily.lang.vi）· 隱私權政策</span>
+  <span class="i18n-en">Daily Viet (com.github.boybeak.daily.lang.vi) · Privacy Policy</span>
+  <span class="i18n-vi">Tiếng Việt mỗi ngày (com.github.boybeak.daily.lang.vi) · Chính sách quyền riêng tư</span>
+  <span class="i18n-ja">毎日のベトナム語（com.github.boybeak.daily.lang.vi）· プライバシーポリシー</span>
+  <span class="i18n-ko">매일 베트남어 (com.github.boybeak.daily.lang.vi) · 개인정보 처리방침</span>
+  <span class="i18n-km">វៀតណាមរាល់ថ្ងៃ (com.github.boybeak.daily.lang.vi) · គោលការណ៍ភាពឯកជន</span>
+  <span class="i18n-lo">ຫວຽດນາມປະຈຳວັນ (com.github.boybeak.daily.lang.vi) · ນະໂຍບາຍຄວາມເປັນສ່ວນຕົວ</span><br>
   <span class="i18n-zh">联系方式：<span class="fill">【待填写：联系邮箱】</span></span>
+  <span class="i18n-zh-Hant">聯絡方式：<span class="fill">【待填寫：聯絡信箱】</span></span>
   <span class="i18n-en">Contact: <span class="fill">【To be filled: contact email】</span></span>
+  <span class="i18n-vi">Liên hệ: <span class="fill">【Cần điền: email liên hệ】</span></span>
+  <span class="i18n-ja">連絡先：<span class="fill">【要記入：連絡先メール】</span></span>
+  <span class="i18n-ko">연락처: <span class="fill">【미작성: 연락처 이메일】</span></span>
+  <span class="i18n-km">ទំនាក់ទំនង៖ <span class="fill">【ត្រូវបំពេញ៖ អ៊ីមែលទំនាក់ទំនង】</span></span>
+  <span class="i18n-lo">ຕິດຕໍ່: <span class="fill">【ຕ້ອງຕື່ມ: ອີເມວຕິດຕໍ່】</span></span>
 </footer>
 
 <script src="../../assets/site.js"></script>

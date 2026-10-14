@@ -6,8 +6,9 @@
      · App 详情页      <body class="app-page app-vi|app-th|app-ja"> + <div class="wrap">
      · 隐私政策等文档页 <body class="doc-body app-vi|app-th|app-ja"> + <main class="doc">
    语言切换：
-     <html data-lang="zh-Hans"> 由 assets/site.js 维护；正文中成对出现
-     .i18n-zh / .i18n-en 的节点，按 data-lang 只显示其一。
+     <html data-lang="…"> 由 assets/site.js 维护；正文按语言写
+     .i18n-zh / .i18n-zh-Hant / .i18n-en / .i18n-vi / .i18n-ja / .i18n-ko /
+     .i18n-km / .i18n-lo 节点，按 data-lang 只显示其一。
    ========================================================================== */
 
 /* ---------- 1. 设计 token ---------- */
@@ -62,7 +63,9 @@ body {
     var(--bg);
   color: var(--text);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
-               "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", sans-serif;
+               "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC",
+               "Noto Sans Khmer", "Khmer MN", "Noto Sans Lao", "Lao MN",
+               "Leelawadee UI", sans-serif;
   font-size: 16px;
   line-height: 1.75;
   -webkit-font-smoothing: antialiased;
@@ -114,38 +117,46 @@ a { color: inherit; }
   .hero-deco .chip--4 { animation-duration: 4.8s; animation-delay: 1.7s; }
 }
 
-/* ---------- 3. 语言切换（中英） ---------- */
-html[data-lang="zh-Hans"] .i18n-en { display: none !important; }
-html[data-lang="en"] .i18n-zh { display: none !important; }
+/* ---------- 3. 语言切换（八种界面语言） ----------
+   默认 zh-Hans 可见；其余语言由 data-lang 对应规则隐藏（keep !important
+   以覆盖元素自身的 display）。新增语言：加一条 data-lang 规则 + <option>。 */
+html[data-lang="zh-Hans"] :is(.i18n-zh-Hant, .i18n-en, .i18n-vi, .i18n-ja, .i18n-ko, .i18n-km, .i18n-lo) { display: none !important; }
+html[data-lang="zh-Hant"] :is(.i18n-zh, .i18n-en, .i18n-vi, .i18n-ja, .i18n-ko, .i18n-km, .i18n-lo) { display: none !important; }
+html[data-lang="en"]      :is(.i18n-zh, .i18n-zh-Hant, .i18n-vi, .i18n-ja, .i18n-ko, .i18n-km, .i18n-lo) { display: none !important; }
+html[data-lang="vi"]      :is(.i18n-zh, .i18n-zh-Hant, .i18n-en, .i18n-ja, .i18n-ko, .i18n-km, .i18n-lo) { display: none !important; }
+html[data-lang="ja"]      :is(.i18n-zh, .i18n-zh-Hant, .i18n-en, .i18n-vi, .i18n-ko, .i18n-km, .i18n-lo) { display: none !important; }
+html[data-lang="ko"]      :is(.i18n-zh, .i18n-zh-Hant, .i18n-en, .i18n-vi, .i18n-ja, .i18n-km, .i18n-lo) { display: none !important; }
+html[data-lang="km"]      :is(.i18n-zh, .i18n-zh-Hant, .i18n-en, .i18n-vi, .i18n-ja, .i18n-ko, .i18n-lo) { display: none !important; }
+html[data-lang="lo"]      :is(.i18n-zh, .i18n-zh-Hant, .i18n-en, .i18n-vi, .i18n-ja, .i18n-ko, .i18n-km) { display: none !important; }
 
-.langswitch {
-  display: inline-flex;
-  padding: 2px;
-  background: var(--card);
+/* 下拉选择控件：胶囊造型，右侧自带箭头 */
+.langswitch { display: inline-flex; }
+
+.langswitch select {
+  appearance: none;
+  -webkit-appearance: none;
+  margin: 0;
   border: 1px solid var(--line);
-  border-radius: 999px;
-  box-shadow: var(--shadow-card);
-}
-
-.langswitch button,
-.langswitch a {
-  border: 0;
-  background: transparent;
+  background-color: var(--card);
   font: inherit;
   font-size: 12.5px;
   line-height: 1.5;
   color: var(--text-2);
-  padding: 4px 11px;
+  padding: 5px 30px 5px 14px;
   border-radius: 999px;
+  box-shadow: var(--shadow-card);
   cursor: pointer;
-  text-decoration: none;
-  transition: color .2s;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath d='M1 1l4 4 4-4' fill='none' stroke='%235C5553' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 13px center;
+  transition: color .2s, border-color .2s;
 }
 
-.langswitch button.on {
-  background: linear-gradient(135deg, #3A332F, #191512);
-  color: #fff;
-  font-weight: 700;
+.langswitch select:hover { color: var(--text); border-color: #D8CFC9; }
+
+.langswitch select:focus-visible {
+  outline: 2px solid var(--accent-2);
+  outline-offset: 2px;
 }
 
 /* ---------- 4. 首页与 App 详情页 ---------- */
@@ -932,6 +943,7 @@ html[data-lang="en"] .i18n-zh { display: none !important; }
 
 .doc .doc-nav__crumb { color: var(--text-3); text-decoration: none; }
 .doc .doc-nav__crumb:hover { color: var(--text); }
+.doc-nav .langswitch { margin-left: auto; }
 .doc-nav__links { display: inline-flex; gap: 4px; margin-left: auto; }
 
 .doc-nav__links a {
