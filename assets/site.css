@@ -598,10 +598,11 @@ html[data-lang="lo"]      :is(.i18n-zh, .i18n-zh-Hant, .i18n-en, .i18n-vi, .i18n
 .foot {
   position: relative;
   display: flex;
-  flex-wrap: wrap;
-  gap: 4px 14px;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
   margin-top: 52px;
-  padding-top: 22px;
+  padding-top: 26px;
   font-size: 12.5px;
   color: var(--text-3);
 }
@@ -618,6 +619,15 @@ html[data-lang="lo"]      :is(.i18n-zh, .i18n-zh-Hant, .i18n-en, .i18n-vi, .i18n
 
 .foot a { color: var(--text-2); text-underline-offset: 2px; }
 .foot a:hover { color: var(--text); }
+.foot-contact { display: flex; align-items: center; gap: 10px; }
+.foot-contact__label { margin-right: 4px; }
+.foot-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 4px 14px;
+}
 
 /* ---------- 5. App 详情页 ---------- */
 .crumb {
@@ -1120,8 +1130,6 @@ html[data-lang="lo"]      :is(.i18n-zh, .i18n-zh-Hant, .i18n-en, .i18n-vi, .i18n
 }
 
 /* ---------- 4.6 页脚联系方式（图标 + 弹层） ---------- */
-.contact-links { display: inline-flex; align-items: center; gap: 8px; }
-.contact-links__label { margin-right: 2px; }
 .contact-icon {
   display: inline-flex;
   width: 28px;
