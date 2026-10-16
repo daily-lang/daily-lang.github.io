@@ -44,3 +44,66 @@
 
   apply(saved || root.getAttribute('data-lang') || DEFAULT);
 })();
+
+/* ---------- 页脚联系方式弹层：点 QQ / 微信图标显示账号，支持一键复制 ---------- */
+(function () {
+  var openPop = null;
+
+  function closePop() {
+    if (!openPop) return;
+    openPop.hidden = true;
+    openPop = null;
+    document.body.style.overflow = '';
+  }
+
+  function fallbackCopy(text) {
+    var ta = document.createElement('textarea');
+    ta.value = text;
+    ta.style.position = 'fixed';
+    ta.style.opacity = '0';
+    document.body.appendChild(ta);
+    ta.select();
+    try { document.execCommand('copy'); } catch (e) { /* 隐私模式下忽略 */ }
+    document.body.removeChild(ta);
+  }
+
+  document.addEventListener('click', function (event) {
+    if (!event.target || !event.target.closest) return;
+
+    var opener = event.target.closest('[data-contact]');
+    if (opener) {
+      closePop();
+      var pop = document.getElementById(opener.getAttribute('data-contact'));
+      if (pop) {
+        pop.hidden = false;
+        openPop = pop;
+        document.body.style.overflow = 'hidden';
+      }
+      return;
+    }
+
+    if (openPop) {
+      if (event.target.closest('[data-pop-close]')) { closePop(); return; }
+      if (!event.target.closest('.contact-pop__card')) { closePop(); return; }
+    }
+
+    var copyBtn = event.target.closest('.contact-pop__copy');
+    if (copyBtn) {
+      var text = copyBtn.getAttribute('data-copy') || '';
+      var done = function () {
+        copyBtn.classList.add('copied');
+        setTimeout(function () { copyBtn.classList.remove('copied'); }, 1600);
+      };
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(done, function () { fallbackCopy(text); done(); });
+      } else {
+        fallbackCopy(text);
+        done();
+      }
+    }
+  });
+
+  document.addEventListener('keydown', function (event) {
+    if (event.key === 'Escape') closePop();
+  });
+})();

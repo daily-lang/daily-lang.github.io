@@ -562,25 +562,26 @@
 
   <footer class="foot">
     <span>© 2026 DailyLang</span>
-    <span><a href="mailto:boybeak@qq.com">
-      <span class="i18n-zh">联系开发者</span>
-      <span class="i18n-zh-Hant">聯絡開發者</span>
-      <span class="i18n-en">Contact us</span>
-      <span class="i18n-vi">Liên hệ nhà phát triển</span>
-      <span class="i18n-ja">開発者に問い合わせる</span>
-      <span class="i18n-ko">개발자에게 문의</span>
-      <span class="i18n-km">ទំនាក់ទំនងអ្នកអភិវឌ្ឍន៍</span>
-      <span class="i18n-lo">ຕິດຕໍ່ຜູ້ພັດທະນາ</span>
-    </a></span>
-    <span>
-      <span class="i18n-zh">QQ：915522070 · 微信号：NullDreamException</span>
-      <span class="i18n-zh-Hant">QQ：915522070 · 微信：NullDreamException</span>
-      <span class="i18n-en">QQ: 915522070 · WeChat: NullDreamException</span>
-      <span class="i18n-vi">QQ: 915522070 · WeChat: NullDreamException</span>
-      <span class="i18n-ja">QQ：915522070 · WeChat：NullDreamException</span>
-      <span class="i18n-ko">QQ: 915522070 · 위챗: NullDreamException</span>
-      <span class="i18n-km">QQ: 915522070 · WeChat: NullDreamException</span>
-      <span class="i18n-lo">QQ: 915522070 · WeChat: NullDreamException</span>
+    <span class="contact-links">
+      <span class="contact-links__label">
+        <span class="i18n-zh">联系开发者</span>
+        <span class="i18n-zh-Hant">聯絡開發者</span>
+        <span class="i18n-en">Contact us</span>
+        <span class="i18n-vi">Liên hệ nhà phát triển</span>
+        <span class="i18n-ja">開発者に問い合わせる</span>
+        <span class="i18n-ko">개발자에게 문의</span>
+        <span class="i18n-km">ទំនាក់ទំនងអ្នកអភិវឌ្ឍន៍</span>
+        <span class="i18n-lo">ຕິດຕໍ່ຜູ້ພັດທະນາ</span>
+      </span>
+      <a class="contact-icon" href="mailto:boybeak@qq.com" title="boybeak@qq.com" aria-label="Email: boybeak@qq.com">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="1.5" y="1.5" width="21" height="21" rx="5.5" fill="#64748B"/><rect x="5.5" y="7.6" width="13" height="8.8" rx="1.6" fill="#fff"/><path d="M6.2 8.8l5.8 3.8 5.8-3.8" fill="none" stroke="#64748B" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <button type="button" class="contact-icon" data-contact="pop-qq" aria-haspopup="dialog" aria-label="QQ: 915522070">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="1.5" y="1.5" width="21" height="21" rx="5.5" fill="#12B7F5"/><text x="12" y="15.4" text-anchor="middle" font-size="8.2" font-weight="700" fill="#fff" font-family="-apple-system, 'PingFang SC', 'Segoe UI', Arial, sans-serif">QQ</text></svg>
+      </button>
+      <button type="button" class="contact-icon" data-contact="pop-wechat" aria-haspopup="dialog" aria-label="WeChat: NullDreamException">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="1.5" y="1.5" width="21" height="21" rx="5.5" fill="#07C160"/><path fill="#fff" d="M9.6 5.8c-3.1 0-5.6 2-5.6 4.6 0 1.5.86 2.8 2.2 3.7l-.55 1.64 1.92-.96c.5.14 1.02.23 1.57.26a5 5 0 0 1-.15-1.2c0-2.36 2.35-4.28 5.25-4.28.18 0 .36 0 .54.02C14.3 7.2 12.14 5.8 9.6 5.8z"/><circle cx="7.9" cy="9.3" r=".8" fill="#07C160"/><circle cx="11.3" cy="9.3" r=".8" fill="#07C160"/><path fill="#fff" d="M19.6 13.8c0-1.94-1.91-3.5-4.27-3.5s-4.28 1.56-4.28 3.5 1.92 3.5 4.28 3.5c.47 0 .93-.06 1.36-.17l1.58.79-.48-1.44c1.1-.64 1.81-1.62 1.81-2.68z"/><circle cx="13.85" cy="13.1" r=".65" fill="#07C160"/><circle cx="16.55" cy="13.1" r=".65" fill="#07C160"/></svg>
+      </button>
     </span>
     <span>
       <span class="i18n-zh">本站由 GitHub Pages 托管</span>
@@ -593,6 +594,99 @@
       <span class="i18n-lo">ເວັບໄຊນີ້ໂຮດໂດຍ GitHub Pages</span>
     </span>
   </footer>
+
+  <div class="contact-pop" id="pop-qq" hidden>
+    <div class="contact-pop__mask" data-pop-close></div>
+    <div class="contact-pop__card" role="dialog" aria-modal="true">
+      <button type="button" class="contact-pop__close" data-pop-close aria-label="Close">&times;</button>
+      <svg class="contact-pop__logo" viewBox="0 0 24 24" aria-hidden="true"><rect x="1.5" y="1.5" width="21" height="21" rx="5.5" fill="#12B7F5"/><text x="12" y="15.4" text-anchor="middle" font-size="8.2" font-weight="700" fill="#fff" font-family="-apple-system, 'PingFang SC', 'Segoe UI', Arial, sans-serif">QQ</text></svg>
+      <div class="contact-pop__name">QQ</div>
+      <div class="contact-pop__hint">
+        <span class="i18n-zh">复制后打开 QQ 搜索添加</span>
+        <span class="i18n-zh-Hant">複製後開啟 QQ 搜尋加入</span>
+        <span class="i18n-en">Copy, then search this ID in QQ</span>
+        <span class="i18n-vi">Sao chép rồi tìm mã này trên QQ</span>
+        <span class="i18n-ja">コピーしてQQで検索してください</span>
+        <span class="i18n-ko">복사 후 QQ에서 검색하세요</span>
+        <span class="i18n-km">ចម្លងមក បន្ទាប់មកស្វែងរកក្នុង QQ</span>
+        <span class="i18n-lo">ສຳເນົາ ແລ້ວຄົ້ນຫາໃນ QQ</span>
+      </div>
+      <div class="contact-pop__id">915522070</div>
+      <button type="button" class="contact-pop__copy" data-copy="915522070">
+        <span class="copy-text">
+          <span class="i18n-zh">复制</span>
+          <span class="i18n-zh-Hant">複製</span>
+          <span class="i18n-en">Copy</span>
+          <span class="i18n-vi">Sao chép</span>
+          <span class="i18n-ja">コピー</span>
+          <span class="i18n-ko">복사</span>
+          <span class="i18n-km">ចម្លង</span>
+          <span class="i18n-lo">ສຳເນົາ</span>
+        </span>
+        <span class="copied-text">
+          <span class="i18n-zh">已复制</span>
+          <span class="i18n-zh-Hant">已複製</span>
+          <span class="i18n-en">Copied</span>
+          <span class="i18n-vi">Đã sao chép</span>
+          <span class="i18n-ja">コピーしました</span>
+          <span class="i18n-ko">복사됨</span>
+          <span class="i18n-km">បានចម្លង</span>
+          <span class="i18n-lo">ສຳເນົາແລ້ວ</span>
+        </span>
+      </button>
+    </div>
+  </div>
+
+  <div class="contact-pop" id="pop-wechat" hidden>
+    <div class="contact-pop__mask" data-pop-close></div>
+    <div class="contact-pop__card" role="dialog" aria-modal="true">
+      <button type="button" class="contact-pop__close" data-pop-close aria-label="Close">&times;</button>
+      <svg class="contact-pop__logo" viewBox="0 0 24 24" aria-hidden="true"><rect x="1.5" y="1.5" width="21" height="21" rx="5.5" fill="#07C160"/><path fill="#fff" d="M9.6 5.8c-3.1 0-5.6 2-5.6 4.6 0 1.5.86 2.8 2.2 3.7l-.55 1.64 1.92-.96c.5.14 1.02.23 1.57.26a5 5 0 0 1-.15-1.2c0-2.36 2.35-4.28 5.25-4.28.18 0 .36 0 .54.02C14.3 7.2 12.14 5.8 9.6 5.8z"/><circle cx="7.9" cy="9.3" r=".8" fill="#07C160"/><circle cx="11.3" cy="9.3" r=".8" fill="#07C160"/><path fill="#fff" d="M19.6 13.8c0-1.94-1.91-3.5-4.27-3.5s-4.28 1.56-4.28 3.5 1.92 3.5 4.28 3.5c.47 0 .93-.06 1.36-.17l1.58.79-.48-1.44c1.1-.64 1.81-1.62 1.81-2.68z"/><circle cx="13.85" cy="13.1" r=".65" fill="#07C160"/><circle cx="16.55" cy="13.1" r=".65" fill="#07C160"/></svg>
+      <div class="contact-pop__name">
+        <span class="i18n-zh">微信</span>
+        <span class="i18n-zh-Hant">微信</span>
+        <span class="i18n-en">WeChat</span>
+        <span class="i18n-vi">WeChat</span>
+        <span class="i18n-ja">WeChat</span>
+        <span class="i18n-ko">위챗</span>
+        <span class="i18n-km">WeChat</span>
+        <span class="i18n-lo">WeChat</span>
+      </div>
+      <div class="contact-pop__hint">
+        <span class="i18n-zh">复制后打开微信 · 添加朋友 · 搜索</span>
+        <span class="i18n-zh-Hant">複製後開啟微信 · 加入朋友 · 搜尋</span>
+        <span class="i18n-en">Copy, then add friend in WeChat</span>
+        <span class="i18n-vi">Sao chép rồi thêm bạn trên WeChat</span>
+        <span class="i18n-ja">コピーしてWeChatで友だち追加</span>
+        <span class="i18n-ko">복사 후 위챗에서 친구 추가</span>
+        <span class="i18n-km">ចម្លងមក បន្ទាប់មកបន្ថែមមិត្តភក្តិក្នុង WeChat</span>
+        <span class="i18n-lo">ສຳເນົາ ແລ້ວເພີ່ມໝູ່ໃນ WeChat</span>
+      </div>
+      <div class="contact-pop__id">NullDreamException</div>
+      <button type="button" class="contact-pop__copy" data-copy="NullDreamException">
+        <span class="copy-text">
+          <span class="i18n-zh">复制</span>
+          <span class="i18n-zh-Hant">複製</span>
+          <span class="i18n-en">Copy</span>
+          <span class="i18n-vi">Sao chép</span>
+          <span class="i18n-ja">コピー</span>
+          <span class="i18n-ko">복사</span>
+          <span class="i18n-km">ចម្លង</span>
+          <span class="i18n-lo">ສຳເນົາ</span>
+        </span>
+        <span class="copied-text">
+          <span class="i18n-zh">已复制</span>
+          <span class="i18n-zh-Hant">已複製</span>
+          <span class="i18n-en">Copied</span>
+          <span class="i18n-vi">Đã sao chép</span>
+          <span class="i18n-ja">コピーしました</span>
+          <span class="i18n-ko">복사됨</span>
+          <span class="i18n-km">បានចម្លង</span>
+          <span class="i18n-lo">ສຳເນົາແລ້ວ</span>
+        </span>
+      </button>
+    </div>
+  </div>
 
 </div>
 <script src="assets/site.js"></script>

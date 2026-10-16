@@ -1118,3 +1118,88 @@ html[data-lang="lo"]      :is(.i18n-zh, .i18n-zh-Hant, .i18n-en, .i18n-vi, .i18n
   .doc .contact dt { margin-top: 6px; }
   .doc .entry__tags { margin-left: 0; }
 }
+
+/* ---------- 4.6 页脚联系方式（图标 + 弹层） ---------- */
+.contact-links { display: inline-flex; align-items: center; gap: 8px; }
+.contact-links__label { margin-right: 2px; }
+.contact-icon {
+  display: inline-flex;
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  border: 0;
+  border-radius: 8px;
+  background: none;
+  cursor: pointer;
+  transition: transform .15s ease, filter .15s ease;
+}
+.contact-icon svg { display: block; width: 100%; height: 100%; border-radius: inherit; }
+.contact-icon:hover { transform: translateY(-1px); filter: brightness(1.08); }
+.contact-icon:active { transform: none; }
+
+.contact-pop { position: fixed; inset: 0; z-index: 60; display: flex; align-items: center; justify-content: center; padding: 20px; }
+.contact-pop[hidden] { display: none; }
+.contact-pop__mask { position: absolute; inset: 0; background: rgba(23, 20, 18, .42); }
+.contact-pop__card {
+  position: relative;
+  width: min(320px, 90vw);
+  padding: 30px 24px 24px;
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 18px 48px rgba(23, 20, 18, .25);
+  text-align: center;
+  animation: contactPopIn .2s ease;
+}
+@keyframes contactPopIn {
+  from { opacity: 0; transform: translateY(10px) scale(.96); }
+  to { opacity: 1; transform: none; }
+}
+.contact-pop__close {
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  width: 30px;
+  height: 30px;
+  border: 0;
+  border-radius: 50%;
+  background: none;
+  color: #999;
+  font-size: 20px;
+  line-height: 1;
+  cursor: pointer;
+}
+.contact-pop__close:hover { color: #333; }
+.contact-pop__logo { display: block; width: 46px; height: 46px; margin: 0 auto; border-radius: 12px; }
+.contact-pop__name { margin-top: 10px; font-size: 15px; font-weight: 700; color: #2A2622; }
+.contact-pop__hint { margin-top: 4px; font-size: 12px; color: #8A837C; }
+.contact-pop__id {
+  display: inline-block;
+  min-width: 180px;
+  margin: 14px auto 0;
+  padding: 10px 14px;
+  background: #F6F3F0;
+  border-radius: 10px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: .3px;
+  color: #2A2622;
+  user-select: all;
+}
+.contact-pop__copy {
+  display: inline-block;
+  margin-top: 14px;
+  padding: 9px 26px;
+  border: 0;
+  border-radius: 999px;
+  background: #2A2622;
+  color: #fff;
+  font-size: 13.5px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background .15s ease;
+}
+.contact-pop__copy:hover { background: #443E38; }
+.contact-pop__copy .copied-text { display: none; }
+.contact-pop__copy.copied .copy-text { display: none; }
+.contact-pop__copy.copied .copied-text { display: inline; }
