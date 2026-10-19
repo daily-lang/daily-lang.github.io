@@ -3,8 +3,8 @@
    --------------------------------------------------------------------------
    用法：
      · 首页            <body class="home">
-     · App 详情页      <body class="app-page app-vi|app-th|app-ja"> + <div class="wrap">
-     · 隐私政策等文档页 <body class="doc-body app-vi|app-th|app-ja"> + <main class="doc">
+     · App 详情页      <body class="app-page app-vi|app-th|app-ja|app-yue"> + <div class="wrap">
+     · 隐私政策等文档页 <body class="doc-body app-vi|app-th|app-ja|app-yue"> + <main class="doc">
    语言切换：
      <html data-lang="…"> 由 assets/site.js 维护；正文按语言写
      .i18n-zh / .i18n-zh-Hant / .i18n-en / .i18n-vi / .i18n-ja / .i18n-ko /
@@ -30,10 +30,11 @@
   --accent-2: #D98E00;
   --grad-accent: linear-gradient(96deg, #DA251D 0%, #E05A1B 52%, #D98E00 100%);
 
-  /* 各 App 主题色：越南国旗红 / 泰国国旗蓝 / 日之丸红 */
+  /* 各 App 主题色：越南国旗红 / 泰国国旗蓝 / 日之丸红 / 洋紫荆红 */
   --vi: #DA251D; --vi-deep: #7D1310; --vi-tint: #FBE9E8; --vi-line: #F0C9C6; --vi-gold: #FFCD00;
   --th: #1F4E9C; --th-deep: #123166; --th-tint: #E8EEF9; --th-line: #C9D8F0; --th-red: #A51931;
   --ja: #BC002D; --ja-deep: #7E001E; --ja-tint: #FBEBEE; --ja-line: #F0C6CC;
+  --yue: #DE2910; --yue-deep: #7F1408; --yue-tint: #FDECE9; --yue-line: #F2C7C1;
 
   --radius: 14px;
   --radius-lg: 16px;
@@ -650,6 +651,7 @@ html[data-lang="lo"]      :is(.i18n-zh, .i18n-zh-Hant, .i18n-en, .i18n-vi, .i18n
 .app-page.app-vi, .doc-body.app-vi { --brand: var(--vi); --brand-deep: var(--vi-deep); --brand-tint: var(--vi-tint); --brand-line: var(--vi-line); }
 .app-page.app-th, .doc-body.app-th { --brand: var(--th); --brand-deep: var(--th-deep); --brand-tint: var(--th-tint); --brand-line: var(--th-line); }
 .app-page.app-ja, .doc-body.app-ja { --brand: var(--ja); --brand-deep: var(--ja-deep); --brand-tint: var(--ja-tint); --brand-line: var(--ja-line); }
+.app-page.app-yue, .doc-body.app-yue { --brand: var(--yue); --brand-deep: var(--yue-deep); --brand-tint: var(--yue-tint); --brand-line: var(--yue-line); }
 
 /* Hero 布局：品牌色渐变卡片；第一行 = 图标 + 应用名称（垂直居中）；
    宣传口号、商店按钮各自独立成行，用 margin 明确分层 */

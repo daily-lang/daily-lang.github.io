@@ -28,6 +28,12 @@
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
+  <url>
+    <loc>https://daily-lang.github.io/yue/</loc>
+    <lastmod>2026-10-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
 
   <!-- 隐私政策入口页 -->
   <url>
@@ -45,6 +51,12 @@
   <url>
     <loc>https://daily-lang.github.io/th/privacy/</loc>
     <lastmod>2026-10-11</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://daily-lang.github.io/yue/privacy/</loc>
+    <lastmod>2026-10-19</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
