@@ -63,11 +63,14 @@ html {
 
 body {
   margin: 0;
-  background:
-    radial-gradient(1100px 560px at 88% -120px, rgba(31, 78, 156, .07), transparent 62%),
-    radial-gradient(1000px 540px at -12% 6%, rgba(218, 37, 29, .065), transparent 58%),
-    radial-gradient(900px 520px at 55% 112%, rgba(217, 142, 0, .07), transparent 62%),
-    var(--bg);
+  /* 背景：暖灰底 + 三色极光光斑 + 细点阵纹理（24px 平铺），打破纯色单调 */
+  background-color: var(--bg);
+  background-image:
+    radial-gradient(1100px 560px at 88% -120px, rgba(31, 78, 156, .095), transparent 62%),
+    radial-gradient(1000px 540px at -12% 6%, rgba(218, 37, 29, .09), transparent 58%),
+    radial-gradient(900px 520px at 55% 112%, rgba(217, 142, 0, .095), transparent 62%),
+    radial-gradient(circle, rgba(31, 26, 25, .05) 1px, transparent 1.4px);
+  background-size: auto, auto, auto, 24px 24px;
   color: var(--text);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
                "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC",
@@ -1228,7 +1231,84 @@ html[data-lang="lo"]      :is(.i18n-zh, .i18n-zh-Hant, .i18n-en, .i18n-vi, .i18n
   cursor: pointer;
   transition: background .15s ease;
 }
-.contact-pop__copy:hover { background: var(--vi-deep); }
+.contact-pop__copy:hover { background: #A11A14; }
 .contact-pop__copy .copied-text { display: none; }
 .contact-pop__copy.copied .copy-text { display: none; }
 .contact-pop__copy.copied .copied-text { display: inline; }
+
+/* ---------- 8. 夜间模式（跟随系统） ----------
+   色板对齐 App v2.2 暖黑夜间：bg #161312 / surface #211D1C / muted #2A2625 /
+   line #383332 / text #F0EBE8。品牌渐变 hero 保持不变（App 夜间今日卡同为红渐变）；
+   tint/line 系列按 App nightTint/nightLine（18% 混合）取值；
+   --brand-deep 在夜间切换为提亮版（保证文档页链接/摘要在暗底可读）。 */
+:root { color-scheme: light; }
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+
+    --text: #F0EBE8;
+    --text-2: #B8B0AC;
+    --text-3: #8F8784;
+    --bg: #161312;
+    --card: #211D1C;
+    --line: #383332;
+    --muted-card: #2A2625;
+
+    --gold-tint: #49443D;
+    --gold-dark: #E0C25C;
+
+    /* nightTint(source)：#211D1C 与品牌色 18% 混合 */
+    --vi-tint: #421E1C; --th-tint: #212633; --ja-tint: #3D181F; --yue-tint: #431F1A;
+    /* nightLine(source)：#383332 与品牌色 18% 混合 */
+    --vi-line: #55302E; --th-line: #333845; --ja-line: #502A31; --yue-line: #56312C;
+  }
+
+  /* 文档页 / 摘要框的品牌深色文字 → 夜间提亮，暗底可读 */
+  .app-page.app-vi, .doc-body.app-vi { --brand-deep: #E7716C; }
+  .app-page.app-th, .doc-body.app-th { --brand-deep: #6D8CBF; }
+  .app-page.app-ja, .doc-body.app-ja { --brand-deep: #D35977; }
+  .app-page.app-yue, .doc-body.app-yue { --brand-deep: #EA7464; }
+
+  /* 夜间背景：光斑改为暗底辉光，点阵换亮色 */
+  body {
+    background-color: var(--bg);
+    background-image:
+      radial-gradient(1100px 560px at 88% -120px, rgba(98, 146, 224, .10), transparent 62%),
+      radial-gradient(1000px 540px at -12% 6%, rgba(218, 37, 29, .12), transparent 58%),
+      radial-gradient(900px 520px at 55% 112%, rgba(217, 142, 0, .09), transparent 62%),
+      radial-gradient(circle, rgba(240, 235, 232, .045) 1px, transparent 1.4px);
+    background-size: auto, auto, auto, 24px 24px;
+  }
+
+  /* 硬编码浅色的组件逐一换暗 */
+  .topbar::before { background: rgba(22, 19, 18, .82); border-bottom-color: rgba(56, 51, 50, .8); }
+
+  .eyebrow,
+  .hero-deco .chip,
+  .btn--ghost,
+  .crumb,
+  .point,
+  .store-btn { background: rgba(33, 29, 28, .85); }
+
+  .langswitch select:hover, .crumb:hover, .btn--ghost:hover,
+  .store-btn:hover, .doc-nav__links a:hover { border-color: #4A423D; }
+  .app-card:hover { border-color: #4A423D; }
+
+  /* 品牌渐变 hero 上的商店按钮夜间保持白底（对齐 App 夜间今日卡的白 CTA）；
+     未上线按钮仍走 muted 平底 */
+  .app-hero .store-btn:not(.store-btn--soon) { background: rgba(255, 255, 255, .94); }
+
+  .point--c .point__icon { background: #2E3A2E; color: #A1C5A3; }
+  .badge--live, .badge--free { background: #2E3A2E; color: #A1C5A3; box-shadow: inset 0 0 0 1px rgba(161, 197, 163, .2); }
+
+  .app-hero { box-shadow: 0 14px 34px -16px rgba(0, 0, 0, .55); }
+
+  .contact-pop__mask { background: rgba(10, 8, 7, .62); }
+  .contact-pop__card { background: #211D1C; }
+  .contact-pop__close { color: #8F8784; }
+  .contact-pop__close:hover { color: #F0EBE8; }
+  .contact-pop__name { color: #F0EBE8; }
+  .contact-pop__hint { color: #8F8784; }
+  .contact-pop__id { background: #2A2625; color: #F0EBE8; }
+}
