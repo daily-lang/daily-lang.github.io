@@ -1295,9 +1295,12 @@ html[data-lang="lo"]      :is(.i18n-zh, .i18n-zh-Hant, .i18n-en, .i18n-vi, .i18n
   .store-btn:hover, .doc-nav__links a:hover { border-color: #4A423D; }
   .app-card:hover { border-color: #4A423D; }
 
-  /* 品牌渐变 hero 上的商店按钮夜间保持白底（对齐 App 夜间今日卡的白 CTA）；
+  /* 品牌渐变 hero 上的商店按钮夜间保持白底（对齐 App 夜间今日卡的白 CTA），
+     文字随之钉回浅色取值（夜间 --text/--text-3 已翻转成浅色，会白底白字）；
      未上线按钮仍走 muted 平底 */
   .app-hero .store-btn:not(.store-btn--soon) { background: rgba(255, 255, 255, .94); }
+  .app-hero .store-btn:not(.store-btn--soon) .store-btn__name { color: #1F1A19; }
+  .app-hero .store-btn:not(.store-btn--soon) .store-btn__caption { color: #8A8280; }
 
   .point--c .point__icon { background: #2E3A2E; color: #A1C5A3; }
   .badge--live, .badge--free { background: #2E3A2E; color: #A1C5A3; box-shadow: inset 0 0 0 1px rgba(161, 197, 163, .2); }
