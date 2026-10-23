@@ -13,7 +13,7 @@
   ==========================================================================
   每日日语（appId: ja）隐私政策 · English · v2.3.0
 
-  正文以 shared/src/commonMain/assets/i18n/en.json 的 privacy.* 键为基准（第 4 节用「无订阅」口径的 privacy.s4NoSub.*）
+  正文以 shared/src/commonMain/assets/i18n/en.json 的 privacy.* 键为基准（第 4 节用「无订阅」口径的 privacy.S4 双轨口径（买断或订阅，与 App 内 privacy.s4 逐字一致）
   （9 节，第 4 节为「购买与支付」），与 App 内隐私弹窗展示的全文逐字一致。
   源草稿：DailyLang 仓库 docs/store/ja/privacy-policy.md；商店配置：
   appConfig/ja/store/store-info.json 的 privacyPolicyUrl(s)。
@@ -79,13 +79,14 @@
     <li>Not used to identify you: these records describe &quot;the learning activity on this device&quot;; they contain nothing that points to your personal identity.</li>
 </ul>
 
-<h2><span class="num">4.</span>Purchases and payments</h2>
-<ul>
-    <li>Intermediate and advanced courses are paid courses unlocked with a one-time purchase (not a subscription): payments are handled by the store billing service of the channel you use — Google Play Billing on Android, HUAWEI IAP Kit on HarmonyOS, and App Store in-app purchases on iOS. Payment details such as card numbers are processed by the respective store; we never see or store any payment information.</li>
-    <li>Purchase entitlements (unlocked courses) are stored locally on your device only, so the app can restore your owned content the next time you open it; they contain nothing that can identify you personally.</li>
+<h2><span class="num">4.</span>Purchases, subscriptions and payments</h2>
+  <ul>
+    <li>Advanced courses can be unlocked in two ways: a one-time purchase, or an auto-renewing subscription (membership). Payments for purchases and subscriptions are handled by the store billing service of the channel you use — Google Play Billing on Android, HUAWEI IAP Kit on HarmonyOS, and App Store in-app purchases on iOS. Payment details such as card numbers are processed by the respective store; we never see or store any payment information.</li>
+    <li>Subscriptions renew automatically: unless cancelled, they renew at the end of the current billing period. You can cancel at any time in the store's subscription management — "Payments &amp; subscriptions" in Google Play on Android, "Payments &amp; purchases" under your HUAWEI ID on HarmonyOS, and "Settings › Apple ID › Subscriptions" on iOS. After cancelling, your entitlement remains until the end of the current period.</li>
+    <li>Purchase entitlements (unlocked courses and subscription status) are stored locally on your device only, so the app can restore your owned content the next time you open it; they contain nothing that can identify you personally.</li>
     <li>After reinstalling or switching devices, owned content is restored from the purchase history of the respective store — no account required.</li>
     <li>Refunds follow the refund policy of the respective store.</li>
-</ul>
+  </ul>
 
 <h2><span class="num">5.</span>Microphone and audio</h2>
 <ul>

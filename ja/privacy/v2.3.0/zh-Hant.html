@@ -13,7 +13,7 @@
   ==========================================================================
   每日日语（appId: ja）隐私政策 · 繁體中文 · v2.3.0
 
-  正文以 shared/src/commonMain/assets/i18n/zh-Hant.json 的 privacy.* 键为基准（第 4 节用「无订阅」口径的 privacy.s4NoSub.*）
+  正文以 shared/src/commonMain/assets/i18n/zh-Hant.json 的 privacy.* 键为基准（第 4 节用「无订阅」口径的 privacy.S4 双轨口径（买断或订阅，与 App 内 privacy.s4 逐字一致）
   （9 节，第 4 节为「购买与支付」），与 App 内隐私弹窗展示的全文逐字一致。
   源草稿：DailyLang 仓库 docs/store/ja/privacy-policy.md；商店配置：
   appConfig/ja/store/store-info.json 的 privacyPolicyUrl(s)。
@@ -79,13 +79,14 @@
     <li>不用於識別你：這些記錄描述的是「這一台裝置上的學習情況」，不含任何能指向你個人身分的資訊。</li>
 </ul>
 
-<h2><span class="num">4.</span>購買與支付</h2>
-<ul>
-    <li>中級與高級課程均為付費課程，需一次性買斷後使用（不是訂閱）：購買由你所使用渠道的商店結算服務完成——Android 是 Google Play 結算，HarmonyOS 是華為 IAP Kit，iOS 是 App Store 內購；卡號等支付資訊由相應商店處理，我們不接觸、也不保存任何支付資訊。</li>
-    <li>購買權益（已解鎖的課程）只保存在你的裝置本機，用於在你重新開啟 App 時恢復已購內容；它不包含任何能指向你個人身分的資訊。</li>
+<h2><span class="num">4.</span>購買、訂閱與支付</h2>
+  <ul>
+    <li>進階課程提供兩種開通方式：一次性買斷，或連續訂閱（會員）。購買與訂閱的支付由你所使用渠道的商店結算服務完成——Android 是 Google Play 結算，HarmonyOS 是華為 IAP Kit，iOS 是 App Store 內購；卡號等支付資訊由相應商店處理，我們不接觸、也不保存任何支付資訊。</li>
+    <li>訂閱會自動續訂：如不取消，將在目前訂閱期結束後自動續訂。你可以隨時在對應商店的訂閱管理中取消——Android 在 Google Play 的「付款與訂閱」，HarmonyOS 在華為帳號的「付款與帳單」，iOS 在系統「設定 › Apple ID › 訂閱項目」；取消後權益保留至目前訂閱期結束。</li>
+    <li>購買權益（已解鎖的課程與訂閱狀態）只保存在你的裝置本機，用於在你重新開啟 App 時恢復已購內容；它不包含任何能指向你個人身分的資訊。</li>
     <li>換機或重新安裝後，已購內容透過對應商店的購買記錄恢復，無需註冊帳號。</li>
     <li>退款依對應商店的退款政策處理。</li>
-</ul>
+  </ul>
 
 <h2><span class="num">5.</span>麥克風與音訊</h2>
 <ul>

@@ -13,7 +13,7 @@
   ==========================================================================
   每日日语（appId: ja）隐私政策 · 简体中文 · v2.3.0
 
-  正文以 shared/src/commonMain/assets/i18n/zh-Hans.json 的 privacy.* 键为基准（第 4 节用「无订阅」口径的 privacy.s4NoSub.*）
+  正文以 shared/src/commonMain/assets/i18n/zh-Hans.json 的 privacy.* 键为基准（第 4 节用「无订阅」口径的 privacy.S4 双轨口径（买断或订阅，与 App 内 privacy.s4 逐字一致）
   （9 节，第 4 节为「购买与支付」），与 App 内隐私弹窗展示的全文逐字一致。
   源草稿：DailyLang 仓库 docs/store/ja/privacy-policy.md；商店配置：
   appConfig/ja/store/store-info.json 的 privacyPolicyUrl(s)。
@@ -79,13 +79,14 @@
     <li>不用于识别你：这些记录描述的是「这一台设备上的学习情况」，不含任何能指向你个人身份的信息。</li>
 </ul>
 
-<h2><span class="num">4.</span>购买与支付</h2>
-<ul>
-    <li>中级与高级课程均为付费课程，需一次性买断后使用（不是订阅）：购买由你所使用渠道的应用商店结算服务完成——Android 是 Google Play 结算，HarmonyOS 是华为 IAP Kit，iOS 是 App Store 内购；卡号等支付信息由相应商店处理，我们不接触、也不保存任何支付信息。</li>
-    <li>购买权益（已解锁的课程）只保存在你的设备本地，用于在你重新打开 App 时恢复已购内容；它不包含任何能指向你个人身份的信息。</li>
+<h2><span class="num">4.</span>购买、订阅与支付</h2>
+  <ul>
+    <li>进阶课程提供两种开通方式：一次性买断，或连续订阅（会员）。购买与订阅的支付由你所使用渠道的商店结算服务完成——Android 是 Google Play 结算，HarmonyOS 是华为 IAP Kit，iOS 是 App Store 内购；卡号等支付信息由相应商店处理，我们不接触、也不保存任何支付信息。</li>
+    <li>订阅会自动续期：如不取消，将在当前订阅期结束后自动续订。你可以随时在对应商店的订阅管理中取消——Android 在 Google Play 的「付款与订阅」，HarmonyOS 在华为帐号的「付款与账单」，iOS 在系统「设置 › Apple ID › 订阅」；取消后权益保留至当前订阅期结束。</li>
+    <li>购买权益（已解锁的课程与订阅状态）只保存在你的设备本地，用于在你重新打开 App 时恢复已购内容；它不包含任何能指向你个人身份的信息。</li>
     <li>换机或重装后，已购内容通过对应商店的购买记录恢复，无需注册账号。</li>
     <li>退款按对应商店的退款政策执行。</li>
-</ul>
+  </ul>
 
 <h2><span class="num">5.</span>麦克风与音频</h2>
 <ul>
