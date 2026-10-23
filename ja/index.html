@@ -15,14 +15,14 @@
 <link rel="alternate icon" href="../assets/favicon.png" type="image/png">
 <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
 <title>每日日语 · DailyLang</title>
-<meta name="description" content="每日日语（Daily Japanese）：用「听 → 读」的短练习学日语，即将推出。">
+<meta name="description" content="每日日语（Daily Japanese）：用「听 → 读」的短练习学日语，已在 Google Play 上线。">
 <link rel="stylesheet" href="../assets/site.css">
 <!--
   ==========================================================================
   每日日语（appId: ja）· App 详情页
 
-  - 日语 App 尚未在应用商店上线，本页为「即将推出」详情页；首页 .app-card 的「了解详情」指向这里。
-    （课程内容与音频已制作完成，商店上架后把 badge--soon 换成 badge--live 并补「获取 App」区块。）
+  - 日语 App 已在 Google Play 上线（iOS / HarmonyOS 尚未上线）：badge 用 badge--live，hero 区含
+    Google Play 下载按钮与 AppGallery / iOS「即将上线」占位，后续各商店上线后把占位换成 store-btn 链接。
   - 数据口径与 appConfig/ja/store/store-info.json、appConfig/ja.json 保持一致：
       · 目标语言 = 日语（ja-JP）；界面语言 = 简体中文 / 繁体中文 / 英文（3 种）
   - 隐私政策为正式版（/ja/privacy/，与 store-info 的 privacyPolicyUrl 同址）。
@@ -77,15 +77,15 @@
             <span class="i18n-ko">매일 일본어</span>
             <span class="i18n-km">ជប៉ុនរាល់ថ្ងៃ</span>
             <span class="i18n-lo">ຍີ່ປຸ່ນປະຈຳວັນ</span>
-            <span class="badge badge--soon">
-              <span class="i18n-zh">即将推出</span>
-              <span class="i18n-zh-Hant">即將推出</span>
-              <span class="i18n-en">Coming soon</span>
-              <span class="i18n-vi">Sắp ra mắt</span>
-              <span class="i18n-ja">近日公開</span>
-              <span class="i18n-ko">출시 예정</span>
-              <span class="i18n-km">នឹងមកក្នុងពេលឆាប់ៗ</span>
-              <span class="i18n-lo">ຈະມາໃນບໍ່ດົນ</span>
+            <span class="badge badge--live">
+              <span class="i18n-zh">已上线</span>
+              <span class="i18n-zh-Hant">已上線</span>
+              <span class="i18n-en">Available</span>
+              <span class="i18n-vi">Đã ra mắt</span>
+              <span class="i18n-ja">リリース中</span>
+              <span class="i18n-ko">출시됨</span>
+              <span class="i18n-km">ដាក់ឲ្យប្រើហើយ</span>
+              <span class="i18n-lo">ເປີດໃຫ້ໃຊ້ແລ້ວ</span>
             </span>
           </h1>
           <p class="native">毎日の日本語</p>
@@ -101,6 +101,54 @@
         <span class="i18n-km">រាល់ថ្ងៃប៉ុន្មាននាទី ហ្វឹកហាត់ស្តាប់-អានភាសាជប៉ុន។</span>
         <span class="i18n-lo">ມື້ລະໆຈັກນາທີ ຝຶກຟັງ-ອ່ານພາສາຍີ່ປຸ່ນ.</span>
       </p>
+      <div class="hero-cta app-hero__cta">
+        <a class="store-btn" href="https://play.google.com/store/apps/details?id=com.github.boybeak.daily.lang.ja" target="_blank" rel="noopener">
+          <img src="../assets/icon-google-play.png" alt="" aria-hidden="true" width="28" height="28">
+          <span class="store-btn__text">
+            <span class="store-btn__caption">
+              <span class="i18n-zh">立即下载</span>
+              <span class="i18n-zh-Hant">立即下載</span>
+              <span class="i18n-en">GET IT ON</span>
+              <span class="i18n-vi">TẢI NGAY</span>
+              <span class="i18n-ja">今すぐダウンロード</span>
+              <span class="i18n-ko">지금 다운로드</span>
+              <span class="i18n-km">ទាញយកឥឡូវនេះ</span>
+              <span class="i18n-lo">ດາວໂຫລດດຽວນີ້</span>
+            </span>
+            <span class="store-btn__name">Google Play</span>
+          </span>
+        </a>
+        <span class="store-btn store-btn--soon">
+          <span class="store-btn__text">
+            <span class="store-btn__caption">
+              <span class="i18n-zh">即将上线</span>
+              <span class="i18n-zh-Hant">即將上線</span>
+              <span class="i18n-en">COMING SOON</span>
+              <span class="i18n-vi">SẮP RA MẮT</span>
+              <span class="i18n-ja">近日公開</span>
+              <span class="i18n-ko">출시 예정</span>
+              <span class="i18n-km">នឹងមកក្នុងពេលឆាប់ៗ</span>
+              <span class="i18n-lo">ຈະມາໃນບໍ່ດົນ</span>
+            </span>
+            <span class="store-btn__name">AppGallery</span>
+          </span>
+        </span>
+        <span class="store-btn store-btn--soon">
+          <span class="store-btn__text">
+            <span class="store-btn__caption">
+              <span class="i18n-zh">即将上线</span>
+              <span class="i18n-zh-Hant">即將上線</span>
+              <span class="i18n-en">COMING SOON</span>
+              <span class="i18n-vi">SẮP RA MẮT</span>
+              <span class="i18n-ja">近日公開</span>
+              <span class="i18n-ko">출시 예정</span>
+              <span class="i18n-km">នឹងមកក្នុងពេលឆាប់ៗ</span>
+              <span class="i18n-lo">ຈະມາໃນບໍ່ດົນ</span>
+            </span>
+            <span class="store-btn__name">iOS</span>
+          </span>
+        </span>
+      </div>
     </section>
 
     <!-- ===== 事实速览 ===== -->
@@ -222,27 +270,27 @@
       </div>
     </div>
 
-    <!-- ===== 制作中说明 ===== -->
+    <!-- ===== 其他平台说明 ===== -->
     <h2 class="sec-title">
-      <span class="i18n-zh">正在制作中</span>
-      <span class="i18n-zh-Hant">正在製作中</span>
-      <span class="i18n-en">IN THE WORKS</span>
-      <span class="i18n-vi">ĐANG THỰC HIỆN</span>
-      <span class="i18n-ja">制作中</span>
-      <span class="i18n-ko">제작 중</span>
-      <span class="i18n-km">កំពុងសាងសង់</span>
-      <span class="i18n-lo">ກຳລັງສ້າງ</span>
+      <span class="i18n-zh">其他平台</span>
+      <span class="i18n-zh-Hant">其他平台</span>
+      <span class="i18n-en">OTHER PLATFORMS</span>
+      <span class="i18n-vi">NỀN TẢNG KHÁC</span>
+      <span class="i18n-ja">その他のプラットフォーム</span>
+      <span class="i18n-ko">다른 플랫폼</span>
+      <span class="i18n-km">វេទិកាផ្សេងទៀត</span>
+      <span class="i18n-lo">ແພລດຟອມອື່ນ</span>
     </h2>
     <div class="privacy-box">
       <p>
-        <span class="i18n-zh">日语 App 正在准备上架，上线前会在本页补充课程与下载信息。</span>
-        <span class="i18n-zh-Hant">日語 App 正在準備上架，上線前會在本頁補充課程與下載資訊。</span>
-        <span class="i18n-en">The Japanese app is being prepared for release; course details and download links will be added to this page before launch.</span>
-        <span class="i18n-vi">Ứng dụng tiếng Nhật đang được chuẩn bị phát hành; thông tin khóa học và tải xuống sẽ được bổ sung vào trang này trước khi ra mắt.</span>
-        <span class="i18n-ja">日本語アプリはリリース準備中です。公開前に、このページにコースとダウンロード情報を追加します。</span>
-        <span class="i18n-ko">일본어 앱은 출시를 준비 중이에요. 출시 전에 이 페이지에 코스와 다운로드 정보를 추가할 거예요.</span>
-        <span class="i18n-km">កម្មវិធីជប៉ុនកំពុងរៀបចំដាក់ឲ្យប្រើ មុនពេលចេញនឹងបន្ថែមព័ត៌មានវគ្គសិក្សានិងការទាញយកក្នុងទំព័រនេះ។</span>
-        <span class="i18n-lo">ແອັບຍີ່ປຸ່ນກຳລັງກຽມວາງຕະຫຼາດ ກ່ອນເປີດໃຊ້ຈະເພີ່ມຂໍ້ມູນຫຼັກສູດແລະການດາວໂຫລດໃນໜ້ານີ້.</span>
+        <span class="i18n-zh">日语 App 已在 Google Play 上线；iOS 与 HarmonyOS 版本正在准备中，上线后会在本页补充下载信息。</span>
+        <span class="i18n-zh-Hant">日語 App 已在 Google Play 上線；iOS 與 HarmonyOS 版本正在準備中，上線後會在本頁補充下載資訊。</span>
+        <span class="i18n-en">The Japanese app is now available on Google Play. iOS and HarmonyOS versions are in preparation; download links will be added here as they roll out.</span>
+        <span class="i18n-vi">Ứng dụng tiếng Nhật hiện đã có trên Google Play; phiên bản iOS và HarmonyOS đang được chuẩn bị, liên kết tải xuống sẽ được bổ sung vào trang này khi ra mắt.</span>
+        <span class="i18n-ja">日本語アプリは Google Play で配信中です。iOS 版と HarmonyOS 版は準備中で、公開され次第このページにダウンロード情報を追加します。</span>
+        <span class="i18n-ko">일본어 앱은 Google Play에서 만나볼 수 있어요. iOS와 HarmonyOS 버전은 준비 중이며, 출시되면 이 페이지에 다운로드 정보를 추가할 거예요.</span>
+        <span class="i18n-km">កម្មវិធីជប៉ុនមាននៅលើ Google Play ហើយ។ កំណែ iOS និង HarmonyOS កំពុងរៀបចំ នឹងបន្ថែមតំណទាញយកក្នុងទំព័រនេះពេលចេញ។</span>
+        <span class="i18n-lo">ແອັບຍີ່ປຸ່ນມີໃນ Google Play ແລ້ວ. ສະບັບ iOS ແລະ HarmonyOS ກຳລັງກຽມ ຈະເພີ່ມລິ້ງດາວໂຫລດໃນໜ້ານີ້ເມື່ອເປີດໃຊ້.</span>
       </p>
       <p class="more">
         <a href="privacy/">
