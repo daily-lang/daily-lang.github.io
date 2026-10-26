@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>问路与问价 · 越南语入门 - 每日越南语</title>
+<meta name="description" content="Nhà ga ở đâu?（火车站在哪里？） — 每日越南语，每天几分钟，把越南语练进耳朵里。">
+<meta property="og:type" content="website">
+<meta property="og:title" content="问路与问价 · 越南语入门">
+<meta property="og:description" content="Nhà ga ở đâu?（火车站在哪里？）">
+<meta property="og:url" content="https://daily-lang.github.io/vi/s/getting-started/lesson-directions/">
+<meta property="og:image" content="https://daily-lang.github.io/vi/s/getting-started/lesson-directions/og.png">
+<meta property="og:site_name" content="每日越南语">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="问路与问价 · 越南语入门">
+<meta name="twitter:description" content="Nhà ga ở đâu?（火车站在哪里？）">
+<meta name="twitter:image" content="https://daily-lang.github.io/vi/s/getting-started/lesson-directions/og.png">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: -apple-system, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+       background: #DA251D; color: #fff; min-height: 100vh;
+       display: flex; flex-direction: column; align-items: center; }
+.bar { width: 100%; height: 6px; background: #FFCD00; }
+.wrap { width: 100%; max-width: 560px; padding: 40px 24px 48px; }
+.app { font-size: 15px; opacity: .85; letter-spacing: .04em; }
+.crumb { margin-top: 44px; font-size: 15px; opacity: .8; }
+h1 { margin-top: 6px; font-size: 32px; line-height: 1.3; }
+.card { margin-top: 24px; background: rgba(255,255,255,.12); border-radius: 16px; padding: 24px 20px; }
+.target { font-size: 24px; line-height: 1.5; word-break: break-word; }
+.native { margin-top: 12px; font-size: 17px; opacity: .85; line-height: 1.5; }
+.open { margin-top: 36px; display: block; text-align: center; background: #fff; color: #DA251D;
+        font-size: 18px; font-weight: 600; padding: 15px 0; border-radius: 12px; text-decoration: none; }
+.hint { margin-top: 26px; font-size: 14px; opacity: .8; }
+.stores { margin-top: 12px; display: flex; gap: 12px; }
+.stores a { flex: 1; text-align: center; border: 1px solid rgba(255,255,255,.45); color: #fff;
+            font-size: 15px; padding: 11px 0; border-radius: 10px; text-decoration: none; }
+.foot { margin-top: 40px; font-size: 12.5px; opacity: .65; text-align: center; line-height: 1.7; }
+</style>
+</head>
+<body>
+<div class="bar"></div>
+<div class="wrap">
+  <p class="app">每日越南语</p>
+  <p class="crumb">越南语入门</p>
+  <h1>问路与问价</h1>
+  <div class="card">
+    <p class="target">Nhà ga ở đâu?</p>
+    <p class="native">火车站在哪里？</p>
+  </div>
+  <a class="open" id="openApp" href="dailylang://lesson?courseId=getting-started&amp;lessonId=lesson-directions" data-intent="intent://lesson?courseId=getting-started&amp;lessonId=lesson-directions#Intent;scheme=dailylang;package=com.github.boybeak.daily.lang.vi;S.browser_fallback_url=https%3A%2F%2Fdaily-lang.github.io%2Fvi%2Fs%2Fgetting-started%2Flesson-directions%2F;end">打开 App 学这节课</a>
+  <p class="hint">还没安装？在应用商店搜索「每日越南语」免费开始：</p>
+  <div class="stores">
+    <a href="https://play.google.com/store/apps/details?id=com.github.boybeak.daily.lang.vi&amp;referrer=utm_source%3Dshare%26utm_medium%3Dlesson%26utm_campaign%3Dgetting-started">Google Play</a>
+    <a href="https://appgallery.huawei.com/">华为应用市场</a>
+  </div>
+  <p class="foot">无需注册 · 学习进度只保存在本机 · 不录音不上传<br>daily-lang.github.io</p>
+</div>
+<script>
+// Android 上把「打开 App」换成 intent://（带 browser_fallback_url 兜底）：
+// App Links 域验证未生效时也能拉起；iOS / 鸿蒙保持 dailylang:// scheme。
+(function () {
+  if (!/Android/i.test(navigator.userAgent)) return;
+  var a = document.getElementById('openApp');
+  if (a && a.dataset.intent) a.href = a.dataset.intent;
+})();
+</script>
+</body>
+</html>

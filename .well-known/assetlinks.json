@@ -1,0 +1,52 @@
+[
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.github.boybeak.daily.lang.ja",
+      "sha256_cert_fingerprints": [
+        "3E:0D:30:CA:73:DA:2B:0B:B8:A0:58:0D:2E:E3:2A:A5:BF:FC:A6:E0:B6:1A:76:B6:A7:4F:D2:29:84:A3:65:49",
+        "57:53:DD:30:4E:96:E1:2E:D8:83:81:A2:E4:EB:21:EF:44:38:DE:7D:97:D0:20:4A:9D:2D:60:15:86:ED:B6:1E"
+      ]
+    }
+  },
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.github.boybeak.daily.lang.th",
+      "sha256_cert_fingerprints": [
+        "57:53:DD:30:4E:96:E1:2E:D8:83:81:A2:E4:EB:21:EF:44:38:DE:7D:97:D0:20:4A:9D:2D:60:15:86:ED:B6:1E"
+      ]
+    }
+  },
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.github.boybeak.daily.lang.vi",
+      "sha256_cert_fingerprints": [
+        "2F:54:0A:8C:D2:3D:7F:9A:68:23:5A:F9:4B:6A:F6:18:74:C3:31:D6:AD:42:10:8B:97:B8:78:4B:24:E7:AC:83",
+        "57:53:DD:30:4E:96:E1:2E:D8:83:81:A2:E4:EB:21:EF:44:38:DE:7D:97:D0:20:4A:9D:2D:60:15:86:ED:B6:1E"
+      ]
+    }
+  },
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.github.boybeak.daily.lang.yue",
+      "sha256_cert_fingerprints": [
+        "57:53:DD:30:4E:96:E1:2E:D8:83:81:A2:E4:EB:21:EF:44:38:DE:7D:97:D0:20:4A:9D:2D:60:15:86:ED:B6:1E"
+      ]
+    }
+  }
+]
