@@ -107,3 +107,64 @@
     if (event.key === 'Escape') closePop();
   });
 })();
+
+/* ---------- 每日一卡：daily/<当月>.web.json 按本地日期切片渲染，语言跟随站点切换 ----------
+   页面需提供 <section data-daily-card="<appId>">（落地页在 /<appId>/ 下，fetch 走相对路径）。
+   月包拉不到（未生成/断网）或当天无卡时整卡保持 hidden，绝不出错占位。 */
+(function () {
+  var sections = document.querySelectorAll('[data-daily-card]');
+  if (!sections.length) return;
+
+  function pad(n) { return (n < 10 ? '0' : '') + n; }
+  function todayKey() {
+    var d = new Date(); // 本地日期：与 App「本地日期切片」同一口径，不用 UTC 的 toISOString
+    return d.getFullYear() + '-' + pad(d.getMonth() + 1) + '-' + pad(d.getDate());
+  }
+
+  function pick(map, lang) {
+    if (!map) return null;
+    return map[lang] || map.en || null;
+  }
+
+  function render(section) {
+    var pack = section._dailyPack;
+    var body = section.querySelector('[data-daily-card-body]');
+    if (!pack || !body) return;
+    var day = pack.days && pack.days[todayKey()];
+    if (!day) return; // 今天的键缺失：保持 hidden
+
+    var lang = document.documentElement.getAttribute('data-lang') || 'zh-Hans';
+    var set = function (name, value) {
+      var el = body.querySelector('[data-daily-card-' + name + ']');
+      if (!el) return;
+      if (value) { el.textContent = value; el.hidden = false; }
+      else { el.hidden = true; }
+    };
+    set('text', day.text || null);
+    set('phonetic', day.phonetic || null);
+    set('t', pick(day.t, lang));
+    set('origin', pick(day.origin, lang));
+    var dateEl = body.querySelector('[data-daily-card-date]');
+    if (dateEl) dateEl.textContent = todayKey();
+    body.hidden = false;
+  }
+
+  function load(section) {
+    var month = todayKey().slice(0, 7);
+    // 落地页就在 /<appId>/ 下：直接用相对路径，data-daily-card 仅作 appId 标识
+    fetch('daily/' + month + '.web.json')
+      .then(function (r) { if (!r.ok) throw new Error(String(r.status)); return r.json(); })
+      .then(function (pack) { section._dailyPack = pack; render(section); })
+      .catch(function () { /* 月包未生成或断网：整卡保持隐藏 */ });
+  }
+
+  for (var i = 0; i < sections.length; i++) load(sections[i]);
+
+  // 站点语言切换 = html[data-lang] 变化：用同一份月包按新语区重渲染译文与出处
+  if (typeof MutationObserver !== 'undefined') {
+    var observer = new MutationObserver(function () {
+      for (var j = 0; j < sections.length; j++) render(sections[j]);
+    });
+    observer.observe(document.documentElement, { attributes: true, attributeFilter: ['data-lang'] });
+  }
+})();

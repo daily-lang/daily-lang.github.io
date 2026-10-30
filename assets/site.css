@@ -1315,3 +1315,66 @@ html[data-lang="lo"]      :is(.i18n-zh, .i18n-zh-Hant, .i18n-en, .i18n-vi, .i18n
   .contact-pop__hint { color: #8F8784; }
   .contact-pop__id { background: #2A2625; color: #F0EBE8; }
 }
+
+/* ==========================================================================
+   每日一卡：daily/<月>.web.json 按本地日期切片，assets/site.js 渲染
+   （正文 = 目标语言大字，音标/译文/出处可缺省隐藏，CTA 引导到 App 收听）
+   ========================================================================== */
+.daily-card-section { margin: 44px 0 8px; }
+
+.daily-card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-card);
+  padding: 22px 24px 20px;
+}
+
+.daily-card__meta {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  margin: 0;
+}
+
+.daily-card__label {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.daily-card__date { font-size: 12px; color: var(--text-3); font-variant-numeric: tabular-nums; }
+
+.daily-card__text {
+  margin: 12px 0 0;
+  font-size: 27px;
+  line-height: 1.42;
+  font-weight: 600;
+  color: var(--text);
+  overflow-wrap: anywhere;
+}
+
+.daily-card__phonetic { margin: 7px 0 0; font-size: 14px; color: var(--text-3); }
+
+.daily-card__t { margin: 9px 0 0; font-size: 15px; line-height: 1.55; color: var(--text-2); }
+
+.daily-card__origin { margin: 14px 0 0; font-size: 12px; color: var(--text-3); }
+
+.daily-card__cta { margin: 14px 0 0; }
+.daily-card__cta a { font-size: 14px; font-weight: 600; color: var(--accent); text-decoration: none; }
+.daily-card__cta a:hover { text-decoration: underline; }
+
+@media (max-width: 560px) {
+  .daily-card { padding: 18px 18px 16px; }
+  .daily-card__text { font-size: 23px; }
+}
+
+@media (prefers-color-scheme: dark) {
+  .daily-card { background: #211D1C; border-color: #383332; }
+  .daily-card__text { color: #F0EBE8; }
+  .daily-card__t { color: #B8B0AC; }
+  .daily-card__phonetic, .daily-card__origin, .daily-card__date { color: #8F8784; }
+}
