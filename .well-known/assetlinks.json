@@ -1,14 +1,18 @@
 [
   {
     "relation": [
-      "delegate_permission/common.handle_all_urls"
+      "delegate_permission/common.handle_all_urls",
+      "delegate_permission/common.get_login_creds"
     ],
     "target": {
       "namespace": "android_app",
       "package_name": "com.github.boybeak.daily.lang.ja",
       "sha256_cert_fingerprints": [
         "3E:0D:30:CA:73:DA:2B:0B:B8:A0:58:0D:2E:E3:2A:A5:BF:FC:A6:E0:B6:1A:76:B6:A7:4F:D2:29:84:A3:65:49",
-        "57:53:DD:30:4E:96:E1:2E:D8:83:81:A2:E4:EB:21:EF:44:38:DE:7D:97:D0:20:4A:9D:2D:60:15:86:ED:B6:1E"
+        "57:53:DD:30:4E:96:E1:2E:D8:83:81:A2:E4:EB:21:EF:44:38:DE:7D:97:D0:20:4A:9D:2D:60:15:86:ED:B6:1E",
+        "8A:8A:EF:9F:C1:3E:8B:3B:6B:72:B9:83:DE:36:EF:57:47:5B:DD:09:38:4C:3F:FC:3C:87:D8:C6:8D:7E:ED:C9",
+        "D6:03:82:82:E8:76:34:09:2E:27:2B:9D:79:B8:B1:74:7A:C6:F5:B4:30:A9:45:C9:71:17:9F:C5:5D:DD:13:33",
+        "BC:13:2E:61:07:FB:32:D7:47:0C:69:77:1F:59:65:47:AC:C8:0F:2C:60:23:47:DD:AB:EF:58:DB:6A:C2:7A:D2"
       ]
     }
   },
@@ -26,14 +30,18 @@
   },
   {
     "relation": [
-      "delegate_permission/common.handle_all_urls"
+      "delegate_permission/common.handle_all_urls",
+      "delegate_permission/common.get_login_creds"
     ],
     "target": {
       "namespace": "android_app",
       "package_name": "com.github.boybeak.daily.lang.vi",
       "sha256_cert_fingerprints": [
         "2F:54:0A:8C:D2:3D:7F:9A:68:23:5A:F9:4B:6A:F6:18:74:C3:31:D6:AD:42:10:8B:97:B8:78:4B:24:E7:AC:83",
-        "57:53:DD:30:4E:96:E1:2E:D8:83:81:A2:E4:EB:21:EF:44:38:DE:7D:97:D0:20:4A:9D:2D:60:15:86:ED:B6:1E"
+        "57:53:DD:30:4E:96:E1:2E:D8:83:81:A2:E4:EB:21:EF:44:38:DE:7D:97:D0:20:4A:9D:2D:60:15:86:ED:B6:1E",
+        "5D:DD:A5:D7:21:14:30:9F:A3:3C:3E:BA:7E:ED:E6:DD:77:C6:90:20:26:14:0E:8F:71:F2:1C:F8:F1:B8:9C:05",
+        "EF:4B:50:A2:F2:35:2D:E5:58:3B:0A:36:EC:8E:0F:6A:6F:E6:F4:3C:DF:5F:B9:7B:8F:86:24:83:92:60:1B:E5",
+        "15:1B:2E:93:E2:FF:75:71:8A:61:6C:50:F3:B6:1E:1F:7F:9F:9F:09:45:E5:80:BA:63:4A:A4:79:E9:72:65:79"
       ]
     }
   },
